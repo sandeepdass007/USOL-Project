@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+CommonUtils = function() {
+	
+	return {
+		
+	}
+}
