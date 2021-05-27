@@ -8,9 +8,27 @@
 		<script src="jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 		<script src="js/utils/common-utils.js"></script>
 		<script src="js/student-handler.js"></script>
+		
+		<style type="text/css">
+			body, html {
+			  height: 100%;
+			}
+			
+			.bg {
+			  /* The image used */
+			  background-image: url("images/home-background.png");
+			
+			  /* Full height */
+			  height: 100%;
+			
+			  /* Center and scale the image nicely */
+			  background-position: center;
+			  background-repeat: no-repeat;
+			  background-size: cover;
+			}
+		</style>
 	</head>
-	<body>
-		<h1 class="text-primary">Home Page</h1>
+	<body class= "bg" > 
 		<div class="container">
 			<div class="row">
 				<div class="col-4"></div>
