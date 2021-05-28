@@ -12,4 +12,19 @@ public class StudentController {
 	public String getHome() {
 		return "student-home";
 	}
+	
+	@GetMapping("/profile")
+	public String getProfile() {
+		return "student-profile";
+	}
+	
+	@GetMapping("/account")
+	public String getAccount() {
+		return "student-account";
+	}
+	
+	@GetMapping("/academics")
+	public String getAcademics() {
+		return "student-academics";
+	}
 }
