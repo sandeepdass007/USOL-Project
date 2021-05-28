@@ -18,7 +18,7 @@
 			
 			.bg {
 			  /* The image used */
-			  background-image: url("/images/student-background.jpg");
+			  background-image: url("/images/student-bg.png");
 			
 			  /* Full height */
 			  height: 100%;
@@ -32,7 +32,12 @@
 	</head>
 	
 	<body class = "bg">
-	
+		<div class="container-fluid">
+  			<div class="row">
+    			<div class="col-1"><img style="height:8rem; width:8rem" src="images/pu-logo.png" alt="pu logo"></div>
+    			<div class="col-11 d-flex align-content-center flex-wrap justify-content-center"> <h1>University School Of Open Learning</h1></div>
+  			</div>
+		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
