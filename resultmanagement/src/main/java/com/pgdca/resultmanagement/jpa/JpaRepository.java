@@ -11,9 +11,16 @@ public class JpaRepository {
 	@Autowired
 	private CredentialsJpaRepository credJpaRepository;
 	
+	@Autowired
+	private StudentDetailsJpaRepository studentDetailsJpaRepository;
+	
 	public ValidationResponse isUserValid(final String username, final String password) {
 		boolean userValid = credJpaRepository.isUserValid(username, password);
 		return new ValidationResponse(userValid, userValid ? null : "Invalid username or password");
+	}
+
+	public String getUserFullName(final String enrollmentNo) {
+		return studentDetailsJpaRepository.getStudentFullName(enrollmentNo);
 	}
 	
 }

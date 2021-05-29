@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -29,7 +30,10 @@ public class LoginController {
 
 	@PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public LoginResponse login(@RequestBody LoginCredentials loginCredentials, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public LoginResponse login(@RequestBody LoginCredentials loginCredentials,
+			HttpServletRequest request,
+			HttpServletResponse response,
+			HttpSession httpSession) throws ServletException, IOException {
 		final String username = loginCredentials.getUsername();
 		final String password = loginCredentials.getPassword();
 		Debug debug = loginCredentials.getDebug();
@@ -40,6 +44,9 @@ public class LoginController {
 		 * Logic to validate username and password from database
 		 * */
 		ValidationResponse validationResponse = jpaRepository.isUserValid(username, password);
+		if(validationResponse.isValid()) {
+			httpSession.setAttribute("username", username);
+		}
 		return new LoginResponse(validationResponse.isValid(), validationResponse.getError());
 	}
 }
