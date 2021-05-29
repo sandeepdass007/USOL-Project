@@ -51,7 +51,7 @@ $("document").ready(function() {
 				if(success == true || success == "true") {
 					window.location.href = "/student/";
 				} else {
-					alert("Login Failed!");
+					showLoginErrorModal();
 				}
             },
             data: JSON.stringify(jsonData)
@@ -61,3 +61,8 @@ $("document").ready(function() {
 	});
 	
 });
+function showLoginErrorModal(){
+	var modalEl = document.getElementById("loginErrorModal");
+	var myModal = new bootstrap.Modal(modalEl);
+	myModal.show();
+}
