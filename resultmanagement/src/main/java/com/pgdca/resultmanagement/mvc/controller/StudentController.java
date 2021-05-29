@@ -36,17 +36,53 @@ public class StudentController {
 	}
 	
 	@GetMapping("/profile")
-	public String getProfile() {
+	public String getProfile(Model model, HttpSession httpSession) {
+		String username = (String)httpSession.getAttribute("username");
+		// if username session attribute is not present, that means it is a security breach
+		// so redirect the user to home page.
+		if(!StringUtils.hasText(username)) {
+			return "redirect:/";
+		}
+		String studentFullName = jpaRepository.getUserFullName(username);
+		
+		if(!StringUtils.hasText(studentFullName)) {
+			return "redirect:/";
+		}
+		model.addAttribute("studentname", studentFullName);
 		return "student-profile";
 	}
 	
 	@GetMapping("/account")
-	public String getAccount() {
+	public String getAccount(Model model, HttpSession httpSession) {
+		String username = (String)httpSession.getAttribute("username");
+		// if username session attribute is not present, that means it is a security breach
+		// so redirect the user to home page.
+		if(!StringUtils.hasText(username)) {
+			return "redirect:/";
+		}
+		String studentFullName = jpaRepository.getUserFullName(username);
+		
+		if(!StringUtils.hasText(studentFullName)) {
+			return "redirect:/";
+		}
+		model.addAttribute("studentname", studentFullName);
 		return "student-account";
 	}
 	
 	@GetMapping("/academics")
-	public String getAcademics() {
+	public String getAcademics(Model model, HttpSession httpSession) {
+		String username = (String)httpSession.getAttribute("username");
+		// if username session attribute is not present, that means it is a security breach
+		// so redirect the user to home page.
+		if(!StringUtils.hasText(username)) {
+			return "redirect:/";
+		}
+		String studentFullName = jpaRepository.getUserFullName(username);
+		
+		if(!StringUtils.hasText(studentFullName)) {
+			return "redirect:/";
+		}
+		model.addAttribute("studentname", studentFullName);
 		return "student-academics";
 	}
 }
