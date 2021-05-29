@@ -30,38 +30,42 @@ $("document").ready(function() {
 			}
 		
 		var jsonData = {
-		    "username": username,
-		    "password": password,
-		    "debug" : {
-		        "enable": "false",
-		        "forceFail": "true"
-		    }
+			"username": username,
+			"password": password,
+			"debug" : {
+				"enable": "false",
+				"forceFail": "true"
+			}
 		};
 		
 		$.ajax({
-            url: '/login/', // -> localhost:8080/login/
+			url: '/login/', // -> localhost:8080/login/
 			async: true,
-            type: 'POST',
+			type: 'POST',
 			processData: false,
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {
-                console.log(data);
+			dataType: 'json',
+			contentType: 'application/json',
+			success: function (data) {
+				console.log(data);
 				var success = data["success"];
 				if(success == true || success == "true") {
 					window.location.href = "/student/";
 				} else {
 					showLoginErrorModal();
 				}
-            },
-            data: JSON.stringify(jsonData)
-        });
+			},
+			error: function(xhr, textStatus, errorThrown) {
+				showLoginErrorModal(Constant.LOGIN_SERVER_ERROR);
+			},
+			data: JSON.stringify(jsonData)
+		});
 		
 		e.preventDefault();
 	});
 	
 });
-function showLoginErrorModal(){
+function showLoginErrorModal(msg = "Invalid username or password. Kindly check and try again."){
+	$("#loginErrorModal #modal-message").text(msg);
 	var modalEl = document.getElementById("loginErrorModal");
 	var myModal = new bootstrap.Modal(modalEl);
 	myModal.show();
