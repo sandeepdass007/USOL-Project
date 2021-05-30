@@ -10,13 +10,13 @@ import javax.persistence.Table;
 public class Credentials {
 
 	@Id
-	@Column(name = "username")
+	@Column(name = "username", length = 15)
 	private String username;
 	
-	@Column(name = "pwd")
+	@Column(name = "pwd", length = 15)
 	private String password;
 	
-	@Column(name = "usertype")
+	@Column(name = "usertype", length = 15)
 	private String userType;
 
 	public Credentials() {}

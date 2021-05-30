@@ -10,39 +10,43 @@ import javax.persistence.Table;
 public class StudentDetails {
 
 	@Id
-	@Column(name = "enrollmentNo", nullable = false)
+	@Column(name = "enrollmentNo", nullable = false, length = 15)
 	private String enrollmentNo;
 	
-	@Column(name = "applicationNo", nullable = false)
+	@Column(name = "applicationNo", nullable = false, length = 15)
 	private String applicationNo;
 	
-	@Column(name = "parentDetailsId", nullable = false)
+	@Column(name = "parentDetailsId", nullable = false, length = 50)
 	private String parentDetailsId;
 	
-	@Column(name = "rollNo")
+	@Column(name = "rollNo", length = 10)
 	private String rollNo;
 	
-	@Column(name = "firstName", nullable = false)
+	@Column(name = "firstName", nullable = false, length = 15)
 	private String firstName;
 	
-	@Column(name = "middleName")
+	@Column(name = "middleName", length = 15)
 	private String middleName;
 	
-	@Column(name = "lastName")
+	@Column(name = "lastName", length = 15)
 	private String lastName;
 	
-	@Column(name = "studentTypeId", nullable = false)
+	@Column(name = "studentTypeId", nullable = false, length = 10)
 	private String studentTypeId;
 	
-	@Column(name = "courseId", nullable = false)
+	@Column(name = "courseId", nullable = false, length = 10)
 	private String courseId;
+	
+	@Column(name = "contactDetailId", nullable = false, length = 50)
+	private String contactDetailId;
 	
 	public StudentDetails() {
 		super();
 	}
 
 	public StudentDetails(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
-			String firstName, String middleName, String lastName, String studentTypeId, String courseId) {
+			String firstName, String middleName, String lastName, String studentTypeId, String courseId,
+			String contactDetailId) {
 		super();
 		this.enrollmentNo = enrollmentNo;
 		this.applicationNo = applicationNo;
@@ -53,6 +57,7 @@ public class StudentDetails {
 		this.lastName = lastName;
 		this.studentTypeId = studentTypeId;
 		this.courseId = courseId;
+		this.contactDetailId = contactDetailId;
 	}
 
 	public String getEnrollmentNo() {
@@ -125,5 +130,13 @@ public class StudentDetails {
 
 	public void setCourseId(String courseId) {
 		this.courseId = courseId;
+	}
+
+	public String getContactDetailId() {
+		return contactDetailId;
+	}
+
+	public void setContactDetailId(String contactDetailId) {
+		this.contactDetailId = contactDetailId;
 	}
 }
