@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "StudentDetails")
-public class StudentDetails {
+public class StudentDetail {
 
 	@Id
 	@Column(name = "enrollmentNo", nullable = false, length = 15)
@@ -40,11 +40,11 @@ public class StudentDetails {
 	@Column(name = "contactDetailId", nullable = false, length = 50)
 	private String contactDetailId;
 	
-	public StudentDetails() {
+	public StudentDetail() {
 		super();
 	}
 
-	public StudentDetails(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
+	public StudentDetail(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
 			String firstName, String middleName, String lastName, String studentTypeId, String courseId,
 			String contactDetailId) {
 		super();

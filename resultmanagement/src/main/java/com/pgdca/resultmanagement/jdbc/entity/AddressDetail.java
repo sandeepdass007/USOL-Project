@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "AddressDetails")
-public class AddressDetails {
+public class AddressDetail {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 50)
@@ -25,23 +25,29 @@ public class AddressDetails {
 	@Column(name = "cityId", nullable = false, length = 10)
 	private String cityId;
 	
+	@Column(name = "stateId", nullable = false, length = 10)
+	private String stateId;
+	
 	@Column(name = "countryId", nullable = false, length = 10)
 	private String countryId;
 	
-	public AddressDetails() {
+	public AddressDetail() {
 		super();
 	}
-	
-	public AddressDetails(String id, String buildingHouseNo, String landmark, String pincode, String cityId,
-			String countryId) {
+
+	public AddressDetail(String id, String buildingHouseNo, String landmark, String pincode, String cityId,
+			String stateId, String countryId) {
 		super();
 		this.id = id;
 		this.buildingHouseNo = buildingHouseNo;
 		this.landmark = landmark;
 		this.pincode = pincode;
 		this.cityId = cityId;
+		this.stateId = stateId;
 		this.countryId = countryId;
 	}
+
+
 
 	public String getId() {
 		return id;
@@ -73,6 +79,14 @@ public class AddressDetails {
 
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+	
+	public String getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(String stateId) {
+		this.stateId = stateId;
 	}
 
 	public String getCityId() {

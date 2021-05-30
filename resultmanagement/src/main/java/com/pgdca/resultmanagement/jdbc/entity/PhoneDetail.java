@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PhoneDetails")
-public class PhoneDetails {
+public class PhoneDetail {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 50)
@@ -16,24 +16,24 @@ public class PhoneDetails {
 	@Column(name = "phoneTypeId", nullable = false, length = 50)
 	private String phoneTypeId;
 	
-	@Column(name = "landlineExt", nullable = false, length = 10)
+	@Column(name = "landlineExt", length = 10)
 	private Integer landlineExt;
 	
-	@Column(name = "landlineNo", nullable = false, length = 10)
+	@Column(name = "landlineNo", length = 10)
 	private Integer landlineNo;
 	
 	@Column(name = "mobileCode", nullable = false, length = 5)
 	private Integer mobileCode;
 	
 	@Column(name = "mobile", nullable = false, length = 15)
-	private Integer mobile;
+	private String mobile;
 	
-	public PhoneDetails() {
+	public PhoneDetail() {
 		super();
 	}
 
-	public PhoneDetails(String id, String phoneTypeId, Integer landlineExt, Integer landlineNo, Integer mobileCode,
-			Integer mobile) {
+	public PhoneDetail(String id, String phoneTypeId, Integer landlineExt, Integer landlineNo, Integer mobileCode,
+			String mobile) {
 		super();
 		this.id = id;
 		this.phoneTypeId = phoneTypeId;
@@ -83,11 +83,11 @@ public class PhoneDetails {
 		this.mobileCode = mobileCode;
 	}
 
-	public Integer getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Integer mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 }

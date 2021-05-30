@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PhoneTypes")
-public class PhoneTypes {
+public class PhoneType {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 50)
@@ -16,11 +16,11 @@ public class PhoneTypes {
 	@Column(name = "type", nullable = false, length = 15)
 	private String type;
 	
-	public PhoneTypes() {
+	public PhoneType() {
 		super();
 	}
 
-	public PhoneTypes(String id, String type) {
+	public PhoneType(String id, String type) {
 		super();
 		this.id = id;
 		this.type = type;

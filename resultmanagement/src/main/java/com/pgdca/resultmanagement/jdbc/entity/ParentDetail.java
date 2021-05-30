@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ParentDetails")
-public class ParentDetails {
+public class ParentDetail {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 50)
@@ -25,11 +25,11 @@ public class ParentDetails {
 	@Column(name = "motherOccupation", length = 30)
 	private String motherOccupation;
 	
-	public ParentDetails() {
+	public ParentDetail() {
 		super();
 	}
 
-	public ParentDetails(String id, String fatherName, String motherName, String fatherOccupation,
+	public ParentDetail(String id, String fatherName, String motherName, String fatherOccupation,
 			String motherOccupation) {
 		super();
 		this.id = id;
