@@ -13,7 +13,7 @@ public class CityInfo {
 	@Column(name = "id", nullable = false, length = 10)
 	private String id;
 	
-	@Column(name = "name", nullable = false, length = 30)
+	@Column(name = "name", nullable = false, length = 50)
 	private String name;
 	
 	public CityInfo() {
