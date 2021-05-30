@@ -8,8 +8,10 @@
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
+		<script src="/js/student-chart-handler.js"></script>
 		
 		<style type="text/css">
 			body, html {
@@ -60,6 +62,17 @@
 					<div class="col">
 						<jsp:include page="student-navbar.jsp"></jsp:include>
 					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-3">
+						<div id="percentageHistory" style="width:100%; height:15rem;">
+						</div>
+					</div>
+					<div class="col-3"></div>
+					<div class="col-3"></div>
+					<div class="col-3"></div>
 				</div>
 			</div>
 		</div>
