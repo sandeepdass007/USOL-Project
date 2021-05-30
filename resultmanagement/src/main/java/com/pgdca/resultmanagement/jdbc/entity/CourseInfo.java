@@ -16,14 +16,22 @@ public class CourseInfo {
 	@Column(name = "courseName", nullable = false, length = 50)
 	private String courseName;
 	
+	@Column(name = "years", nullable = false, length = 2)
+	private Integer years;
+	
+	@Column(name = "semesters", nullable = false, length = 2)
+	private Integer semesters;
+	
 	public CourseInfo() {
 		super();
 	}
 
-	public CourseInfo(String id, String courseName) {
+	public CourseInfo(String id, String courseName, Integer years, Integer semesters) {
 		super();
 		this.id = id;
 		this.courseName = courseName;
+		this.years = years;
+		this.semesters = semesters;
 	}
 
 	public String getId() {
@@ -40,5 +48,21 @@ public class CourseInfo {
 
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
+	}
+
+	public Integer getYears() {
+		return years;
+	}
+
+	public void setYears(Integer years) {
+		this.years = years;
+	}
+
+	public Integer getSemesters() {
+		return semesters;
+	}
+
+	public void setSemesters(Integer semesters) {
+		this.semesters = semesters;
 	}
 }
