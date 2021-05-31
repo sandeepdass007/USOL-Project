@@ -28,22 +28,22 @@ public class PhoneDetail {
 	@Column(name = "mobileCode", nullable = false, length = 5)
 	private Integer mobileCode;
 	
-	@Column(name = "mobile", nullable = false, length = 15)
-	private String mobile;
+	@Column(name = "mobileNo", nullable = false, length = 15)
+	private String mobileNo;
 	
 	public PhoneDetail() {
 		super();
 	}
 
 	public PhoneDetail(String id, String phoneTypeId, Integer landlineExt, Integer landlineNo, Integer mobileCode,
-			String mobile) {
+			String mobileNo) {
 		super();
 		this.id = id;
 		this.phoneTypeId = phoneTypeId;
 		this.landlineExt = landlineExt;
 		this.landlineNo = landlineNo;
 		this.mobileCode = mobileCode;
-		this.mobile = mobile;
+		this.mobileNo = mobileNo;
 	}
 
 	public String getId() {
@@ -86,11 +86,11 @@ public class PhoneDetail {
 		this.mobileCode = mobileCode;
 	}
 
-	public String getMobile() {
-		return mobile;
+	public String getMobileNo() {
+		return mobileNo;
 	}
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 }

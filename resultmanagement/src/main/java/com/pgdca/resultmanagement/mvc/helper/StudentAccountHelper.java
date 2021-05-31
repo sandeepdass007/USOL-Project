@@ -10,21 +10,18 @@ import com.pgdca.resultmanagement.mvc.dao.StudentDetailDao;
 import com.pgdca.resultmanagement.utils.CommonUtil;
 
 @Component
-public class StudentProfileHelper extends StudentHelper {
+public class StudentAccountHelper extends StudentHelper {
 
 	@Autowired
 	private JpaRepository jpaRepository;
 
 	public HashMap<String, Object> getModelAttributes(String username) {
 		final HashMap<String, Object> modelAttributes = new HashMap<String, Object>();
-
-		final StudentDetailDao studentDetailDao = jpaRepository.getStudentDetailDao(username);
-		final String fullName = CommonUtil.getFullName(studentDetailDao.getFirstName(),
-				studentDetailDao.getMiddleName(), studentDetailDao.getLastName());
-		
+		final StudentDetailDao studentProfileDao = jpaRepository.getStudentDetailDao(username);
+		final String fullName = CommonUtil.getFullName(studentProfileDao.getFirstName(),
+				studentProfileDao.getMiddleName(), studentProfileDao.getLastName());
 		modelAttributes.put("studentFullName", fullName);
-		modelAttributes.put("studentProfileDao", studentDetailDao);
+		modelAttributes.put("studentProfileDao", studentProfileDao);
 		return modelAttributes;
 	}
-
 }

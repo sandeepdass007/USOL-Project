@@ -1,20 +1,21 @@
 package com.pgdca.resultmanagement.jpa;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.dto.ValidationResponse;
-import com.pgdca.resultmanagement.jdbc.entity.AddressDetail;
-import com.pgdca.resultmanagement.jdbc.entity.CityInfo;
-import com.pgdca.resultmanagement.jdbc.entity.ContactDetail;
-import com.pgdca.resultmanagement.jdbc.entity.CountryInfo;
-import com.pgdca.resultmanagement.jdbc.entity.ParentDetail;
-import com.pgdca.resultmanagement.jdbc.entity.PhoneDetail;
-import com.pgdca.resultmanagement.jdbc.entity.PhoneType;
-import com.pgdca.resultmanagement.jdbc.entity.StateInfo;
-import com.pgdca.resultmanagement.jdbc.entity.StudentDetail;
-import com.pgdca.resultmanagement.jdbc.entity.StudentType;
-import com.pgdca.resultmanagement.mvc.dao.StudentProfileDao;
+import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
+import com.pgdca.resultmanagement.mvc.dao.CityInfoDao;
+import com.pgdca.resultmanagement.mvc.dao.ContactDetailDao;
+import com.pgdca.resultmanagement.mvc.dao.CountryInfoDao;
+import com.pgdca.resultmanagement.mvc.dao.ParentDetailDao;
+import com.pgdca.resultmanagement.mvc.dao.PhoneDetailDao;
+import com.pgdca.resultmanagement.mvc.dao.PhoneTypeDao;
+import com.pgdca.resultmanagement.mvc.dao.StateInfoDao;
+import com.pgdca.resultmanagement.mvc.dao.StudentDetailDao;
+import com.pgdca.resultmanagement.mvc.dao.StudentTypeDao;
 
 @Component
 public class JpaRepository {
@@ -61,19 +62,68 @@ public class JpaRepository {
 		return studentDetailsJpaRepository.getStudentFullName(enrollmentNo);
 	}
 
-	public StudentProfileDao getStudentProfile(String username) {
-		final StudentDetail studentDetail = studentDetailsJpaRepository.getStudentDetails(username);
-		final StudentType studentType = studentTypeJpaRepository.getStudentType(studentDetail.getStudentTypeId());
-		final ParentDetail parentDetail = parentDetailJpaRepository.getParentDetail(studentDetail.getParentDetailsId());
-		final ContactDetail contactDetail = contactDetailJpaRepository.getContactDetail(studentDetail.getContactDetailId());
-		final PhoneDetail phoneDetail = phoneDetailJpaRepository.getPhoneDetail(contactDetail.getPhoneDetailId());
-		final PhoneType phoneType = phoneTypeJpaRepository.getPhoneType(phoneDetail.getPhoneTypeId());
-		final AddressDetail addressDetail = addressDetailJpaRepository.getAddressDetail(contactDetail.getAddressId());
-		final CityInfo cityInfo = cityInfoJpaRepository.getCityInfo(addressDetail.getCityId());
-		final StateInfo stateInfo = stateInfoJpaRepository.getStateInfo(addressDetail.getStateId());
-		final CountryInfo countryInfo = countryInfoJpaRepository.getCountryInfo(addressDetail.getCountryId());
-		final StudentProfileDao studentProfileDao = new StudentProfileDao(studentDetail, addressDetail, contactDetail,
-				parentDetail, studentType, phoneDetail, phoneType, cityInfo, stateInfo, countryInfo);
-		return studentProfileDao;
+	public StudentDetailDao getStudentDetailDao(String username) {
+		
+		StudentDetailDao studentDetailDao = studentDetailsJpaRepository.getStudentDetailDao(username, this);
+		
+//		final StudentDetail studentDetail = studentDetailsJpaRepository.getStudentDetails(username);
+//		final StudentType studentType = studentTypeJpaRepository.getStudentType(studentDetail.getStudentTypeId());
+//		final ParentDetail parentDetail = parentDetailJpaRepository.getParentDetail(studentDetail.getParentDetailsId());
+//		final ContactDetail contactDetail = contactDetailJpaRepository.getContactDetail(studentDetail.getContactDetailId());
+//		final List<PhoneDetail> phoneDetail = phoneDetailJpaRepository.getPhoneDetail(contactDetail.getPhoneDetailId());
+//		final PhoneType phoneType = phoneTypeJpaRepository.getPhoneType(phoneDetail.getPhoneTypeId());
+//		final AddressDetail addressDetail = addressDetailJpaRepository.getAddressDetail(contactDetail.getAddressId());
+//		final CityInfo cityInfo = cityInfoJpaRepository.getCityInfo(addressDetail.getCityId());
+//		final StateInfo stateInfo = stateInfoJpaRepository.getStateInfo(addressDetail.getStateId());
+//		final CountryInfo countryInfo = countryInfoJpaRepository.getCountryInfo(addressDetail.getCountryId());
+//		final StudentDetailsDao studentProfileDao = new StudentDetailsDao(studentDetail, addressDetail, contactDetail,
+//				parentDetail, studentType, phoneDetail, phoneType, cityInfo, stateInfo, countryInfo);
+//		return studentProfileDao;
+		return studentDetailDao;
+	}
+	
+	public ParentDetailDao getParentDetailDao(String parentDetailId) {
+		ParentDetailDao parentDetailDao = parentDetailJpaRepository.getParentDetailDao(parentDetailId);
+		return parentDetailDao;
+	}
+	
+	public StudentTypeDao getStudentTypeDao(String studentTypeId) {
+		StudentTypeDao studentTypeDao = studentTypeJpaRepository.getStudentTypeDao(studentTypeId);
+		return studentTypeDao;
+	}
+
+	public ContactDetailDao getContactDetailDao(String contactDetailId) {
+		ContactDetailDao contactDetailDao = contactDetailJpaRepository.getContactDetailDao(contactDetailId, this);
+		return contactDetailDao;
+	}
+
+	public List<PhoneDetailDao> getPhoneDetailDaoList(String phoneDetailId) {
+		List<PhoneDetailDao> phoneDetailDaoList = phoneDetailJpaRepository.getPhoneDetailDaoList(phoneDetailId, this);
+		return phoneDetailDaoList;
+	}
+
+	public PhoneTypeDao getPhoneTypeDao(String phoneTypeId) {
+		PhoneTypeDao phoneTypeDao = phoneTypeJpaRepository.getPhoneTypeDao(phoneTypeId);
+		return phoneTypeDao;
+	}
+
+	public List<AddressDetailDao> getAddressDetailDaoList(String addressId) {
+		List<AddressDetailDao> addressDetailDaoList = addressDetailJpaRepository.getAddressDetailDaoList(addressId, this);
+		return addressDetailDaoList;
+	}
+
+	public CityInfoDao getCityInfoDao(String cityId) {
+		CityInfoDao cityInfoDao = cityInfoJpaRepository.getCityInfoDao(cityId);
+		return cityInfoDao;
+	}
+
+	public CountryInfoDao getCountryInfoDao(String countryId) {
+		CountryInfoDao countryInfoDao = countryInfoJpaRepository.getCountryInfoDao(countryId);
+		return countryInfoDao;
+	}
+
+	public StateInfoDao getStateInfoDao(String stateId) {
+		StateInfoDao stateInfoDao = stateInfoJpaRepository.getStateInfoDao(stateId);
+		return stateInfoDao;
 	}
 }

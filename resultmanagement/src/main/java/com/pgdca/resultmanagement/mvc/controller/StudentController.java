@@ -6,12 +6,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.pgdca.resultmanagement.jpa.JpaRepository;
+import com.pgdca.resultmanagement.mvc.helper.StudentAcademicsHelper;
+import com.pgdca.resultmanagement.mvc.helper.StudentAccountHelper;
+import com.pgdca.resultmanagement.mvc.helper.StudentHomeHelper;
 import com.pgdca.resultmanagement.mvc.helper.StudentProfileHelper;
 
 @Controller
@@ -19,13 +21,19 @@ import com.pgdca.resultmanagement.mvc.helper.StudentProfileHelper;
 public class StudentController {
 
 	@Autowired
-	private JpaRepository jpaRepository;
+	private StudentHomeHelper studentHomeHelper;
 	
 	@Autowired
 	private StudentProfileHelper studentProfileHelper;
+	
+	@Autowired
+	private StudentAccountHelper studentAccountHelper;
+	
+	@Autowired
+	private StudentAcademicsHelper studentAcademicsHelper;
 
 	@GetMapping({ "/", "/home" })
-	public String getHome(Model model, HttpSession httpSession) {
+	public String getHome(ModelMap modelMap, HttpSession httpSession) {
 		String username = (String) httpSession.getAttribute("username");
 		// if username session attribute is not present, that means it is a security
 		// breach
@@ -33,18 +41,14 @@ public class StudentController {
 		if (!StringUtils.hasText(username)) {
 			return "redirect:/";
 		}
-		String studentFullName = jpaRepository.getUserFullName(username);
-
-		if (!StringUtils.hasText(studentFullName)) {
-			httpSession.invalidate();
-			return "redirect:/";
-		}
-		model.addAttribute("studentname", studentFullName);
+		
+		HashMap<String, Object> modelAttributes = studentHomeHelper.getModelAttributes(username);
+		modelMap.addAllAttributes(modelAttributes);
 		return "student-home";
 	}
 
 	@GetMapping("/profile")
-	public String getProfile(Model model, HttpSession httpSession) {
+	public String getProfile(ModelMap modelMap, HttpSession httpSession) {
 		String username = (String) httpSession.getAttribute("username");
 		// if username session attribute is not present, that means it is a security
 		// breach
@@ -54,12 +58,12 @@ public class StudentController {
 		}
 
 		HashMap<String, Object> modelAttributes = studentProfileHelper.getModelAttributes(username);
-		model.addAllAttributes(modelAttributes);
+		modelMap.addAllAttributes(modelAttributes);
 		return "student-profile";
 	}
 
 	@GetMapping("/account")
-	public String getAccount(Model model, HttpSession httpSession) {
+	public String getAccount(ModelMap modelMap, HttpSession httpSession) {
 		String username = (String) httpSession.getAttribute("username");
 		// if username session attribute is not present, that means it is a security
 		// breach
@@ -67,17 +71,14 @@ public class StudentController {
 		if (!StringUtils.hasText(username)) {
 			return "redirect:/";
 		}
-		String studentFullName = jpaRepository.getUserFullName(username);
-
-		if (!StringUtils.hasText(studentFullName)) {
-			return "redirect:/";
-		}
-		model.addAttribute("studentname", studentFullName);
+		
+		HashMap<String, Object> modelAttributes = studentAccountHelper.getModelAttributes(username);
+		modelMap.addAllAttributes(modelAttributes);
 		return "student-account";
 	}
 
 	@GetMapping("/academics")
-	public String getAcademics(Model model, HttpSession httpSession) {
+	public String getAcademics(ModelMap modelMap, HttpSession httpSession) {
 		String username = (String) httpSession.getAttribute("username");
 		// if username session attribute is not present, that means it is a security
 		// breach
@@ -85,12 +86,9 @@ public class StudentController {
 		if (!StringUtils.hasText(username)) {
 			return "redirect:/";
 		}
-		String studentFullName = jpaRepository.getUserFullName(username);
-
-		if (!StringUtils.hasText(studentFullName)) {
-			return "redirect:/";
-		}
-		model.addAttribute("studentname", studentFullName);
+		
+		HashMap<String, Object> modelAttributes = studentAcademicsHelper.getModelAttributes(username);
+		modelMap.addAllAttributes(modelAttributes);
 		return "student-academics";
 	}
 }

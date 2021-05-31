@@ -18,6 +18,6 @@
 			</li>
 		</ul>
 	</div>
-	<span class="navbar-brand text-end ps-2" href="#">Welcome  ${studentname}!</span>
+	<span class="navbar-brand text-end ps-2" href="#">Welcome ${studentFullName} (${studentProfileDao.getEnrollmentNo()})</span>
 	<span id="logoutBtn" class="me-2 text-white" style="cursor: pointer;"><i class="fas fa-door-open"></i></span>
 </nav>

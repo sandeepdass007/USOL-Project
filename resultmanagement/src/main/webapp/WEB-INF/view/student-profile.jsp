@@ -62,6 +62,86 @@
 				</div>
 			</div>
 			<h1 class="display-3">Student Profile Page</h1>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="accordion">
+							<div class="accordion-item">
+								<h4 class="accordion-header display-4" id="studentNamePanelHeading">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentNamePanel" aria-expanded="true" aria-controls="studentNamePanel">
+										<span>Student Name</span>
+									</button>
+								</h4>
+								<div id="studentNamePanel" class="accordion-collapse collapse show" aria-labelledby="studentNamePanelHeading">
+									<div class="accordion-body">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-4">
+													<div class="input-group mb-3">
+														<span class="input-group-text">First Name</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getFirstName()}" readonly/>
+													</div>
+												</div>
+												<div class="col-4">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Middle Name</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getMiddleName()}" readonly/>
+													</div>
+												</div>
+												<div class="col-4">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Last Name</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getLastName()}" readonly/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="accordion">
+							<div class="accordion-item">
+								<h4 class="accordion-header display-4" id="studentDOBPanelHeading">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentDOBPanel" aria-expanded="true" aria-controls="studentDOBPanel">
+										<span>Date Of Birth</span>
+									</button>
+								</h4>
+								<div id="studentDOBPanel" class="accordion-collapse collapse show" aria-labelledby="studentDOBPanelHeading">
+									<div class="accordion-body">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-4">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Date</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getDateOfBirth().getDate()}" readonly/>
+													</div>
+												</div>
+												<div class="col-4">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Month</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getDateOfBirth().getMonthName()}" readonly/>
+													</div>
+												</div>
+												<div class="col-4">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Year</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getDateOfBirth().getYear()}" readonly/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
