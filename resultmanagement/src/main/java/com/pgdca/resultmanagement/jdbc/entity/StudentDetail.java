@@ -1,12 +1,14 @@
 package com.pgdca.resultmanagement.jdbc.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "StudentDetails")
+@Table(name = "StudentDetail")
 public class StudentDetail {
 
 	@Id
@@ -31,6 +33,9 @@ public class StudentDetail {
 	@Column(name = "lastName", length = 15)
 	private String lastName;
 
+	@Column(name = "dateOfBirth", nullable = false)
+	private Date dateOfBirth;
+
 	@Column(name = "sessionStart", nullable = false, length = 5)
 	private Integer sessionStart;
 
@@ -51,8 +56,8 @@ public class StudentDetail {
 	}
 
 	public StudentDetail(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
-			String firstName, String middleName, String lastName, Integer sessionStart, Integer sessionEnd,
-			String studentTypeId, String courseId, String contactDetailId) {
+			String firstName, String middleName, String lastName, Date dateOfBirth, Integer sessionStart,
+			Integer sessionEnd, String studentTypeId, String courseId, String contactDetailId) {
 		super();
 		this.enrollmentNo = enrollmentNo;
 		this.applicationNo = applicationNo;
@@ -61,6 +66,7 @@ public class StudentDetail {
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
 		this.sessionStart = sessionStart;
 		this.sessionEnd = sessionEnd;
 		this.studentTypeId = studentTypeId;
@@ -122,6 +128,14 @@ public class StudentDetail {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public Integer getSessionStart() {

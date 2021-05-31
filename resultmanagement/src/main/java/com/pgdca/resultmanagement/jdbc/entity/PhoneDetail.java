@@ -6,12 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PhoneDetails")
+@Table(name = "PhoneDetail")
 public class PhoneDetail {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 50)
 	private String id;
+	
+	@Column(name = "phoneDetailId", nullable = false, length = 50)
+	private String phoneDetailId;
 	
 	@Column(name = "phoneTypeId", nullable = false, length = 50)
 	private String phoneTypeId;

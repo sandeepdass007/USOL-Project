@@ -6,21 +6,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PhoneType")
-public class PhoneType {
+@Table(name = "AddressType")
+public class AddressType {
 
 	@Id
-	@Column(name = "id", nullable = false, length = 50)
+	@Column(name = "id", nullable = false, length = 10)
 	private String id;
-	
+
 	@Column(name = "type", nullable = false, length = 15)
 	private String type;
-	
-	public PhoneType() {
+
+	public AddressType() {
 		super();
 	}
 
-	public PhoneType(String id, String type) {
+	public AddressType(String id, String type) {
 		super();
 		this.id = id;
 		this.type = type;

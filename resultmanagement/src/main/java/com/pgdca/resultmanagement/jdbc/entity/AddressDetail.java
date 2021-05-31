@@ -6,12 +6,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "AddressDetails")
+@Table(name = "AddressDetail")
 public class AddressDetail {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 50)
 	private String id;
+	
+	@Column(name = "addressId", nullable = false, length = 50)
+	private String addressId;
+	
+	@Column(name = "addressTypeId", nullable = false, length = 10)
+	private String addressTypeId;
 	
 	@Column(name = "buildingHouseNo", nullable = false, length = 30)
 	private String buildingHouseNo;
