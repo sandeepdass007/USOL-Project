@@ -1,8 +1,10 @@
 <html>
 	<head>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		<!-- Style Sheets -->
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
+		<link href="/css/student-common.css" rel="stylesheet">
 		
 		<!-- JavaScripts -->
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
@@ -10,42 +12,6 @@
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
-		
-		<style type="text/css">
-			body, html {
-				height: 100%;
-			}
-			
-			.bg {
-				position: fixed;
-				left: 0;
-				right: 0;
-				z-index: 1;
-				display: block;
-				-webkit-filter: blur(5px);
-				-moz-filter: blur(5px);
-				-o-filter: blur(5px);
-				-ms-filter: blur(5px);
-				filter: blur(5px);
-				/* The image used */
-				background-image: url("/images/student-home-bg.jpg");
-			
-				/* Full height */
-				height: 100%;
-			
-				/* Center and scale the image nicely */
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
-			
-			.mainbodycontent {
-				position: fixed;
-				left: 0;
-				right: 0;
-				z-index: 9999;
-			}
-		</style>
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -79,19 +45,19 @@
 												<div class="col-4">
 													<div class="input-group mb-3">
 														<span class="input-group-text">First Name</span>
-														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getFirstName()}" readonly/>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getFirstName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
 													<div class="input-group mb-3">
 														<span class="input-group-text">Middle Name</span>
-														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getMiddleName()}" readonly/>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getMiddleName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
 													<div class="input-group mb-3">
 														<span class="input-group-text">Last Name</span>
-														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getLastName()}" readonly/>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getLastName()}" readonly/>
 													</div>
 												</div>
 											</div>
@@ -118,22 +84,168 @@
 												<div class="col-4">
 													<div class="input-group mb-3">
 														<span class="input-group-text">Date</span>
-														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getDateOfBirth().getDate()}" readonly/>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getDateOfBirth().getDate()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
 													<div class="input-group mb-3">
 														<span class="input-group-text">Month</span>
-														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getDateOfBirth().getMonthName()}" readonly/>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getDateOfBirth().getMonthName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
 													<div class="input-group mb-3">
 														<span class="input-group-text">Year</span>
-														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentProfileDao.getDateOfBirth().getYear()}" readonly/>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getDateOfBirth().getYear()}" readonly/>
 													</div>
 												</div>
 											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="accordion">
+							<div class="accordion-item">
+								<h4 class="accordion-header display-4" id="studentParentsPanelHeading">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentParentsPanel" aria-expanded="true" aria-controls="studentParentsPanel">
+										<span>Parent Details</span>
+									</button>
+								</h4>
+								<div id="studentParentsPanel" class="accordion-collapse collapse show" aria-labelledby="studentParentsPanelHeading">
+									<div class="accordion-body">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-3">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Father</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getFatherName() }" readonly/>
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Occupation</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getFatherOccupation()}" readonly/>
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Mother</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getMotherName()}" readonly/>
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="input-group mb-3">
+														<span class="input-group-text">Occupation</span>
+														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getMotherOccupation()}" readonly/>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="accordion">
+							<div class="accordion-item">
+								<h4 class="accordion-header display-4" id="studentContactPanelHeading">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentContactPanel" aria-expanded="true" aria-controls="studentContactPanel">
+										<span>Contact Details</span>
+									</button>
+								</h4>
+								<div id="studentContactPanel" class="accordion-collapse collapse show" aria-labelledby="studentContactPanelHeading">
+									<div class="accordion-body">
+										<div class="container-fluid">
+											<c:forEach var="phoneDetail" items="${studentDetailDao.getContactDetailDao().getPhoneDetailDaoList()}">
+												<div class="row">
+													<div class="col-2">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Type</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${phoneDetail.getPhoneType()}" readonly/>
+														</div>
+													</div>
+													<div class="col-2">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Landline Ext</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${phoneDetail.getLandlineExt()}" readonly/>
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Landline</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${phoneDetail.getLandlineNo()}" readonly/>
+														</div>
+													</div>
+													<div class="col-2">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Mobile Code</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${phoneDetail.getMobileCode()}" readonly/>
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Mobile No</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${phoneDetail.getMobileNo()}" readonly/>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+											<c:forEach var="addressDetail" items="${studentDetailDao.getContactDetailDao().getAddressDetailDaoList()}">
+												<div class="row">
+													<div class="col-4">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Type</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getType()}" readonly/>
+														</div>
+													</div>
+													<div class="col-4">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Building/House No</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getBuildingHouseNo()}" readonly/>
+														</div>
+													</div>
+													<div class="col-4">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Landmark</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getLandmark()}" readonly/>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-3">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Pincode</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getPincode()}" readonly/>
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="input-group mb-3">
+															<span class="input-group-text">City</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getCity()}" readonly/>
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="input-group mb-3">
+															<span class="input-group-text">State</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getState()}" readonly/>
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="input-group mb-3">
+															<span class="input-group-text">Country</span>
+															<input type="text" class="form-control" placeholder="Not Applicable" value="${addressDetail.getCountry()}" readonly/>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 								</div>

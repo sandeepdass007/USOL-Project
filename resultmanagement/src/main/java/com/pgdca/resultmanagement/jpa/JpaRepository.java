@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.dto.ValidationResponse;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
+import com.pgdca.resultmanagement.mvc.dao.AddressTypeDao;
 import com.pgdca.resultmanagement.mvc.dao.CityInfoDao;
 import com.pgdca.resultmanagement.mvc.dao.ContactDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.CountryInfoDao;
@@ -43,6 +44,9 @@ public class JpaRepository {
 
 	@Autowired
 	private AddressDetailJpaRepository addressDetailJpaRepository;
+	
+	@Autowired
+	private AddressTypeJpaRepository addressTypeJpaRepository;
 	
 	@Autowired
 	private CityInfoJpaRepository cityInfoJpaRepository;
@@ -125,5 +129,10 @@ public class JpaRepository {
 	public StateInfoDao getStateInfoDao(String stateId) {
 		StateInfoDao stateInfoDao = stateInfoJpaRepository.getStateInfoDao(stateId);
 		return stateInfoDao;
+	}
+
+	public AddressTypeDao getAddressTypeDao(String addressTypeId) {
+		final AddressTypeDao addressType = addressTypeJpaRepository.getAddressTypeDao(addressTypeId, this);
+		return addressType;
 	}
 }

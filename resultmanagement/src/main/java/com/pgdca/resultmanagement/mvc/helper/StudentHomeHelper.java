@@ -21,7 +21,7 @@ public class StudentHomeHelper extends StudentHelper {
 		final String fullName = CommonUtil.getFullName(studentProfileDao.getFirstName(),
 				studentProfileDao.getMiddleName(), studentProfileDao.getLastName());
 		modelAttributes.put("studentFullName", fullName);
-		modelAttributes.put("studentProfileDao", studentProfileDao);
+		modelAttributes.put("studentDetailDao", studentProfileDao);
 		return modelAttributes;
 	}
 }

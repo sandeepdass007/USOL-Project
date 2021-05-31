@@ -21,9 +21,8 @@ public class StudentProfileHelper extends StudentHelper {
 		final StudentDetailDao studentDetailDao = jpaRepository.getStudentDetailDao(username);
 		final String fullName = CommonUtil.getFullName(studentDetailDao.getFirstName(),
 				studentDetailDao.getMiddleName(), studentDetailDao.getLastName());
-		
 		modelAttributes.put("studentFullName", fullName);
-		modelAttributes.put("studentProfileDao", studentDetailDao);
+		modelAttributes.put("studentDetailDao", studentDetailDao);
 		return modelAttributes;
 	}
 

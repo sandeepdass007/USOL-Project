@@ -33,8 +33,10 @@ public class AddressDetailJpaRepository {
 		List<AddressDetailDao> addressDetailDaoList = new ArrayList<AddressDetailDao>();
 		for(AddressDetail addressDetail : addressDetailList) {
 			final AddressDetailDao addressDetailDao = AddressDetailDaoBuilder.getBuilder()
+				.setType(jpaRepository.getAddressTypeDao(addressDetail.getAddressTypeId()).getType())
 				.setBuildingHouseNo(addressDetail.getBuildingHouseNo())
 				.setPincode(addressDetail.getPincode())
+				.setLandmark(addressDetail.getLandmark())
 				.setCity(jpaRepository.getCityInfoDao(addressDetail.getCityId()).getName())
 				.setState(jpaRepository.getStateInfoDao(addressDetail.getStateId()).getName())
 				.setCountry(jpaRepository.getCountryInfoDao(addressDetail.getCountryId()).getName())
