@@ -45,19 +45,19 @@
 										<div class="container-fluid">
 											<div class="row">
 												<div class="col-4">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">First Name</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getFirstName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Middle Name</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getMiddleName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Last Name</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getLastName()}" readonly/>
 													</div>
@@ -84,19 +84,19 @@
 										<div class="container-fluid">
 											<div class="row">
 												<div class="col-4">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Date</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getDateOfBirth().getDate()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Month</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getDateOfBirth().getMonthName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-4">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Year</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getDateOfBirth().getYear()}" readonly/>
 													</div>
@@ -123,25 +123,25 @@
 										<div class="container-fluid">
 											<div class="row">
 												<div class="col-3">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Father</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getFatherName() }" readonly/>
 													</div>
 												</div>
 												<div class="col-3">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Occupation</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getFatherOccupation()}" readonly/>
 													</div>
 												</div>
 												<div class="col-3">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Mother</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getMotherName()}" readonly/>
 													</div>
 												</div>
 												<div class="col-3">
-													<div class="input-group mb-3">
+													<div class="input-group">
 														<span class="input-group-text">Occupation</span>
 														<input type="text" class="form-control" placeholder="Not Applicable" value="${studentDetailDao.getParentDetailDao().getMotherOccupation()}" readonly/>
 													</div>
