@@ -18,8 +18,10 @@
 		<div class="mainbodycontent">
 			<div class="container-fluid">
 				<div class="row mt-2 mb-2">
-					<div class="col-1"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
-					<div class="col-11 d-flex align-content-center flex-wrap justify-content-center"><h1 class="display-1">University School Of Open Learning</h1></div>
+					<div class="col-6 col-sm-3 col-md-2 col-lg-2"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
+					<div class="col-6 col-sm-9 col-md-10 col-lg-10 d-flex align-content-center flex-wrap justify-content-center">
+						<h1 class="display-3 text-center">University School Of Open Learning</h1>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col">
@@ -34,7 +36,7 @@
 						<div class="accordion">
 							<div class="accordion-item">
 								<h4 class="accordion-header display-4" id="studentNamePanelHeading">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentNamePanel" aria-expanded="true" aria-controls="studentNamePanel">
+									<button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#studentNamePanel" aria-expanded="true" aria-controls="studentNamePanel">
 										<span>Student Name</span>
 									</button>
 								</h4>
@@ -73,7 +75,7 @@
 						<div class="accordion">
 							<div class="accordion-item">
 								<h4 class="accordion-header display-4" id="studentDOBPanelHeading">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentDOBPanel" aria-expanded="true" aria-controls="studentDOBPanel">
+									<button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#studentDOBPanel" aria-expanded="true" aria-controls="studentDOBPanel">
 										<span>Date Of Birth</span>
 									</button>
 								</h4>
@@ -112,7 +114,7 @@
 						<div class="accordion">
 							<div class="accordion-item">
 								<h4 class="accordion-header display-4" id="studentParentsPanelHeading">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentParentsPanel" aria-expanded="true" aria-controls="studentParentsPanel">
+									<button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#studentParentsPanel" aria-expanded="true" aria-controls="studentParentsPanel">
 										<span>Parent Details</span>
 									</button>
 								</h4>
@@ -157,7 +159,7 @@
 						<div class="accordion">
 							<div class="accordion-item">
 								<h4 class="accordion-header display-4" id="studentContactPanelHeading">
-									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#studentContactPanel" aria-expanded="true" aria-controls="studentContactPanel">
+									<button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#studentContactPanel" aria-expanded="true" aria-controls="studentContactPanel">
 										<span>Contact Details</span>
 									</button>
 								</h4>

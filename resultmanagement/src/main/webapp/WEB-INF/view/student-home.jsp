@@ -20,8 +20,10 @@
 		<div class="mainbodycontent">
 			<div class="container-fluid">
 				<div class="row mt-2 mb-2">
-					<div class="col-1"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
-					<div class="col-11 d-flex align-content-center flex-wrap justify-content-center"><h1 class="display-1">University School Of Open Learning</h1></div>
+					<div class="col-6 col-sm-3 col-md-2 col-lg-2"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
+					<div class="col-6 col-sm-9 col-md-10 col-lg-10 d-flex align-content-center flex-wrap justify-content-center">
+						<h1 class="display-3 text-center">University School Of Open Learning</h1>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col">
