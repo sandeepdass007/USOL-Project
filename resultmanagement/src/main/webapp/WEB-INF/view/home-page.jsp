@@ -52,7 +52,7 @@
 			<div class="row">
 				<div class="col-4"></div>
 				<div class="col-4">
-					<form>
+					<form id="loginForm">
 						<div class="mb-3">
 							<label class="form-label">Username</label>
 							<input type="text" class="form-control" id="loginUsername" aria-describedby="usernameHelp"/>
@@ -64,7 +64,7 @@
 							<input type="password" class="form-control"	id="loginPassword">
 							<div class="invalid-feedback"> Password can't be empty or whitespaces.</div>
 						</div>
-						<button id="loginSubmitBtn" type="button" class="btn btn-primary">Login</button>
+						<button id="loginSubmitBtn" type="submit" class="btn btn-primary">Login</button>
 					</form>
 				</div>
 				<div class="col-4"></div>

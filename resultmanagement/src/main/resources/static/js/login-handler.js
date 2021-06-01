@@ -5,7 +5,7 @@
 $("document").ready(function() {
 	
 	// Registering the click event on login button
-	$("#loginSubmitBtn").click(function(e) {
+	$("#loginForm").submit(function(e) {
 		// get username and password from the provided input fields
 		var username = $("#loginUsername").val();
 		var password = $("#loginPassword").val();
@@ -26,8 +26,9 @@ $("document").ready(function() {
 		// To prevent the execution of login if either username or password is invalid. 
 		var invalid = $("#loginUsername, #loginPassword").hasClass("is-invalid");
 		if(invalid == true){
+			e.preventDefault();
 			return;
-			}
+		}
 		
 		var jsonData = {
 			"username": username,
