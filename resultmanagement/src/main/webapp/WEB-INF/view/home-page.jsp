@@ -11,6 +11,7 @@
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/js/utils/constants.js"></script>
 		<script src="/js/login-handler.js"></script>
+		<script src="/js/home.js"></script>
 		
 		<style type="text/css">
 			body, html {
@@ -88,6 +89,8 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
+		<br/>
+		<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
 		<br/>
 		<div class="container">
 			<div class="row">
