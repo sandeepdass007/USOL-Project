@@ -55,6 +55,15 @@ body, html {
 	background-color: #00000040;
 }
 
+.accordion-item .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.accordion .input-group-text, .accordion input[type="text"] {
+	font-size: 0.85rem !important;
+}
+
 button.accordion-button {
 	background-color: transparent !important;
 	color: white !important;
