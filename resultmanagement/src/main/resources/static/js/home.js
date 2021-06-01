@@ -114,7 +114,7 @@ function populateCourseWiseStudEnrollChart() {
 			}
 		},
 		series: [{
-			name: 'Brands',
+			name: 'Course',
 			colorByPoint: true,
 			data: [{
 				name: 'Other',
