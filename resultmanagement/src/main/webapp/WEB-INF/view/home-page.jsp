@@ -9,6 +9,7 @@
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/js/utils/constants.js"></script>
 		<script src="/js/login-handler.js"></script>
 		<script src="/js/home.js"></script>
@@ -92,9 +93,12 @@
 		<br/>
 		<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
 		<br/>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-4"></div>
+				<div class="col-4">
+					<div id="courseWiseStudentsEnrolled" style="width:100%; height:15rem;">
+					</div>
+				</div>
 				<div class="col-4 border rounded" style="background-color: #ecb0b012">
 					<form id="loginForm">
 						<div class="mb-3">
@@ -111,7 +115,10 @@
 						<button id="loginSubmitBtn" type="submit" class="btn btn-primary">Login</button>
 					</form>
 				</div>
-				<div class="col-4"></div>
+				<div class="col-4">
+					<div id="categoryWiseEnrollments" style="width:100%; height:15rem;">
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
