@@ -3,6 +3,7 @@
 		<!-- Style Sheets -->
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
+		<link href="css/login.css" rel="stylesheet">
 		
 		<!-- JavaScripts -->
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
@@ -48,10 +49,50 @@
 				</div>
 			</div>
 		</div>
+		
+		<div id="login-carousel" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg" class="d-block w-100" alt="..."/>
+					<div class="carousel-caption d-none d-sm-block d-md-block">
+						<h5>Lao Tzu</h5>
+						<p>"A journey of a thousand miles must begin with a single step."</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="https://wowslider.com/sliders/demo-93/data1/images/lake.jpg" class="d-block w-100" alt="..."/>
+					<div class="carousel-caption d-none d-sm-block d-md-block">
+						<h5>J.R.R. Tolkien</h5>
+						<p>"Not all those who wander are lost."</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg" class="d-block w-100" alt="..."/>
+					<div class="carousel-caption d-none d-sm-block d-md-block">
+						<h5>Paulo Coelho</h5>
+						<p>"If you think adventures are dangerous, try routine: It’s Lethal."</p>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#login-carousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#login-carousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<br/>
 		<div class="container">
 			<div class="row">
 				<div class="col-4"></div>
-				<div class="col-4">
+				<div class="col-4 border rounded" style="background-color: #ecb0b012">
 					<form id="loginForm">
 						<div class="mb-3">
 							<label class="form-label">Username</label>

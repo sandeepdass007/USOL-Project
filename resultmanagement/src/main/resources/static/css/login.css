@@ -1,0 +1,7 @@
+#login-carousel .carousel-inner {
+	height: 50vh;
+}
+
+#login-carousel .carousel-inner .carousel-item {
+	height: 100%;
+}
