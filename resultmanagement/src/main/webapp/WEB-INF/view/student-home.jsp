@@ -12,7 +12,7 @@
 		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
-		<script src="/js/student-chart-handler.js"></script>
+		<script src="/js/chart-handler/student-home-chart-handler.js"></script>
 	</head>
 	
 	<body>

@@ -9,8 +9,11 @@
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/modules/treemap.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
+		<script src="/js/chart-handler/student-academics-chart-handler.js"></script>
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -28,7 +31,17 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="display-3">Student Academics Page</h1>
+			<br/>
+			<div class="container">
+				<div class="row">
+					<div class="col-4">
+						<div id="overallCourseChart" style="width:100%; height:15rem;">
+						</div>
+					</div>
+					<div class="col-4"></div>
+					<div class="col-4"></div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

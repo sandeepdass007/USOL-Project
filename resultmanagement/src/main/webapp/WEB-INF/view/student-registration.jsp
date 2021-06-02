@@ -12,13 +12,12 @@
 		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
-		<script src="/js/student-chart-handler.js"></script>
 	</head>
 	<body>
 		<div class = "bg"></div>
 		<div class="mainbodycontent" >
 				
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row mt-2 mb-2">
 					<div class="col-1"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
 					<div class="col-11 d-flex align-content-center flex-wrap justify-content-center"><h1 class="display-1">University School Of Open Learning</h1></div>
@@ -51,17 +50,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-3">
-						<div id="percentageHistory" style="width:100%; height:15rem;">
-						</div>
-					</div>
-					<div class="col-3"></div>
-					<div class="col-3"></div>
-					<div class="col-3"></div>
-				</div>
-			</div>
+			<br/>
 			<div class="container">
 						<form class="row g-3 needs-validation" novalidate>
 			  			<div class="col-md-4">
