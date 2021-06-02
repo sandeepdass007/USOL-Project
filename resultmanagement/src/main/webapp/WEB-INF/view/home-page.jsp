@@ -3,7 +3,7 @@
 		<!-- Style Sheets -->
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
-		<link href="css/login.css" rel="stylesheet">
+		<link href="/css/login.css" rel="stylesheet">
 		
 		<!-- JavaScripts -->
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
