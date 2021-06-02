@@ -54,17 +54,31 @@ $("document").ready(function() {
 				} else {
 					showLoginErrorModal();
 				}
+				enableLoginForm();
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				showLoginErrorModal(Constant.LOGIN_SERVER_ERROR);
+				enableLoginForm();
 			},
 			data: JSON.stringify(jsonData)
 		});
 		
+		disableLoginForm();
+		$("#loginLoadingSpinner").removeClass("d-none");
 		e.preventDefault();
 	});
 	
 });
+
+function disableLoginForm() {
+	$("#loginForm").addClass("disable-content");
+}
+
+function enableLoginForm() {
+	$("#loginForm").removeClass("disable-content");
+	$("#loginLoadingSpinner").addClass("d-none");
+}
+
 function showLoginErrorModal(msg = "Invalid username or password. Kindly check and try again."){
 	$("#loginErrorModal #modal-message").text(msg);
 	var modalEl = document.getElementById("loginErrorModal");

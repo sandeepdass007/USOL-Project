@@ -112,7 +112,10 @@
 							<input type="password" class="form-control"	id="loginPassword">
 							<div class="invalid-feedback"> Password can't be empty or whitespaces.</div>
 						</div>
-						<button id="loginSubmitBtn" type="submit" class="btn btn-primary">Login</button>
+						<button id="loginSubmitBtn" type="submit" class="btn btn-primary">
+							<span>Login</span>
+							<span id="loginLoadingSpinner" class="spinner-grow spinner-grow-sm d-none" role="status" aria-hidden="true"></span>
+						</button>
 					</form>
 				</div>
 				<div class="col-4">
