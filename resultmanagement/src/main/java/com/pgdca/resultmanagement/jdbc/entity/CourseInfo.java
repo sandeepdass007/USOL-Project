@@ -12,23 +12,27 @@ public class CourseInfo {
 	@Id
 	@Column(name = "id", nullable = false, length = 10)
 	private String id;
-	
+
+	@Column(name = "courseTypeId", nullable = false, length = 10)
+	private String courseTypeId;
+
 	@Column(name = "courseName", nullable = false, length = 50)
 	private String courseName;
-	
+
 	@Column(name = "years", nullable = false, length = 2)
 	private Integer years;
-	
+
 	@Column(name = "semesters", nullable = false, length = 2)
 	private Integer semesters;
-	
+
 	public CourseInfo() {
 		super();
 	}
 
-	public CourseInfo(String id, String courseName, Integer years, Integer semesters) {
+	public CourseInfo(String id, String courseTypeId, String courseName, Integer years, Integer semesters) {
 		super();
 		this.id = id;
+		this.courseTypeId = courseTypeId;
 		this.courseName = courseName;
 		this.years = years;
 		this.semesters = semesters;
@@ -40,6 +44,14 @@ public class CourseInfo {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getCourseTypeId() {
+		return courseTypeId;
+	}
+
+	public void setCourseTypeId(String courseTypeId) {
+		this.courseTypeId = courseTypeId;
 	}
 
 	public String getCourseName() {
@@ -65,4 +77,5 @@ public class CourseInfo {
 	public void setSemesters(Integer semesters) {
 		this.semesters = semesters;
 	}
+
 }
