@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class CourseType {
 
 	@Id
-	@Column(name = "id", nullable = false, length = 50)
+	@Column(name = "id", nullable = false, length = 10)
 	private String id;
 	
 	@Column(name = "type", nullable = false, length = 20)

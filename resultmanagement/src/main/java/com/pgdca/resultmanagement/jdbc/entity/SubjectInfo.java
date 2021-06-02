@@ -12,34 +12,26 @@ public class SubjectInfo {
 	@Id
 	@Column(name = "id", nullable = false, length = 10)
 	private String id;
-	
-	@Column(name = "subjectTypeId", nullable = false, length = 10)
-	private String subjectTypeId;
-	
+
+	@Column(name = "subjectDistributionId", nullable = false, length = 10)
+	private String subjectDistributionId;
+
 	@Column(name = "name", nullable = false, length = 30)
 	private String name;
-	
+
 	@Column(name = "code", nullable = false, length = 10)
 	private String code;
-	
-	@Column(name = "maxMarks", nullable = false, length = 3)
-	private Integer maxMarks;
-	
-	@Column(name = "minMarks", nullable = false, length = 3)
-	private Integer minMarks;
-	
+
 	public SubjectInfo() {
 		super();
 	}
 
-	public SubjectInfo(String id, String subjectTypeId, String name, String code, Integer maxMarks, Integer minMarks) {
+	public SubjectInfo(String id, String subjectTypeId, String name, String code) {
 		super();
 		this.id = id;
-		this.subjectTypeId = subjectTypeId;
+		this.subjectDistributionId = subjectTypeId;
 		this.name = name;
 		this.code = code;
-		this.maxMarks = maxMarks;
-		this.minMarks = minMarks;
 	}
 
 	public String getId() {
@@ -51,11 +43,11 @@ public class SubjectInfo {
 	}
 
 	public String getSubjectTypeId() {
-		return subjectTypeId;
+		return subjectDistributionId;
 	}
 
 	public void setSubjectTypeId(String subjectTypeId) {
-		this.subjectTypeId = subjectTypeId;
+		this.subjectDistributionId = subjectTypeId;
 	}
 
 	public String getName() {
@@ -74,19 +66,4 @@ public class SubjectInfo {
 		this.code = code;
 	}
 
-	public Integer getMaxMarks() {
-		return maxMarks;
-	}
-
-	public void setMaxMarks(Integer maxMarks) {
-		this.maxMarks = maxMarks;
-	}
-
-	public Integer getMinMarks() {
-		return minMarks;
-	}
-
-	public void setMinMarks(Integer minMarks) {
-		this.minMarks = minMarks;
-	}
 }
