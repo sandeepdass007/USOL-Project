@@ -13,6 +13,9 @@ public class SubjectDistributionRefInfo {
 	@Column(name = "id", nullable = false, length = 50)
 	private String id;
 
+	@Column(name = "subjectDistributionRefId", nullable = false, length = 50)
+	private String subjectDistributionRefId;
+
 	@Column(name = "subjectTypeId", nullable = false, length = 10)
 	private String subjectTypeId;
 
@@ -26,9 +29,11 @@ public class SubjectDistributionRefInfo {
 		super();
 	}
 
-	public SubjectDistributionRefInfo(String id, String subjectTypeId, Integer maxMarks, Integer minMarks) {
+	public SubjectDistributionRefInfo(String id, String subjectDistributionRefId, String subjectTypeId,
+			Integer maxMarks, Integer minMarks) {
 		super();
 		this.id = id;
+		this.subjectDistributionRefId = subjectDistributionRefId;
 		this.subjectTypeId = subjectTypeId;
 		this.maxMarks = maxMarks;
 		this.minMarks = minMarks;
@@ -40,6 +45,14 @@ public class SubjectDistributionRefInfo {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getSubjectDistributionRefId() {
+		return subjectDistributionRefId;
+	}
+
+	public void setSubjectDistributionRefId(String subjectDistributionRefId) {
+		this.subjectDistributionRefId = subjectDistributionRefId;
 	}
 
 	public String getSubjectTypeId() {
