@@ -11,6 +11,7 @@ var StudentAcademicsChartHandler = function() {
 $("document").ready(function() {
 
 	populateOverallCourseChart();
+	populateClassVersusPercentage();
 
 });
 
@@ -134,5 +135,64 @@ function populateOverallCourseChart() {
 		title: {
 			text: 'Overall Performance'
 		}
+	});
+}
+
+function populateClassVersusPercentage() {
+	Highcharts.chart('classVersusPercentage', {
+		chart: {
+			backgroundColor: 'none'
+		},
+		title: {
+			text: 'Avg. Class vs Sandeep'
+		},
+		yAxis: {
+			title: {
+				text: 'Marks (in %)'
+			}
+		},
+
+		xAxis: {
+			type: 'category',
+		},
+
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle'
+		},
+
+		plotOptions: {
+			series: {
+				label: {
+					connectorAllowed: false
+				},
+				pointStart: 1
+			}
+		},
+
+		series: [{
+			name: 'Class Avg.',
+			data: [78.25, 79.55, 77.56, 80.82, 72.43, 85.11, 75.01, 77.25]
+		}, {
+			name: 'Sandeep',
+			data: [65.25, 88.25, 75.15, 85.82, 77.27, 83.02, 82.82, 79.29]
+		}],
+
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+
 	});
 }

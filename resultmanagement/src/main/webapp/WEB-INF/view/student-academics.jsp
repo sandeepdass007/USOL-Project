@@ -70,7 +70,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-4"></div>
+					<div class="col-4">
+						<div id="classVersusPercentage" style="width:100%; height:15rem;">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
