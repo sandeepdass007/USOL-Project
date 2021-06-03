@@ -15,27 +15,31 @@ public class MasterMarks {
 
 	@EmbeddedId
 	private CourseSubEnrollNoCompKey courseSubEnrollNoCompKey;
-	
+
 	@Column(name = "marks", length = 5)
 	private Integer marks;
-	
+
 	@Column(name = "session", nullable = false, length = 10)
 	private Date session;
-	
+
 	@Column(name = "reappearStatusId", length = 50)
 	private String reappearStatusId;
-	
+
+	@Column(name = "subjectDistributionId", length = 50)
+	private String subjectDistributionId;
+
 	public MasterMarks() {
 		super();
 	}
 
 	public MasterMarks(CourseSubEnrollNoCompKey courseSubEnrollNoCompKey, Integer marks, Date session,
-			String reappearStatusId) {
+			String reappearStatusId, String subjectDistributionId) {
 		super();
 		this.courseSubEnrollNoCompKey = courseSubEnrollNoCompKey;
 		this.marks = marks;
 		this.session = session;
 		this.reappearStatusId = reappearStatusId;
+		this.subjectDistributionId = subjectDistributionId;
 	}
 
 	public CourseSubEnrollNoCompKey getCourseSubEnrollNoCompKey() {
@@ -69,4 +73,13 @@ public class MasterMarks {
 	public void setReappearStatusId(String reappearStatusId) {
 		this.reappearStatusId = reappearStatusId;
 	}
+
+	public String getSubjectDistributionId() {
+		return subjectDistributionId;
+	}
+
+	public void setSubjectDistributionId(String subjectDistributionId) {
+		this.subjectDistributionId = subjectDistributionId;
+	}
+
 }
