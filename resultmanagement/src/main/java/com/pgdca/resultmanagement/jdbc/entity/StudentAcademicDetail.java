@@ -1,5 +1,7 @@
 package com.pgdca.resultmanagement.jdbc.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,7 +19,7 @@ public class StudentAcademicDetail {
 	private String courseId;
 	
 	@Column(name = "session", nullable = false, length = 10)
-	private String session;
+	private Date session;
 	
 	@Column(name = "semester", nullable = false, length = 2)
 	private Integer semester;
@@ -29,7 +31,7 @@ public class StudentAcademicDetail {
 		super();
 	}
 
-	public StudentAcademicDetail(String enrollmentNo, String courseId, String session, Integer semester,
+	public StudentAcademicDetail(String enrollmentNo, String courseId, Date session, Integer semester,
 			String resultStatusId) {
 		super();
 		this.enrollmentNo = enrollmentNo;
@@ -55,11 +57,11 @@ public class StudentAcademicDetail {
 		this.courseId = courseId;
 	}
 
-	public String getSession() {
+	public Date getSession() {
 		return session;
 	}
 
-	public void setSession(String session) {
+	public void setSession(Date session) {
 		this.session = session;
 	}
 

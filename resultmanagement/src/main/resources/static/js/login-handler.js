@@ -53,8 +53,8 @@ $("document").ready(function() {
 					window.location.href = "/student/";
 				} else {
 					showLoginErrorModal();
+					enableLoginForm();
 				}
-				enableLoginForm();
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				showLoginErrorModal(Constant.LOGIN_SERVER_ERROR);

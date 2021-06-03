@@ -37,10 +37,10 @@ public class StudentDetail {
 	private Date dateOfBirth;
 
 	@Column(name = "sessionStart", nullable = false, length = 5)
-	private Integer sessionStart;
+	private Date sessionStart;
 
 	@Column(name = "sessionEnd", length = 5)
-	private Integer sessionEnd;
+	private Date sessionEnd;
 
 	@Column(name = "studentTypeId", nullable = false, length = 10)
 	private String studentTypeId;
@@ -56,8 +56,8 @@ public class StudentDetail {
 	}
 
 	public StudentDetail(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
-			String firstName, String middleName, String lastName, Date dateOfBirth, Integer sessionStart,
-			Integer sessionEnd, String studentTypeId, String courseId, String contactDetailId) {
+			String firstName, String middleName, String lastName, Date dateOfBirth, Date sessionStart,
+			Date sessionEnd, String studentTypeId, String courseId, String contactDetailId) {
 		super();
 		this.enrollmentNo = enrollmentNo;
 		this.applicationNo = applicationNo;
@@ -138,19 +138,19 @@ public class StudentDetail {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public Integer getSessionStart() {
+	public Date getSessionStart() {
 		return sessionStart;
 	}
 
-	public void setSessionStart(Integer sessionStart) {
+	public void setSessionStart(Date sessionStart) {
 		this.sessionStart = sessionStart;
 	}
 
-	public Integer getSessionEnd() {
+	public Date getSessionEnd() {
 		return sessionEnd;
 	}
 
-	public void setSessionEnd(Integer sessionEnd) {
+	public void setSessionEnd(Date sessionEnd) {
 		this.sessionEnd = sessionEnd;
 	}
 

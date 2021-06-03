@@ -1,5 +1,7 @@
 package com.pgdca.resultmanagement.jdbc.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -19,7 +21,7 @@ public class ReappearInfo {
 	
 	// session in which reappear exam attempted
 	@Column(name = "session", nullable = false, length = 10)
-	private String session;
+	private Date session;
 	
 	@Column(name = "reappearStatusId", length = 10)
 	private String reappearStatusId;
@@ -28,7 +30,7 @@ public class ReappearInfo {
 		super();
 	}
 
-	public ReappearInfo(ReappearCompKey reappearCompKey, Integer marks, String session, String reappearStatusId) {
+	public ReappearInfo(ReappearCompKey reappearCompKey, Integer marks, Date session, String reappearStatusId) {
 		super();
 		this.reappearCompKey = reappearCompKey;
 		this.marks = marks;
@@ -52,11 +54,11 @@ public class ReappearInfo {
 		this.marks = marks;
 	}
 
-	public String getSession() {
+	public Date getSession() {
 		return session;
 	}
 
-	public void setSession(String session) {
+	public void setSession(Date session) {
 		this.session = session;
 	}
 

@@ -1,5 +1,7 @@
 package com.pgdca.resultmanagement.jdbc.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -18,7 +20,7 @@ public class MasterMarks {
 	private Integer marks;
 	
 	@Column(name = "session", nullable = false, length = 10)
-	private String session;
+	private Date session;
 	
 	@Column(name = "reappearStatusId", length = 50)
 	private String reappearStatusId;
@@ -27,7 +29,7 @@ public class MasterMarks {
 		super();
 	}
 
-	public MasterMarks(CourseSubEnrollNoCompKey courseSubEnrollNoCompKey, Integer marks, String session,
+	public MasterMarks(CourseSubEnrollNoCompKey courseSubEnrollNoCompKey, Integer marks, Date session,
 			String reappearStatusId) {
 		super();
 		this.courseSubEnrollNoCompKey = courseSubEnrollNoCompKey;
@@ -52,11 +54,11 @@ public class MasterMarks {
 		this.marks = marks;
 	}
 
-	public String getSession() {
+	public Date getSession() {
 		return session;
 	}
 
-	public void setSession(String session) {
+	public void setSession(Date session) {
 		this.session = session;
 	}
 
