@@ -13,26 +13,7 @@
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
 		<script src="/js/student-chart-handler.js"></script>
-		
-		<style type="text/css">
-			body, html {
-				height: 100%;
-			}
-			.bg {
-				/* The image used */
-				background-image: url("/images/pan-uni-bg.png");
-			
-				/* Full height */
-				height: 100%;
-			
-				/* Center and scale the image nicely */
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
-			
-		</style>
-		
+
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -48,7 +29,7 @@
 			</div>
 			<div class="card text-center ms-2 bg-secondary bg-#ff0013 border border-dark border border-4 ">
 				<div class="card-body">
-		    	<h1 class="card-title">Student Registration Form</h2>
+		    	<h1 class="card-title">Student Registration Form</h1>
 		    	</div>
 	    	</div>
 			<div class="container" id="studentRegistrationForm">
