@@ -16,6 +16,12 @@ public class SubjectInfo {
 	@Column(name = "subjectDistributionId", nullable = false, length = 10)
 	private String subjectDistributionId;
 
+	@Column(name = "overallMinMarks")
+	private Integer overallMinMarks;
+
+	@Column(name = "overallMaxMarks")
+	private Integer overallMaxMarks;
+
 	@Column(name = "name", nullable = false, length = 30)
 	private String name;
 
@@ -26,10 +32,13 @@ public class SubjectInfo {
 		super();
 	}
 
-	public SubjectInfo(String id, String subjectDistributionId, String name, String code) {
+	public SubjectInfo(String id, String subjectDistributionId, Integer overallMinMarks, Integer overallMaxMarks,
+			String name, String code) {
 		super();
 		this.id = id;
 		this.subjectDistributionId = subjectDistributionId;
+		this.overallMinMarks = overallMinMarks;
+		this.overallMaxMarks = overallMaxMarks;
 		this.name = name;
 		this.code = code;
 	}
@@ -48,6 +57,22 @@ public class SubjectInfo {
 
 	public void setSubjectDistributionId(String subjectDistributionId) {
 		this.subjectDistributionId = subjectDistributionId;
+	}
+
+	public Integer getOverallMinMarks() {
+		return overallMinMarks;
+	}
+
+	public void setOverallMinMarks(Integer overallMinMarks) {
+		this.overallMinMarks = overallMinMarks;
+	}
+
+	public Integer getOverallMaxMarks() {
+		return overallMaxMarks;
+	}
+
+	public void setOverallMaxMarks(Integer overallMaxMarks) {
+		this.overallMaxMarks = overallMaxMarks;
 	}
 
 	public String getName() {
