@@ -11,6 +11,7 @@
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/highcharts-3d.js"></script>
 		<script src="/highcharts/highcharts-9.1.0/modules/treemap.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
@@ -34,7 +35,7 @@
 			</div>
 			<br/>
 			<div class="container">
-				<div class="row">
+				<div class="row mb-2">
 					<div class="col-4">
 						<div id="overallCourseChart" style="width:100%; height:15rem;">
 						</div>
@@ -74,6 +75,14 @@
 						<div id="classVersusPercentage" style="width:100%; height:15rem;">
 						</div>
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<div id="semesterWiseDistributionPerformance" style="width:100%; height:15rem;">
+						</div>
+					</div>
+					<div class="col-4"></div>
+					<div class="col-4"></div>
 				</div>
 			</div>
 		</div>

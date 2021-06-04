@@ -12,6 +12,7 @@ $("document").ready(function() {
 
 	populateOverallCourseChart();
 	populateClassVersusPercentage();
+	populateSemesterWiseDistributionPerformance();
 
 });
 
@@ -194,5 +195,59 @@ function populateClassVersusPercentage() {
 			}]
 		}
 
+	});
+}
+
+function populateSemesterWiseDistributionPerformance() {
+	Highcharts.chart('semesterWiseDistributionPerformance', {
+		chart: {
+			type: 'column',
+			options3d: {
+				enabled: true,
+				alpha: 15,
+				beta: 15,
+				viewDistance: 25,
+				depth: 40
+			}
+		},
+		title: {
+			text: 'Distribution Performance'
+		},
+		subtitle: {
+			text: 'Semester Wise'
+		},
+		xAxis: {
+			categories: ['Semester-1', 'Semester-2', 'Semester-3', 'Semester-4', 'Semester-5', 'Semester-6', 'Semester-7', 'Semester-8']
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Percentage with distribution'
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle',
+			reversed: true
+		},
+		plotOptions: {
+			series: {
+				stacking: 'normal'
+			}
+		},
+		series: [{
+			name: 'Theory',
+			data: [78.05, 82.92, 94.24, 65.01, 77.25, 66.34, 73.22, 92.92]
+		}, {
+			name: 'Practical',
+			data: [52.05, 62.92, 74.24, 45.01, 57.25, 46.34, 53.22, 72.92]
+		}, {
+			name: 'Mid Terms',
+			data: [68.05, 72.92, 84.24, 55.01, 67.25, 56.34, 63.22, 82.92]
+		}, {
+			name: 'Assignment',
+			data: [72.05, 89.92, 76.24, 82.01, 56.25, 78.34, 45.22, 98.92]
+		}]
 	});
 }
