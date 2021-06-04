@@ -3,18 +3,26 @@ package com.pgdca.resultmanagement.jdbc.entity;
 import java.sql.Date;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.pgdca.resultmanagement.jdbc.compositekey.CourseSubEnrollNoCompKey;
 
 @Entity
 @Table(name = "MasterMarks")
 public class MasterMarks {
 
-	@EmbeddedId
-	private CourseSubEnrollNoCompKey courseSubEnrollNoCompKey;
+	@Id
+	@Column(name = "id", nullable = false, length = 50)
+	private String id;
+
+	@Column(name = "enrollmentNo", nullable = false, length = 15)
+	private String enrollmentNo;
+
+	@Column(name = "courseId", nullable = false, length = 10)
+	private String courseId;
+
+	@Column(name = "subjectId", nullable = false, length = 10)
+	private String subjectId;
 
 	@Column(name = "marks", length = 5)
 	private Integer marks;
@@ -32,22 +40,49 @@ public class MasterMarks {
 		super();
 	}
 
-	public MasterMarks(CourseSubEnrollNoCompKey courseSubEnrollNoCompKey, Integer marks, Date session,
+	public MasterMarks(String id, String enrollmentNo, String courseId, String subjectId, Integer marks, Date session,
 			String reappearStatusId, String subjectDistributionId) {
 		super();
-		this.courseSubEnrollNoCompKey = courseSubEnrollNoCompKey;
+		this.id = id;
+		this.enrollmentNo = enrollmentNo;
+		this.courseId = courseId;
+		this.subjectId = subjectId;
 		this.marks = marks;
 		this.session = session;
 		this.reappearStatusId = reappearStatusId;
 		this.subjectDistributionId = subjectDistributionId;
 	}
 
-	public CourseSubEnrollNoCompKey getCourseSubEnrollNoCompKey() {
-		return courseSubEnrollNoCompKey;
+	public String getId() {
+		return id;
 	}
 
-	public void setCourseSubEnrollNoCompKey(CourseSubEnrollNoCompKey courseSubEnrollNoCompKey) {
-		this.courseSubEnrollNoCompKey = courseSubEnrollNoCompKey;
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getEnrollmentNo() {
+		return enrollmentNo;
+	}
+
+	public void setEnrollmentNo(String enrollmentNo) {
+		this.enrollmentNo = enrollmentNo;
+	}
+
+	public String getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(String courseId) {
+		this.courseId = courseId;
+	}
+
+	public String getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(String subjectId) {
+		this.subjectId = subjectId;
 	}
 
 	public Integer getMarks() {

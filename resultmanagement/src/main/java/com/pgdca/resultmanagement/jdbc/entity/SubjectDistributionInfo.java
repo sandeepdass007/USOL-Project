@@ -13,30 +13,21 @@ public class SubjectDistributionInfo {
 	@Column(name = "id", nullable = false, length = 50)
 	private String id;
 
-	@Column(name = "subjectDistributionId", nullable = false, length = 50)
+	@Column(name = "subjectDistributionId", nullable = false, length = 10)
 	private String subjectDistributionId;
 
-	@Column(name = "subjectTypeId", nullable = false, length = 10)
-	private String subjectTypeId;
-
-	@Column(name = "maxMarks", nullable = false)
-	private Integer maxMarks;
-
-	@Column(name = "minMarks", nullable = false)
-	private Integer minMarks;
+	@Column(name = "subjectDistributionRefId", nullable = false, length = 10)
+	private String subjectDistributionRefId;
 
 	public SubjectDistributionInfo() {
 		super();
 	}
 
-	public SubjectDistributionInfo(String id, String subjectDistributionRefId, String subjectTypeId,
-			Integer maxMarks, Integer minMarks) {
+	public SubjectDistributionInfo(String id, String subjectDistributionId, String subjectDistributionRefId) {
 		super();
 		this.id = id;
-		this.subjectDistributionId = subjectDistributionRefId;
-		this.subjectTypeId = subjectTypeId;
-		this.maxMarks = maxMarks;
-		this.minMarks = minMarks;
+		this.subjectDistributionId = subjectDistributionId;
+		this.subjectDistributionRefId = subjectDistributionRefId;
 	}
 
 	public String getId() {
@@ -47,36 +38,20 @@ public class SubjectDistributionInfo {
 		this.id = id;
 	}
 
-	public String getSubjectDistributionRefId() {
+	public String getSubjectDistributionId() {
 		return subjectDistributionId;
 	}
 
+	public void setSubjectDistributionId(String subjectDistributionId) {
+		this.subjectDistributionId = subjectDistributionId;
+	}
+
+	public String getSubjectDistributionRefId() {
+		return subjectDistributionRefId;
+	}
+
 	public void setSubjectDistributionRefId(String subjectDistributionRefId) {
-		this.subjectDistributionId = subjectDistributionRefId;
-	}
-
-	public String getSubjectTypeId() {
-		return subjectTypeId;
-	}
-
-	public void setSubjectTypeId(String subjectTypeId) {
-		this.subjectTypeId = subjectTypeId;
-	}
-
-	public Integer getMaxMarks() {
-		return maxMarks;
-	}
-
-	public void setMaxMarks(Integer maxMarks) {
-		this.maxMarks = maxMarks;
-	}
-
-	public Integer getMinMarks() {
-		return minMarks;
-	}
-
-	public void setMinMarks(Integer minMarks) {
-		this.minMarks = minMarks;
+		this.subjectDistributionRefId = subjectDistributionRefId;
 	}
 
 }
