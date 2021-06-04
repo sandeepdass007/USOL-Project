@@ -13,6 +13,7 @@ $("document").ready(function() {
 	populateOverallCourseChart();
 	populateClassVersusPercentage();
 	populateSemesterWiseDistributionPerformance();
+	populateDistributionWiseCourseLevelPerformance();
 
 });
 
@@ -248,6 +249,58 @@ function populateSemesterWiseDistributionPerformance() {
 		}, {
 			name: 'Assignment',
 			data: [72.05, 89.92, 76.24, 82.01, 56.25, 78.34, 45.22, 98.92]
+		}]
+	});
+}
+
+function populateDistributionWiseCourseLevelPerformance() {
+	Highcharts.chart('distributionWiseCourseLevelPerformance', {
+		chart: {
+			type: 'pie',
+			options3d: {
+				enabled: true,
+				alpha: 45,
+				beta: 0
+			}
+		},
+		title: {
+			text: 'Distribution Wise Performance'
+		},
+		accessibility: {
+			point: {
+				valueSuffix: '%'
+			}
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				depth: 35,
+				dataLabels: {
+					enabled: true,
+					format: '{point.name}'
+				}
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Distribution',
+			data: [
+				['Theory', 45.0],
+				['Practical', 26.8],
+				{
+					name: 'Assignment',
+					y: 12.8,
+					sliced: true,
+					selected: true
+				},
+				['Viva', 8.5],
+				['Mid-Terms', 6.2],
+				['Others', 0.7]
+			]
 		}]
 	});
 }

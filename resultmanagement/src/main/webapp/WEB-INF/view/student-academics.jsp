@@ -81,7 +81,10 @@
 						<div id="semesterWiseDistributionPerformance" style="width:100%; height:15rem;">
 						</div>
 					</div>
-					<div class="col-4"></div>
+					<div class="col-4">
+						<div id="distributionWiseCourseLevelPerformance" style="width:100%; height:15rem;">
+						</div>
+					</div>
 					<div class="col-4"></div>
 				</div>
 			</div>
