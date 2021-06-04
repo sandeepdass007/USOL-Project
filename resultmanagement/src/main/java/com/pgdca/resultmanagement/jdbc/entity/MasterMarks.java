@@ -33,15 +33,15 @@ public class MasterMarks {
 	@Column(name = "reappearStatusId", length = 50)
 	private String reappearStatusId;
 
-	@Column(name = "subjectDistributionId", length = 50)
-	private String subjectDistributionId;
+	@Column(name = "subjectDistributionRefId", length = 50)
+	private String subjectDistributionRefId;
 
 	public MasterMarks() {
 		super();
 	}
 
 	public MasterMarks(String id, String enrollmentNo, String courseId, String subjectId, Integer marks, Date session,
-			String reappearStatusId, String subjectDistributionId) {
+			String reappearStatusId, String subjectDistributionRefId) {
 		super();
 		this.id = id;
 		this.enrollmentNo = enrollmentNo;
@@ -50,7 +50,7 @@ public class MasterMarks {
 		this.marks = marks;
 		this.session = session;
 		this.reappearStatusId = reappearStatusId;
-		this.subjectDistributionId = subjectDistributionId;
+		this.subjectDistributionRefId = subjectDistributionRefId;
 	}
 
 	public String getId() {
@@ -109,12 +109,12 @@ public class MasterMarks {
 		this.reappearStatusId = reappearStatusId;
 	}
 
-	public String getSubjectDistributionId() {
-		return subjectDistributionId;
+	public String getSubjectDistributionRefId() {
+		return subjectDistributionRefId;
 	}
 
-	public void setSubjectDistributionId(String subjectDistributionId) {
-		this.subjectDistributionId = subjectDistributionId;
+	public void setSubjectDistributionRefId(String subjectDistributionRefId) {
+		this.subjectDistributionRefId = subjectDistributionRefId;
 	}
 
 }
