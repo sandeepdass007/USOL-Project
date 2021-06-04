@@ -26,10 +26,10 @@ public class SubjectInfo {
 		super();
 	}
 
-	public SubjectInfo(String id, String subjectTypeId, String name, String code) {
+	public SubjectInfo(String id, String subjectDistributionId, String name, String code) {
 		super();
 		this.id = id;
-		this.subjectDistributionId = subjectTypeId;
+		this.subjectDistributionId = subjectDistributionId;
 		this.name = name;
 		this.code = code;
 	}
@@ -42,12 +42,12 @@ public class SubjectInfo {
 		this.id = id;
 	}
 
-	public String getSubjectTypeId() {
+	public String getSubjectDistributionId() {
 		return subjectDistributionId;
 	}
 
-	public void setSubjectTypeId(String subjectTypeId) {
-		this.subjectDistributionId = subjectTypeId;
+	public void setSubjectDistributionId(String subjectDistributionId) {
+		this.subjectDistributionId = subjectDistributionId;
 	}
 
 	public String getName() {

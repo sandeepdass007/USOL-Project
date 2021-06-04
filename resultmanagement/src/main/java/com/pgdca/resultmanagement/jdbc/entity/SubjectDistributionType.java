@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SubjectType")
-public class SubjectType {
+@Table(name = "SubjectDistributionType")
+public class SubjectDistributionType {
 
 	@Id
 	@Column(name = "id", nullable = false, length = 10)
@@ -16,11 +16,11 @@ public class SubjectType {
 	@Column(name = "type", nullable = false, length = 10)
 	private String type;
 	
-	public SubjectType() {
+	public SubjectDistributionType() {
 		super();
 	}
 
-	public SubjectType(String id, String type) {
+	public SubjectDistributionType(String id, String type) {
 		super();
 		this.id = id;
 		this.type = type;
