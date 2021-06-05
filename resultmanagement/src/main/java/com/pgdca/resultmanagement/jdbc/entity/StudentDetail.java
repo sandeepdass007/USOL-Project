@@ -36,6 +36,9 @@ public class StudentDetail {
 	@Column(name = "dateOfBirth", nullable = false)
 	private Date dateOfBirth;
 
+	@Column(name = "emailId", nullable = false)
+	private String emailId;
+
 	@Column(name = "sessionStart", nullable = false, length = 5)
 	private Date sessionStart;
 
@@ -44,6 +47,9 @@ public class StudentDetail {
 
 	@Column(name = "studentTypeId", nullable = false, length = 10)
 	private String studentTypeId;
+
+	@Column(name = "universityRegNo", nullable = false, length = 20)
+	private String universityRegNo;
 
 	@Column(name = "courseId", nullable = false, length = 10)
 	private String courseId;
@@ -56,8 +62,8 @@ public class StudentDetail {
 	}
 
 	public StudentDetail(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
-			String firstName, String middleName, String lastName, Date dateOfBirth, Date sessionStart,
-			Date sessionEnd, String studentTypeId, String courseId, String contactDetailId) {
+			String firstName, String middleName, String lastName, Date dateOfBirth, String emailId, Date sessionStart,
+			Date sessionEnd, String studentTypeId, String universityRegNo, String courseId, String contactDetailId) {
 		super();
 		this.enrollmentNo = enrollmentNo;
 		this.applicationNo = applicationNo;
@@ -67,9 +73,11 @@ public class StudentDetail {
 		this.middleName = middleName;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
+		this.emailId = emailId;
 		this.sessionStart = sessionStart;
 		this.sessionEnd = sessionEnd;
 		this.studentTypeId = studentTypeId;
+		this.universityRegNo = universityRegNo;
 		this.courseId = courseId;
 		this.contactDetailId = contactDetailId;
 	}
@@ -138,6 +146,14 @@ public class StudentDetail {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
 	public Date getSessionStart() {
 		return sessionStart;
 	}
@@ -162,6 +178,14 @@ public class StudentDetail {
 		this.studentTypeId = studentTypeId;
 	}
 
+	public String getUniversityRegNo() {
+		return universityRegNo;
+	}
+
+	public void setUniversityRegNo(String universityRegNo) {
+		this.universityRegNo = universityRegNo;
+	}
+
 	public String getCourseId() {
 		return courseId;
 	}
@@ -177,4 +201,5 @@ public class StudentDetail {
 	public void setContactDetailId(String contactDetailId) {
 		this.contactDetailId = contactDetailId;
 	}
+
 }

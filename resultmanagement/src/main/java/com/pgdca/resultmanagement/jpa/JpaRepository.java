@@ -73,22 +73,7 @@ public class JpaRepository {
 	}
 
 	public StudentDetailDao getStudentDetailDao(String username) {
-		
 		StudentDetailDao studentDetailDao = studentDetailsJpaRepository.getStudentDetailDao(username, this);
-		
-//		final StudentDetail studentDetail = studentDetailsJpaRepository.getStudentDetails(username);
-//		final StudentType studentType = studentTypeJpaRepository.getStudentType(studentDetail.getStudentTypeId());
-//		final ParentDetail parentDetail = parentDetailJpaRepository.getParentDetail(studentDetail.getParentDetailsId());
-//		final ContactDetail contactDetail = contactDetailJpaRepository.getContactDetail(studentDetail.getContactDetailId());
-//		final List<PhoneDetail> phoneDetail = phoneDetailJpaRepository.getPhoneDetail(contactDetail.getPhoneDetailId());
-//		final PhoneType phoneType = phoneTypeJpaRepository.getPhoneType(phoneDetail.getPhoneTypeId());
-//		final AddressDetail addressDetail = addressDetailJpaRepository.getAddressDetail(contactDetail.getAddressId());
-//		final CityInfo cityInfo = cityInfoJpaRepository.getCityInfo(addressDetail.getCityId());
-//		final StateInfo stateInfo = stateInfoJpaRepository.getStateInfo(addressDetail.getStateId());
-//		final CountryInfo countryInfo = countryInfoJpaRepository.getCountryInfo(addressDetail.getCountryId());
-//		final StudentDetailsDao studentProfileDao = new StudentDetailsDao(studentDetail, addressDetail, contactDetail,
-//				parentDetail, studentType, phoneDetail, phoneType, cityInfo, stateInfo, countryInfo);
-//		return studentProfileDao;
 		return studentDetailDao;
 	}
 	

@@ -1,5 +1,7 @@
 package com.pgdca.resultmanagement.mvc.dao;
 
+import java.sql.Date;
+
 public class StudentDetailDao {
 
 	private String firstName;
@@ -7,8 +9,10 @@ public class StudentDetailDao {
 	private String lastName;
 	private String enrollmentNo;
 	private String studentType;
-	private String sessionStart;
-	private String sessionEnd;
+	private Date sessionStart;
+	private Date sessionEnd;
+	private String emailId;
+	private String universityRegNo;
 
 	private ParentDetailDao parentDetailDao;
 	private ContactDetailDao contactDetailDao;
@@ -54,20 +58,36 @@ public class StudentDetailDao {
 		this.studentType = studentType;
 	}
 
-	public String getSessionStart() {
+	public Date getSessionStart() {
 		return sessionStart;
 	}
 
-	public void setSessionStart(String sessionStart) {
+	public void setSessionStart(Date sessionStart) {
 		this.sessionStart = sessionStart;
 	}
 
-	public String getSessionEnd() {
+	public Date getSessionEnd() {
 		return sessionEnd;
 	}
 
-	public void setSessionEnd(String sessionEnd) {
+	public void setSessionEnd(Date sessionEnd) {
 		this.sessionEnd = sessionEnd;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getUniversityRegNo() {
+		return universityRegNo;
+	}
+
+	public void setUniversityRegNo(String universityRegNo) {
+		this.universityRegNo = universityRegNo;
 	}
 
 	public ParentDetailDao getParentDetailDao() {

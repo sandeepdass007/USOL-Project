@@ -15,7 +15,7 @@ public interface CourseInfoJpaRepository extends JpaRepository<StudentDetail, St
 	/**
 	 * @return List of [{count of distinct enrollment no, course name}]
 	 */
-	@Query("SELECT count(distinct sd.enrollmentNo), ci.courseName from StudentDetail sd Left Join CourseInfo ci on sd.courseId=ci.id group by ci.courseName")
+	@Query("SELECT count(distinct sd.enrollmentNo), ci.courseName from StudentDetail sd Left Join CourseInfo ci on sd.courseId=ci.id where ci.id is not null group by ci.courseName")
 	public List<Object[]> getCourseWiseStudentEnrollment();
 	
 	/**
@@ -25,6 +25,7 @@ public interface CourseInfoJpaRepository extends JpaRepository<StudentDetail, St
 			+ " from StudentDetail sd"
 			+ " Left Join CourseInfo ci on sd.courseId=ci.id"
 			+ " Left Join CourseType ct on ci.courseTypeId = ct.id"
+			+ " where ci.id is not null"
 			+ " group by sd.sessionStart, ct.type"
 			+ " order by sd.sessionStart, ct.type")
 	public List<Object[]> getCourseTypeWiseEnrollment();

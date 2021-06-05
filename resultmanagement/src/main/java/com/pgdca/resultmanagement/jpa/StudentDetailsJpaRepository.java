@@ -19,8 +19,9 @@ public class StudentDetailsJpaRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 	
-	public String getStudentFullName(final String enrollmentNo) {
-		StudentDetail studentDetail = entityManager.find(StudentDetail.class, enrollmentNo);
+	public String getStudentFullName(final String uniRegNo) {
+		final StudentDetail studentDetail = entityManager.createQuery("SELECT sd from StudentDetail sd where sd.universityRegNo=:uniRegNo", StudentDetail.class).setParameter("uniRegNo", uniRegNo)
+				.getSingleResult();
 		if(studentDetail == null) {
 			return null;
 		}
@@ -31,8 +32,9 @@ public class StudentDetailsJpaRepository {
 		return fullName;
 	}
 
-	public StudentDetail getStudentDetail(String enrollmentNo) {
-		StudentDetail studentDetail = entityManager.find(StudentDetail.class, enrollmentNo);
+	public StudentDetail getStudentDetail(String uniRegNo) {
+		final StudentDetail studentDetail = entityManager.createQuery("SELECT sd from StudentDetail sd where sd.universityRegNo=:uniRegNo", StudentDetail.class).setParameter("uniRegNo", uniRegNo)
+			.getSingleResult();
 		return studentDetail;
 	}
 
@@ -43,6 +45,8 @@ public class StudentDetailsJpaRepository {
 			.setMiddleName(studentDetail.getMiddleName())
 			.setLastName(studentDetail.getLastName())
 			.setEnrollmentNo(studentDetail.getEnrollmentNo())
+			.setEmailId(studentDetail.getEmailId())
+			.setUniversityRegNo(studentDetail.getUniversityRegNo())
 			.setStudentType(jpaRepository.getStudentTypeDao(studentDetail.getStudentTypeId()).getType())
 			.setDateOfBirth(new DateDao(studentDetail.getDateOfBirth()))
 			.setParentDetailDao(jpaRepository.getParentDetailDao(studentDetail.getParentDetailsId()))

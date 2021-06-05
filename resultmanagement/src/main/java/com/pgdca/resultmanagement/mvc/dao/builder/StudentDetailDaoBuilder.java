@@ -1,5 +1,7 @@
 package com.pgdca.resultmanagement.mvc.dao.builder;
 
+import java.sql.Date;
+
 import com.pgdca.resultmanagement.mvc.dao.ContactDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.DateDao;
 import com.pgdca.resultmanagement.mvc.dao.ParentDetailDao;
@@ -42,13 +44,23 @@ public class StudentDetailDaoBuilder {
 		return this;
 	}
 	
-	public StudentDetailDaoBuilder setSessionStart(String sessionStart) {
+	public StudentDetailDaoBuilder setSessionStart(Date sessionStart) {
 		this.studentDetailDao.setSessionStart(sessionStart);
 		return this;
 	}
 	
-	public StudentDetailDaoBuilder setSessionEnd(String sessionEnd) {
+	public StudentDetailDaoBuilder setSessionEnd(Date sessionEnd) {
 		this.studentDetailDao.setSessionEnd(sessionEnd);
+		return this;
+	}
+	
+	public StudentDetailDaoBuilder setEmailId(String emailId) {
+		this.studentDetailDao.setEmailId(emailId);
+		return this;
+	}
+	
+	public StudentDetailDaoBuilder setUniversityRegNo(String universityRegNo) {
+		this.studentDetailDao.setUniversityRegNo(universityRegNo);
 		return this;
 	}
 	

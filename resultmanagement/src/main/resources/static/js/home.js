@@ -22,9 +22,9 @@ function populateCategoryWiseEnrollments() {
 			text: 'Course Type Wise Enrollments'
 		},
 
-		subtitle: {
+		/*subtitle: {
 			text: 'Since : 2015'
-		},
+		},*/
 
 		yAxis: {
 			title: {
@@ -84,7 +84,7 @@ function populateCategoryWiseEnrollments() {
 		processData: false,
 		contentType: 'application/json',
 		success: function(data) {
-			if (!(data || data.length)) {
+			if (!data || data.length == 0) {
 				chart.showLoading("No data available!");
 				return;
 			}
@@ -174,8 +174,7 @@ function populateCourseWiseStudEnrollChart() {
 		processData: false,
 		contentType: 'application/json',
 		success: function(data) {
-
-			if (!data || data.length) {
+			if (!data || Object.keys(data).length == 0) {
 				chart.showLoading("No data available!");
 				return;
 			}
