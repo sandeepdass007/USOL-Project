@@ -113,21 +113,28 @@
 				</div>
 				
 				<div class="row mt-2 mb-2">
-					<div class="col-md-6">
+					<div class="col-md-3">
+						<label for="inputCountry" class="form-label text-white">Country</label>
+						<select id="inputCountry" class="form-select">
+						      <option selected>Choose...</option>
+						      <option>...</option>
+						</select>
+				</div>
+					<div class="col-md-3">
 						<label for="inputCity" class="form-label text-white">City</label>
 						<select id="inputCity" class="form-select">
 						      <option selected>Choose...</option>
 						      <option>...</option>
 						</select>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<label for="inputState" class="form-label text-white">State</label>
 						<select id="inputState" class="form-select">
 						      <option selected>Choose...</option>
 						      <option>...</option>
 						</select>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-3">
 						<label for="inputPincode" class="form-label text-white">Pincode</label>
 						<input type="text" class="form-control" id="inputPincode">
 					</div>
@@ -141,21 +148,28 @@
 				</div>
 				
 				<div class="row mt-2 mb-2">
-					<div class="col-md-6">
+					<div class="col-md-3">
+						<label for="inputCountry" class="form-label text-white">Country</label>
+						<select id="inputCountry" class="form-select">
+						      <option selected>Choose...</option>
+						      <option>...</option>
+						</select>
+				</div>
+					<div class="col-md-3">
 						<label for="inputCity" class="form-label text-white">City</label>
 						<select id="inputCity" class="form-select">
 						      <option selected>Choose...</option>
 						      <option>...</option>
 						</select>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<label for="inputState" class="form-label text-white">State</label>
 						<select id="inputState" class="form-select">
 						      <option selected>Choose...</option>
 						      <option>...</option>
 						</select>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-3">
 						<label for="inputPincode" class="form-label text-white">Pincode</label>
 						<input type="text" class="form-control" id="inputPincode">
 					</div>
