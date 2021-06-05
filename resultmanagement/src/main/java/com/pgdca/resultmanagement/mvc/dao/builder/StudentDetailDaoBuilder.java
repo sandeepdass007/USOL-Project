@@ -64,6 +64,11 @@ public class StudentDetailDaoBuilder {
 		return this;
 	}
 	
+	public StudentDetailDaoBuilder setCurrentSemester(Integer currentSemester) {
+		this.studentDetailDao.setCurrentSemester(currentSemester);
+		return this;
+	}
+	
 	public StudentDetailDaoBuilder setParentDetailDao(ParentDetailDao parentDetailDao) {
 		this.studentDetailDao.setParentDetailDao(parentDetailDao);
 		return this;

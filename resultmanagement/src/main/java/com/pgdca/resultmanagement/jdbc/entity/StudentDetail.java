@@ -45,6 +45,9 @@ public class StudentDetail {
 	@Column(name = "sessionEnd", length = 5)
 	private Date sessionEnd;
 
+	@Column(name = "currentSemester", nullable = false)
+	private Integer currentSemester;
+
 	@Column(name = "studentTypeId", nullable = false, length = 10)
 	private String studentTypeId;
 
@@ -63,7 +66,8 @@ public class StudentDetail {
 
 	public StudentDetail(String enrollmentNo, String applicationNo, String parentDetailsId, String rollNo,
 			String firstName, String middleName, String lastName, Date dateOfBirth, String emailId, Date sessionStart,
-			Date sessionEnd, String studentTypeId, String universityRegNo, String courseId, String contactDetailId) {
+			Date sessionEnd, Integer currentSemester, String studentTypeId, String universityRegNo, String courseId,
+			String contactDetailId) {
 		super();
 		this.enrollmentNo = enrollmentNo;
 		this.applicationNo = applicationNo;
@@ -76,6 +80,7 @@ public class StudentDetail {
 		this.emailId = emailId;
 		this.sessionStart = sessionStart;
 		this.sessionEnd = sessionEnd;
+		this.currentSemester = currentSemester;
 		this.studentTypeId = studentTypeId;
 		this.universityRegNo = universityRegNo;
 		this.courseId = courseId;
@@ -168,6 +173,14 @@ public class StudentDetail {
 
 	public void setSessionEnd(Date sessionEnd) {
 		this.sessionEnd = sessionEnd;
+	}
+
+	public Integer getCurrentSemester() {
+		return currentSemester;
+	}
+
+	public void setCurrentSemester(Integer currentSemester) {
+		this.currentSemester = currentSemester;
 	}
 
 	public String getStudentTypeId() {

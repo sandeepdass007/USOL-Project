@@ -47,6 +47,7 @@ public class StudentDetailsJpaRepository {
 			.setEnrollmentNo(studentDetail.getEnrollmentNo())
 			.setEmailId(studentDetail.getEmailId())
 			.setUniversityRegNo(studentDetail.getUniversityRegNo())
+			.setCurrentSemester(studentDetail.getCurrentSemester())
 			.setStudentType(jpaRepository.getStudentTypeDao(studentDetail.getStudentTypeId()).getType())
 			.setDateOfBirth(new DateDao(studentDetail.getDateOfBirth()))
 			.setParentDetailDao(jpaRepository.getParentDetailDao(studentDetail.getParentDetailsId()))

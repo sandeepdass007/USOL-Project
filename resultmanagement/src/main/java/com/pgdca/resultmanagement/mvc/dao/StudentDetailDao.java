@@ -13,6 +13,7 @@ public class StudentDetailDao {
 	private Date sessionEnd;
 	private String emailId;
 	private String universityRegNo;
+	private Integer currentSemester;
 
 	private ParentDetailDao parentDetailDao;
 	private ContactDetailDao contactDetailDao;
@@ -88,6 +89,14 @@ public class StudentDetailDao {
 
 	public void setUniversityRegNo(String universityRegNo) {
 		this.universityRegNo = universityRegNo;
+	}
+
+	public Integer getCurrentSemester() {
+		return currentSemester;
+	}
+
+	public void setCurrentSemester(Integer currentSemester) {
+		this.currentSemester = currentSemester;
 	}
 
 	public ParentDetailDao getParentDetailDao() {

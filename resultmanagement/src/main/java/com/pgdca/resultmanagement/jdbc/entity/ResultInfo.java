@@ -1,5 +1,7 @@
 package com.pgdca.resultmanagement.jdbc.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,18 +27,22 @@ public class ResultInfo {
 	@Column(name = "resultStatusId", nullable = false, length = 10)
 	private String resultStatusId;
 
+	@Column(name = "resultOutSession", nullable = false)
+	private Date resultOutSession;
+
 	public ResultInfo() {
 		super();
 	}
 
 	public ResultInfo(String id, String enrollmentNo, String subjectId, String subjectDistributionId,
-			String resultStatusId) {
+			String resultStatusId, Date resultOutSession) {
 		super();
 		this.id = id;
 		this.enrollmentNo = enrollmentNo;
 		this.subjectId = subjectId;
 		this.subjectDistributionId = subjectDistributionId;
 		this.resultStatusId = resultStatusId;
+		this.resultOutSession = resultOutSession;
 	}
 
 	public String getId() {
@@ -77,6 +83,14 @@ public class ResultInfo {
 
 	public void setResultStatusId(String resultStatusId) {
 		this.resultStatusId = resultStatusId;
+	}
+
+	public Date getResultOutSession() {
+		return resultOutSession;
+	}
+
+	public void setResultOutSession(Date resultOutSession) {
+		this.resultOutSession = resultOutSession;
 	}
 
 }
