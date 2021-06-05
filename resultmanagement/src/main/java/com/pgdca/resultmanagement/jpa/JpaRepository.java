@@ -1,10 +1,13 @@
 package com.pgdca.resultmanagement.jpa;
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
 import com.pgdca.resultmanagement.dto.ValidationResponse;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.AddressTypeDao;
@@ -26,6 +29,9 @@ public class JpaRepository {
 
 	@Autowired
 	private StudentDetailsJpaRepository studentDetailsJpaRepository;
+	
+	@Autowired
+	private CourseInfoJpaRepository courseInfoJpaRepository;
 
 	@Autowired
 	private StudentTypeJpaRepository studentTypeJpaRepository;
@@ -56,7 +62,7 @@ public class JpaRepository {
 	
 	@Autowired
 	private CountryInfoJpaRepository countryInfoJpaRepository;
-
+	
 	public ValidationResponse isUserValid(final String username, final String password) {
 		boolean userValid = credJpaRepository.isUserValid(username, password);
 		return new ValidationResponse(userValid, userValid ? null : "Invalid username or password");
@@ -134,5 +140,29 @@ public class JpaRepository {
 	public AddressTypeDao getAddressTypeDao(String addressTypeId) {
 		final AddressTypeDao addressType = addressTypeJpaRepository.getAddressTypeDao(addressTypeId, this);
 		return addressType;
+	}
+
+	public HashMap<String, Long> getCourseWiseStudentEnrollment() {
+		HashMap<String, Long> map = new HashMap<String, Long>();
+		final List<Object[]> courseWiseStudentEnrollment = courseInfoJpaRepository.getCourseWiseStudentEnrollment();
+		for(Object[] entry : courseWiseStudentEnrollment) {
+			Long count = (Long)entry[0];
+			String courseName = (String)entry[1];
+			map.put(courseName, count);
+		}
+		return map;
+	}
+	
+	public List<YearCourseWiseEnrollmentDao> getCourseTypeWiseEnrollment() {
+		List<YearCourseWiseEnrollmentDao> list = new LinkedList<YearCourseWiseEnrollmentDao>();
+		final List<Object[]> courseTypeWiseEnrollment = courseInfoJpaRepository.getCourseTypeWiseEnrollment();
+		
+		for(Object[] entry : courseTypeWiseEnrollment) {
+			Long count = (Long)entry[0];
+			String courseType = (String)entry[1];
+			Integer year = Integer.parseInt((String)entry[2]);
+			list.add(new YearCourseWiseEnrollmentDao(count, courseType, year));
+		}
+		return list;
 	}
 }

@@ -14,12 +14,12 @@ $("document").ready(function() {
 });
 
 function populateCategoryWiseEnrollments() {
-	Highcharts.chart('categoryWiseEnrollments', {
+	var chart = Highcharts.chart('categoryWiseEnrollments', {
 		chart: {
 			backgroundColor: 'none'
 		},
 		title: {
-			text: 'Course Category Wise Enrollments'
+			text: 'Course Type Wise Enrollments'
 		},
 
 		subtitle: {
@@ -57,13 +57,7 @@ function populateCategoryWiseEnrollments() {
 			}
 		},
 
-		series: [{
-			name: 'Regular',
-			data: [43934, 52503, 57177, 69658, 97031, 119931, 137133]
-		}, {
-			name: 'Correspondence',
-			data: [41934, 45503, 59177, 63658, 99031, 159931, 167133]
-		}],
+		series: null,
 
 		responsive: {
 			rules: [{
@@ -79,12 +73,63 @@ function populateCategoryWiseEnrollments() {
 				}
 			}]
 		}
+	});
 
+	chart.showLoading("Loading...");
+
+	$.ajax({
+		url: '/chart/year-course-wise-enrollment/',
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!(data || data.length)) {
+				chart.showLoading("No data available!");
+				return;
+			}
+			var startPoint = null;
+			var jsonObj = {};
+			data.forEach(entry => {
+				var enrollments = entry["count"];
+				var courseType = entry["courseType"];
+				var year = entry["year"];
+				startPoint = year < startPoint || startPoint == null ? year : startPoint;
+				if (!jsonObj[courseType]) {
+					jsonObj[courseType] = [];
+				}
+				jsonObj[courseType].push(enrollments);
+			});
+			var courseTypes = Object.keys(jsonObj);
+			if (courseTypes && courseTypes.length) {
+				courseTypes.forEach(courseType => {
+					chart.addSeries({
+						name: courseType,
+						data: jsonObj[courseType]
+					}, false);
+				});
+			}
+
+			chart.series.forEach(series => {
+				series.update({
+					pointStart: startPoint
+				})
+			})
+			chart.setSubtitle({text: "Since: " + startPoint})
+			chart.redraw();
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
+		}
 	});
 }
 
 function populateCourseWiseStudEnrollChart() {
-	Highcharts.chart('courseWiseStudentsEnrolled', {
+
+
+
+	var chart = Highcharts.chart('courseWiseStudentsEnrolled', {
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: null,
@@ -116,36 +161,39 @@ function populateCourseWiseStudEnrollChart() {
 		series: [{
 			name: 'Course',
 			colorByPoint: true,
-			data: [{
-				name: 'Other',
-				y: 61.41,
-				sliced: true,
-				selected: true
-			}, {
-				name: 'MCA',
-				y: 11.84
-			}, {
-				name: 'MBA',
-				y: 10.85
-			}, {
-				name: 'B. Tech.',
-				y: 4.67
-			}, {
-				name: 'Msc (Maths)',
-				y: 4.18
-			}, {
-				name: 'B.A. (English)',
-				y: 1.64
-			}, {
-				name: 'M.Com.',
-				y: 1.6
-			}, {
-				name: 'PGDCA',
-				y: 1.2
-			}, {
-				name: 'B.Ed.',
-				y: 2.61
-			}]
+			data: null // to be loaded by rest api below
 		}]
+	});
+
+	chart.showLoading("Loading...");
+
+	$.ajax({
+		url: '/chart/course-wise-student-enrollment/',
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+
+			if (!data || data.length) {
+				chart.showLoading("No data available!");
+				return;
+			}
+
+			var seriesData = [];
+			var courseNames = Object.keys(data);
+			courseNames.forEach(courseName => {
+				var entry = {
+					name: courseName,
+					y: data[courseName]
+				};
+				seriesData.push(entry);
+			});
+			chart.series[0].setData(seriesData);
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
+		}
 	});
 }
