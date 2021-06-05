@@ -104,46 +104,15 @@
 				   		</div>
 			   		</div>
 			   </div>
-			   	
-			   <div class="row mt-2 mb-2">
-					<div class="col-12">
-						<label for="PermanentAddress" class="form-label text-white">Address</label>
-						<input type="text" class="form-control" id="PermanentAddress" placeholder="Permanent Address">
-					</div>
-				</div>
-				
+			   
 				<div class="row mt-2 mb-2">
-					<div class="col-md-3">
-						<label for="inputCountry" class="form-label text-white">Country</label>
-						<select id="inputCountry" class="form-select">
-						      <option selected>Choose...</option>
-						      <option>...</option>
-						</select>
-				</div>
-					<div class="col-md-3">
-						<label for="inputCity" class="form-label text-white">City</label>
-						<select id="inputCity" class="form-select">
-						      <option selected>Choose...</option>
-						      <option>...</option>
-						</select>
+					<div class="col-6">
+						<label for="PermanentAddress" class="form-label text-white">Permanent Address</label>
+						<input type="text" class="form-control" id="PermanentAddress" placeholder="Building No.">
 					</div>
-					<div class="col-md-3">
-						<label for="inputState" class="form-label text-white">State</label>
-						<select id="inputState" class="form-select">
-						      <option selected>Choose...</option>
-						      <option>...</option>
-						</select>
-					</div>
-					<div class="col-md-3">
-						<label for="inputPincode" class="form-label text-white">Pincode</label>
-						<input type="text" class="form-control" id="inputPincode">
-					</div>
-				</div>
-					
-				<div class="row mt-2 mb-2">
-					<div class="col-12">
-						<label for="CorrespondenceAddress" class="form-label text-white">Address 2</label>
-						<input type="text" class="form-control" id="CorrespondenceAddress" placeholder="Correspondence Address">
+					<div class="col-6">
+						<label for="PermanentAddress" class="form-label text-white">Landmark</label>
+						<input type="text" class="form-control" id="PermanentAddress" placeholder="Landmark">
 					</div>
 				</div>
 				
@@ -175,6 +144,50 @@
 					</div>
 				</div>
 				
+				<div class="row mt-2 mb-2">
+					<div class="col-6">
+						<label for="CorrespondenceAddress" class="form-label text-white">Correspondence Address</label>
+						<input type="text" class="form-control" id="CorrespondenceAddress" placeholder="Building No.">
+					</div>
+					<div class="col-6">
+						<label for="CorrespondenceAddress" class="form-label text-white">Landmark</label>
+						<input type="text" class="form-control" id="CorrespondenceAddress" placeholder="Landmark">
+					</div>
+				</div>
+				
+				<div class="row mt-2 mb-2">
+					<div class="col-md-3">
+						<label for="inputCountry" class="form-label text-white">Country</label>
+						<select id="inputCountry" class="form-select">
+						      <option selected>Choose...</option>
+						      <option>...</option>
+						</select>
+				</div>
+					<div class="col-md-3">
+						<label for="inputCity" class="form-label text-white">City</label>
+						<select id="inputCity" class="form-select">
+						      <option selected>Choose...</option>
+						      <option>...</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="inputState" class="form-label text-white">State</label>
+						<select id="inputState" class="form-select">
+						      <option selected>Choose...</option>
+						      <option>...</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label for="inputPincode" class="form-label text-white">Pincode</label>
+						<input type="text" class="form-control" id="inputPincode">
+					</div>
+				</div>
+
+				<div class="custom-control custom-checkbox">
+					  <input type="checkbox" class="custom-control-input" id="customCheck1">
+					  <label class="custom-control-label" for="customCheck1">Same as permanent address</label>
+				</div>
+								
 				<div class="row mt-2 mb-2">
 				<div class="col-md-6">
 					<label for="inputCourse" class="form-label text-white">Course</label>
