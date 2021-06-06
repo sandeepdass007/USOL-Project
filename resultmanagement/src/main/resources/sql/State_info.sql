@@ -40,3 +40,4 @@ SELECT * FROM STATE_INFO;
 -- Delete from state_info;
 -- DROP TABLE STATE_INFO;
 -- DESC STATE_INFO;
+-- alter table state_info modify column name varchar(50) not null;

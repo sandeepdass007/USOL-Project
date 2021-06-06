@@ -39,7 +39,7 @@ Insert into subject_distribution_ref_info values('Mat18Rf2',80,null,'Subtyp2');
 Insert into subject_distribution_ref_info values('Mat19Rf1',20,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('Mat19Rf2',80,null,'Subtyp2');
 Insert into subject_distribution_ref_info values('Mat20Rf1',20,null,'Subtyp1');
-Insert into subject_distribution_ref_info values('Mat20Rf1',80,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('Mat20Rf2',80,null,'Subtyp2');
 Insert into subject_distribution_ref_info values('CSE1Rf1',30,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('CSE1Rf2',70,null,'Subtyp2');
 Insert into subject_distribution_ref_info values('CSE2Rf1',30,null,'Subtyp1');
