@@ -43,17 +43,17 @@
 					</div>
 					<div class="col-4">
 						<ul class="nav nav-pills mb-3" id="course-wise-details-tab" role="tablist">
-							<c:forEach var="courseName" items="${courseVsSubjects.keySet()}">
+							<c:forEach var="courseWiseSubjects" items="${courseWiseSubjectsList}">
 								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="${courseName}-tab" data-bs-toggle="pill" data-bs-target="#${courseName}"
-										type="button" role="tab" aria-controls="${courseName}" aria-selected="true">${courseName}</button>
+									<button class="nav-link active" id="${courseWiseSubjects.getCourseId()}-tab" data-bs-toggle="pill" data-bs-target="#${courseWiseSubjects.getCourseId()}"
+										type="button" role="tab" aria-controls="${courseWiseSubjects.getCourseName()}" aria-selected="true">${courseWiseSubjects.getCourseName()}</button>
 								</li>
 							</c:forEach>
 						</ul>
 						<div class="tab-content" id="course-wise-details-tabContent">
-							<c:forEach var="courseSubEntry" items="${courseVsSubjects.entrySet()}">
-								<div class="tab-pane fade show active" id="${courseSubEntry.getKey()}" role="tabpanel" aria-labelledby="${courseSubEntry.getKey()}-tab">
-									<c:forEach var="subjectName" items="${courseSubEntry.getValue()}">
+							<c:forEach var="courseWiseSubjects" items="${courseWiseSubjectsList}">
+								<div class="tab-pane fade show active" id="${courseWiseSubjects.getCourseId()}" role="tabpanel" aria-labelledby="${courseWiseSubjects.getCourseName()}-tab">
+									<c:forEach var="subjectName" items="${courseWiseSubjects.getSubjects()}">
 										<span class="badge rounded-pill bg-danger">${subjectName}</span>
 									</c:forEach>
 								</div>

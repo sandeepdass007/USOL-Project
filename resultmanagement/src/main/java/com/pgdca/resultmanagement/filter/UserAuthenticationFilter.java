@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.util.StringUtils;
 
-@WebFilter(urlPatterns = {"/student/*"})
+@WebFilter(urlPatterns = {"/student/*", "/chart/student*"})
 public class UserAuthenticationFilter implements Filter {
 
 	@Override

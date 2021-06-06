@@ -1,5 +1,6 @@
 package com.pgdca.resultmanagement.jpa;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.pgdca.resultmanagement.chart.dao.SubjectMarksDao;
 import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
 import com.pgdca.resultmanagement.dto.ValidationResponse;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
@@ -157,5 +159,23 @@ public class JpaRepository {
 	public List<Object[]> getCourseWiseSubjectNames(String username) {
 		final List<Object[]> courseWiseSubjectNames = studentAcademicJpaRepository.getCourseWiseSubjectNames(username);
 		return courseWiseSubjectNames;
+	}
+
+	public HashMap<Integer, List<SubjectMarksDao>> getStudentSemSubMarks(String univRegNo, String courseId) {
+		final List<Object[]> studentSemSubMarks = studentAcademicJpaRepository.getStudentSemSubMarks(univRegNo, courseId);
+		HashMap<Integer, List<SubjectMarksDao>> map = new HashMap<Integer, List<SubjectMarksDao>>();
+		for(Object[] entry : studentSemSubMarks) {
+			Integer semester = (Integer)entry[0];
+			String subjectName = (String)entry[1];
+			Integer marks = ((BigDecimal)entry[2]).intValue();
+			map.compute(semester, (sem, val) -> {
+				if(val == null) {
+					val = new LinkedList<SubjectMarksDao>();
+				}
+				val.add(new SubjectMarksDao(subjectName, marks));
+				return val;
+			});
+		}
+		return map;
 	}
 }

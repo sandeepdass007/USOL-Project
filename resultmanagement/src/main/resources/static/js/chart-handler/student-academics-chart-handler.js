@@ -18,7 +18,7 @@ $("document").ready(function() {
 });
 
 function populateOverallCourseChart() {
-	Highcharts.chart('overallCourseChart', {
+	var chart = Highcharts.chart('overallCourseChart', {
 		series: [{
 			type: "treemap",
 			layoutAlgorithm: 'stripes',
@@ -36,106 +36,54 @@ function populateOverallCourseChart() {
 					}
 				}
 			}],
-			data: [{
-				id: 'sem1',
-				name: 'Semester-1',
-				color: "#EC2500"
-			}, {
-				id: 'sem2',
-				name: 'Semester-2',
-				color: "#ECE100"
-			}, {
-				id: 'sem3',
-				name: 'Semester-3',
-				color: '#00FF00'
-			}, {
-				id: 'sem4',
-				name: 'Semester-4',
-				color: '#0000FF'
-			}, {
-				id: 'sem5',
-				name: 'Semester-5',
-				color: '#EC9800'
-			}, {
-				id: 'sem6',
-				name: 'Semester-6',
-				color: '#FF98FF'
-			}, {
-				name: 'Sub1Sem1',
-				parent: 'sem1',
-				value: 90
-			}, {
-				name: 'Sub2Sem1',
-				parent: 'sem1',
-				value: 70
-			}, {
-				name: 'Sub3Sem1',
-				parent: 'sem1',
-				value: 75
-			}, {
-				name: 'Sub1Sem2',
-				parent: 'sem2',
-				value: 82
-			}, {
-				name: 'Sub2Sem2',
-				parent: 'sem2',
-				value: 65
-			}, {
-				name: 'Sub3Sem2',
-				parent: 'sem2',
-				value: 92
-			}, {
-				name: 'Sub1Sem3',
-				parent: 'sem3',
-				value: 75
-			}, {
-				name: 'Sub2Sem3',
-				parent: 'sem3',
-				value: 65
-			}, {
-				name: 'Sub3Sem3',
-				parent: 'sem3',
-				value: 85
-			}, {
-				name: 'Sub1Sem4',
-				parent: 'sem4',
-				value: 55
-			}, {
-				name: 'Sub2Sem4',
-				parent: 'sem4',
-				value: 65
-			}, {
-				name: 'Sub3Sem4',
-				parent: 'sem4',
-				value: 95
-			}, {
-				name: 'Sub1Sem5',
-				parent: 'sem5',
-				value: 83
-			}, {
-				name: 'Sub2Sem5',
-				parent: 'sem5',
-				value: 71
-			}, {
-				name: 'Sub3Sem5',
-				parent: 'sem5',
-				value: 45
-			}, {
-				name: 'Sub1Sem6',
-				parent: 'sem6',
-				value: 39
-			}, {
-				name: 'Sub2Sem6',
-				parent: 'sem6',
-				value: 45
-			}, {
-				name: 'Sub3Sem6',
-				parent: 'sem6',
-				value: 27
-			}]
+			data: []
 		}],
 		title: {
 			text: 'Overall Performance'
+		}
+	});
+
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+
+	$.ajax({
+		url: '/chart/student-sem-sub-marks?courseId='+activeCourseId,
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!data || Object.keys(data).length == 0) {
+				chart.showLoading("No data available!");
+				return;
+			}
+			var seriesData = [];
+			var semesters = Object.keys(data);
+			semesters.forEach(semester => {
+				seriesData.push({
+					id: 'sem' + semester,
+					name: 'Semester - ' + semester,
+					color: CommonUtils.getRandomColor()
+				});
+			});
+
+			semesters.forEach(semester => {
+				data[semester].forEach(record => {
+					seriesData.push({
+						name: record["subjectName"],
+						parent: 'sem' + semester,
+						value: record["marks"]
+					});
+				});
+			});
+			chart.update({
+				series: {
+					data: seriesData
+				}
+			})
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
 		}
 	});
 }
