@@ -1,5 +1,5 @@
 -- desc subject_distribution_info;
-select * from subject_distribution_info;
+-- select * from subject_distribution_info;
 Insert into subject_distribution_info values('101','MatDis1','Mat1Rf1');
 Insert into subject_distribution_info values('102','MatDis1','Mat1Rf2');
 Insert into subject_distribution_info values('103','MatDis2','Mat2Rf1');

@@ -1,5 +1,5 @@
-select * from subject_distribution_type;
-desc subject_distribution_type;
+-- select * from subject_distribution_type;
+-- desc subject_distribution_type;
 insert into subject_distributio_type values ('Subtyp1', "Mid Term");
 insert into subject_distributio_type values ('Subtyp2', "Final");
 insert into subject_distributio_type values ('Subtyp3', "Practical");

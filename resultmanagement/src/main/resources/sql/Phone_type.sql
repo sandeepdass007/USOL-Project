@@ -1,4 +1,4 @@
-insert into phone_type values ('PhTyp001', 'Home');
-insert into phone_type values ('PhTyp002', 'Personal');
-insert into phone_type values ('PhTyp003', 'Work');
+insert into phone_type values ('PhTyp1', 'Home');
+insert into phone_type values ('PhTyp2', 'Personal');
+insert into phone_type values ('PhTyp3', 'Work');
 -- Select * from phone_type ;
