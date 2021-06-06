@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		<!-- Style Sheets -->
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
@@ -42,33 +43,21 @@
 					</div>
 					<div class="col-4">
 						<ul class="nav nav-pills mb-3" id="course-wise-details-tab" role="tablist">
-							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="course-1-tab" data-bs-toggle="pill" data-bs-target="#course-1-content" type="button" role="tab" aria-controls="course-1-content" aria-selected="true">PGDCA</button>
-							</li>
-							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="course-2-tab" data-bs-toggle="pill" data-bs-target="#course-2-content" type="button" role="tab" aria-controls="course-1-content" aria-selected="false">Msc. (Maths)</button>
-							</li>
+							<c:forEach var="courseName" items="${courseVsSubjects.keySet()}">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="${courseName}-tab" data-bs-toggle="pill" data-bs-target="#${courseName}"
+										type="button" role="tab" aria-controls="${courseName}" aria-selected="true">${courseName}</button>
+								</li>
+							</c:forEach>
 						</ul>
 						<div class="tab-content" id="course-wise-details-tabContent">
-							<div class="tab-pane fade show active" id="course-1-content" role="tabpanel" aria-labelledby="course-1-tab">
-								<span class="badge rounded-pill bg-primary">Semester - 2</span>
-								<span class="badge rounded-pill bg-primary">Session - 2020-2021</span>
-								<span class="badge rounded-pill bg-danger">JAVA</span>
-								<span class="badge rounded-pill bg-danger">Software Engineering</span>
-								<span class="badge rounded-pill bg-danger">Computer Based Accounting</span>
-								<span class="badge rounded-pill bg-danger">Lab - 3</span>
-								<span class="badge rounded-pill bg-danger">Lab - 4</span>
-								<span class="badge rounded-pill bg-danger">Project Work</span>
-							</div>
-							<div class="tab-pane fade" id="course-2-content" role="tabpanel" aria-labelledby="course-2-tab">
-								<span class="badge rounded-pill bg-primary">Semester - 1</span>
-								<span class="badge rounded-pill bg-primary">Session - 2020-2022</span>
-								<span class="badge rounded-pill bg-danger">Linear Programming</span>
-								<span class="badge rounded-pill bg-danger">Topology</span>
-								<span class="badge rounded-pill bg-danger">Classical Mechanics</span>
-								<span class="badge rounded-pill bg-danger">Field Theory</span>
-								<span class="badge rounded-pill bg-danger">Complex Analysis</span>
-							</div>
+							<c:forEach var="courseSubEntry" items="${courseVsSubjects.entrySet()}">
+								<div class="tab-pane fade show active" id="${courseSubEntry.getKey()}" role="tabpanel" aria-labelledby="${courseSubEntry.getKey()}-tab">
+									<c:forEach var="subjectName" items="${courseSubEntry.getValue()}">
+										<span class="badge rounded-pill bg-danger">${subjectName}</span>
+									</c:forEach>
+								</div>
+							</c:forEach>
 						</div>
 					</div>
 					<div class="col-4">

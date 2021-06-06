@@ -31,6 +31,9 @@ public class JpaRepository {
 	private StudentDetailsJpaRepository studentDetailsJpaRepository;
 	
 	@Autowired
+	private StudentAcademicJpaRepository studentAcademicJpaRepository;
+	
+	@Autowired
 	private CourseInfoJpaRepository courseInfoJpaRepository;
 
 	@Autowired
@@ -149,5 +152,10 @@ public class JpaRepository {
 			list.add(new YearCourseWiseEnrollmentDao(count, courseType, year));
 		}
 		return list;
+	}
+
+	public List<Object[]> getCourseWiseSubjectNames(String username) {
+		final List<Object[]> courseWiseSubjectNames = studentAcademicJpaRepository.getCourseWiseSubjectNames(username);
+		return courseWiseSubjectNames;
 	}
 }
