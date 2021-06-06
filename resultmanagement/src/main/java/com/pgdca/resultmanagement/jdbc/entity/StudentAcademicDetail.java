@@ -12,33 +12,45 @@ import javax.persistence.Table;
 public class StudentAcademicDetail {
 
 	@Id
+	@Column(name = "id", nullable = false, length = 50)
+	private String id;
+
 	@Column(name = "enrollmentNo", nullable = false, length = 15)
 	private String enrollmentNo;
-	
+
 	@Column(name = "courseId", nullable = false, length = 10)
 	private String courseId;
-	
-	@Column(name = "session", nullable = false, length = 10)
-	private Date session;
-	
-	@Column(name = "semester", nullable = false, length = 2)
-	private Integer semester;
-	
+
+	@Column(name = "resultOutSession", nullable = false, length = 10)
+	private Date resultOutSession;
+
+	@Column(name = "resultOfSemester", nullable = false, length = 2)
+	private Integer resultOfSemester;
+
 	@Column(name = "resultStatusId", nullable = false, length = 50)
 	private String resultStatusId;
-	
+
 	public StudentAcademicDetail() {
 		super();
 	}
 
-	public StudentAcademicDetail(String enrollmentNo, String courseId, Date session, Integer semester,
-			String resultStatusId) {
+	public StudentAcademicDetail(String id, String enrollmentNo, String courseId, Date resultOutSession,
+			Integer resultOfSemester, String resultStatusId) {
 		super();
+		this.id = id;
 		this.enrollmentNo = enrollmentNo;
 		this.courseId = courseId;
-		this.session = session;
-		this.semester = semester;
+		this.resultOutSession = resultOutSession;
+		this.resultOfSemester = resultOfSemester;
 		this.resultStatusId = resultStatusId;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getEnrollmentNo() {
@@ -57,20 +69,20 @@ public class StudentAcademicDetail {
 		this.courseId = courseId;
 	}
 
-	public Date getSession() {
-		return session;
+	public Date getResultOutSession() {
+		return resultOutSession;
 	}
 
-	public void setSession(Date session) {
-		this.session = session;
+	public void setResultOutSession(Date resultOutSession) {
+		this.resultOutSession = resultOutSession;
 	}
 
-	public Integer getSemester() {
-		return semester;
+	public Integer getResultOfSemester() {
+		return resultOfSemester;
 	}
 
-	public void setSemester(Integer semester) {
-		this.semester = semester;
+	public void setResultOfSemester(Integer resultOfSemester) {
+		this.resultOfSemester = resultOfSemester;
 	}
 
 	public String getResultStatusId() {
@@ -80,4 +92,5 @@ public class StudentAcademicDetail {
 	public void setResultStatusId(String resultStatusId) {
 		this.resultStatusId = resultStatusId;
 	}
+
 }
