@@ -105,7 +105,7 @@
 							<label class="form-label">Username</label>
 							<input type="text" class="form-control" id="loginUsername" aria-describedby="usernameHelp"/>
 							<div class="invalid-feedback"> Please provide a valid username.</div>
-							<div id="usernameHelp" class="form-text">Usually it is your application number or enrollment number</div>
+							<div id="usernameHelp" class="form-text">Usually it is your university registration number or employee id</div>
 						</div>
 						<div class="mb-3">
 							<label class="form-label">Password</label>
