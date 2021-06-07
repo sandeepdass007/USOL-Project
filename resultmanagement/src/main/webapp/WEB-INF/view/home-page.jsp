@@ -60,24 +60,18 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg" class="d-block w-100" alt="..."/>
+					<img src="/images/result-mg-Ants.png" class="d-block w-100" alt="..."/>
 					<div class="carousel-caption d-none d-sm-block d-md-block">
-						<h5>Lao Tzu</h5>
-						<p>"A journey of a thousand miles must begin with a single step."</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="https://wowslider.com/sliders/demo-93/data1/images/lake.jpg" class="d-block w-100" alt="..."/>
+					<img src="/images/User-friendly.png" class="d-block w-100" alt="..."/>
 					<div class="carousel-caption d-none d-sm-block d-md-block">
-						<h5>J.R.R. Tolkien</h5>
-						<p>"Not all those who wander are lost."</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg" class="d-block w-100" alt="..."/>
+					<img src="/images/Statistical-representation.png" class="d-block w-100" alt="..."/>
 					<div class="carousel-caption d-none d-sm-block d-md-block">
-						<h5>Paulo Coelho</h5>
-						<p>"If you think adventures are dangerous, try routine: It’s Lethal."</p>
 					</div>
 				</div>
 			</div>
