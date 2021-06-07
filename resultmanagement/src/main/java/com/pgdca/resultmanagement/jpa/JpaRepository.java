@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.chart.dao.SubjectMarksDao;
 import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
-import com.pgdca.resultmanagement.dto.ValidationResponse;
+import com.pgdca.resultmanagement.jdbc.entity.Credentials;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.AddressTypeDao;
 import com.pgdca.resultmanagement.mvc.dao.CityInfoDao;
@@ -68,9 +68,9 @@ public class JpaRepository {
 	@Autowired
 	private CountryInfoJpaRepository countryInfoJpaRepository;
 	
-	public ValidationResponse isUserValid(final String username, final String password) {
-		boolean userValid = credJpaRepository.isUserValid(username, password);
-		return new ValidationResponse(userValid, userValid ? null : "Invalid username or password");
+	public Credentials isUserValid(final String username, final String password) {
+		Credentials credentials = credJpaRepository.isUserValid(username, password);
+		return credentials;
 	}
 
 	public String getUserFullName(final String enrollmentNo) {

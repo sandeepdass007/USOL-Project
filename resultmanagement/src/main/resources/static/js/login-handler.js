@@ -47,10 +47,13 @@ $("document").ready(function() {
 			dataType: 'json',
 			contentType: 'application/json',
 			success: function (data) {
-				console.log(data);
 				var success = data["success"];
 				if(success == true || success == "true") {
-					window.location.href = "/student/";
+					if(data["userType"] == 'student') {
+						window.location.href = "/student/";
+					} else if(data["userType"] == 'teacher') {
+						window.location.href = "/teacher/";
+					}
 				} else {
 					showLoginErrorModal();
 					enableLoginForm();

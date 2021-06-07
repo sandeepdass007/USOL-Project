@@ -15,11 +15,11 @@ public class CredentialsJpaRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public boolean isUserValid(String username, String password) {
+	public Credentials isUserValid(String username, String password) {
 		final Credentials credentials = entityManager.find(Credentials.class, username);
-		if(credentials == null) {
-			return false;
+		if(credentials == null || !credentials.getPassword().equals(password)) {
+			return null;
 		}
-		return credentials.getPassword().equals(password);
+		return credentials;
 	}
 }

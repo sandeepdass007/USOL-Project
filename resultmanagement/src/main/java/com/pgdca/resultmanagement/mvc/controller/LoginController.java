@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pgdca.resultmanagement.dto.LoginCredentials;
 import com.pgdca.resultmanagement.dto.LoginCredentials.Debug;
 import com.pgdca.resultmanagement.dto.LoginResponse;
-import com.pgdca.resultmanagement.dto.ValidationResponse;
+import com.pgdca.resultmanagement.jdbc.entity.Credentials;
 import com.pgdca.resultmanagement.jpa.JpaRepository;
+import com.pgdca.resultmanagement.utils.Constants;
 
 @Controller
 @RequestMapping(path = "/login")
@@ -38,15 +39,20 @@ public class LoginController {
 		final String password = loginCredentials.getPassword();
 		Debug debug = loginCredentials.getDebug();
 		if(debug != null && debug.isEnable() && debug.isForceFail()) {
-			return new LoginResponse(false, "Force Fail");
+			return new LoginResponse(false, "Force Fail", null);
 		}
 		/*
 		 * Logic to validate username and password from database
 		 * */
-		ValidationResponse validationResponse = jpaRepository.isUserValid(username, password);
-		if(validationResponse.isValid()) {
+		String error = "Username/Password combination doesn't match";
+		String userType = Constants.EMPTY_STRING;
+		Credentials credentials = jpaRepository.isUserValid(username, password);
+		if(credentials != null) {
 			httpSession.setAttribute("username", username);
+			httpSession.setAttribute("userType", credentials.getUserType());
+			error = Constants.EMPTY_STRING;
+			userType = credentials.getUserType();
 		}
-		return new LoginResponse(validationResponse.isValid(), validationResponse.getError());
+		return new LoginResponse(credentials != null, error, userType);
 	}
 }
