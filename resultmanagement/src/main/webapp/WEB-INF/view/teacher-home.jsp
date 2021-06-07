@@ -1,185 +1,204 @@
 <html>
-<head>
-		<!-- Style Sheets -->
-		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
-		<link href="/css/student-registration.css" rel="stylesheet">
-		
-		<!-- JavaScripts -->
-		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
-		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
-		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
-		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
-		<script src="/js/utils/common-utils.js"></script>
-		<script src="/js/student-handler.js"></script>
-		<script src="/js/student-chart-handler.js"></script>
-</head>
+	<head>
+			<!-- Style Sheets -->
+			<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
+			<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
+			<link href="/css/student-registration.css" rel="stylesheet">
+			
+			<!-- JavaScripts -->
+			<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
+			<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+			<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
+			<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
+			<script src="/js/utils/common-utils.js"></script>
+			<script src="/js/student-handler.js"></script>
+			<script src="/js/student-chart-handler.js"></script>
+	</head>
 
-<body>
+	<body>
 		<div class = "bg"></div>
 		<div class="mainbodycontent" >
-				
 			<div class="container-fluid">
 				<div class="row mt-2 mb-2">
-					<div class="col-6 col-sm-3 col-md-2 col-lg-2"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
+					<div class="col-6 col-sm-3 col-md-2 col-lg-2">
+						<img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"/>
+					</div>
 					<div class="col-6 col-sm-9 col-md-10 col-lg-10 d-flex align-content-center flex-wrap justify-content-center">
-						<h1 class="display-3 text-center"> <strong> University School Of Open Learning </strong> </h1>
+						<h1 class="display-3 text-center">
+							<strong> University School Of Open Learning </strong>
+						</h1>
 					</div>
 				</div>
 			</div>
-			
-			<div class="card text-center ms-2 bg-secondary bg-#ff0013 border border-dark border border-4 ">
+	
+			<div class="card text-center ms-2 bg-secondary border border-dark border border-1 rounded-1" style="background-color: #dc61614d">
 				<div class="card-body">
-		    	<h1 class="card-title">Teacher's Profile</h1>
-		    	</div>
-	    	</div>
-
-			
-			<div class="container" id="teacher'sProfile">
-				
+					<h1 class="card-title">Teacher's Profile</h1>
+				</div>
+			</div>
+	
+	
+			<div class="container" id="teacher-Profile">
+	
 				<div class="row mt-2 mb-2">
-				<div class="col-md-4">
-					<label for="inputCourse" class="form-label text-black">Course</label>
-					<select id="inputcourse" class="form-select">
-					      <option selected>Choose Course...</option>
-					      <option>...</option>
-					</select>
+					<div class="col-md-4">
+						<label for="inputCourse" class="form-label text-black">Course</label>
+						<select id="inputcourse" class="form-select">
+							<option>B.E CSE</option>
+							<option>PGDCA</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label for="inputSemester" class="form-label text-black">Semester</label>
+						<select id="inputSemester" class="form-select">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label for="inputSubject" class="form-label text-black">Subject</label>
+						<select id="inputSubject" class="form-select">
+							<option>Subject - 1</option>
+							<option>Subject - 2</option>
+							<option>Subject - 3</option>
+							<option>Subject - 4</option>
+							<option>Subject - 5</option>
+						</select>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<label for="inputSemester" class="form-label text-black">Semester</label>
-					<select id="inputSemester" class="form-select">
-					      <option selected>Choose Semester...</option>
-					      <option>...</option>
-					</select>
+			</div>
+			<div class="container" style="background-color: #00000040;">
+				<div class="row">
+					<div class="col">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th scope="col">Sr No.</th>
+									<th scope="col">Roll No.</th>
+									<th scope="col">Name</th>
+									<th scope="col">MST </th>
+									<th scope="col">Internal</th>
+									<th scope="col">Theory</th>
+									<th scope="col">Practical</th>
+									<th scope="col">Viva</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row">1</td>
+									<td scope="col">1105</td>
+									<td scope="col">Naina</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col">08</td>
+									<td scope="col">56</td>
+									<td scope="col">35</td>
+									<td scope="col">10</td>
+								</tr>
+								<tr>
+									<td scope="row">2</td>
+									<td scope="col">1106</td>
+									<td scope="col">Mehar</td>
+									<td scope="col">45</td>
+									<td scope="col">08</td>
+									<td scope="col">56</td>
+									<td scope="col">35</td>
+									<td scope="col">10</td>
+								</tr>
+								<tr>
+									<td scope="row">3</td>
+									<td scope="col">1107</td>
+									<td scope="col">Sandeep</td>
+									<td scope="col">45</td>
+									<td scope="col">08</td>
+									<td scope="col">56</td>
+									<td scope="col">35</td>
+									<td scope="col">10</td>
+								</tr>
+								<tr>
+									<td scope="row">4</td>
+									<td scope="col">1108</td>
+									<td scope="col">Mandeep</td>
+									<td scope="col">35</td>
+									<td scope="col">06</td>
+									<td scope="col">46</td>
+									<td scope="col">35</td>
+									<td scope="col">09</td>
+								</tr>
+								<tr>
+									<td scope="row">5</td>
+									<td scope="col">1109</td>
+									<td scope="col">Bhanu</td>
+									<td scope="col">45</td>
+									<td scope="col">08</td>
+									<td scope="col">57</td>
+									<td scope="col">32</td>
+									<td scope="col">09</td>
+								</tr>
+								<tr>
+									<td scope="col">6</td>
+									<td scope="col">1110</td>
+									<td scope="col">Rabia</td>
+									<td scope="col">46</td>
+									<td scope="col">09</td>
+									<td scope="col">55</td>
+									<td scope="col">35</td>
+									<td scope="col">08</td>
+								</tr>
+								<tr>
+									<td scope="col">7</td>
+									<td scope="col">1111</td>
+									<td scope="col">Mehak</td>
+									<td scope="col">48</td>
+									<td scope="col">09</td>
+									<td scope="col">58</td>
+									<td scope="col">38</td>
+									<td scope="col">08</td>
+								</tr>
+								<tr>
+									<td scope="col">8</td>
+									<td scope="col">1112</td>
+									<td scope="col">Nisha</td>
+									<td scope="col">38</td>
+									<td scope="col">05</td>
+									<td scope="col">48</td>
+									<td scope="col">30</td>
+									<td scope="col">07</td>
+								</tr>
+								<tr>
+									<td scope="col">9</td>
+									<td scope="col">1113</td>
+									<td scope="col">Isha</td>
+									<td scope="col">36</td>
+									<td scope="col">04</td>
+									<td scope="col">45</td>
+									<td scope="col">30</td>
+									<td scope="col">07</td>
+								</tr>
+								<tr>
+									<td scope="col">10</td>
+									<td scope="col">1114</td>
+									<td scope="col">Manisha</td>
+									<td scope="col">38</td>
+									<td scope="col">05</td>
+									<td scope="col">48</td>
+									<td scope="col">30</td>
+									<td scope="col">07</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<label for="inputSubject" class="form-label text-black">Subject</label>
-					<select id="inputSubject" class="form-select">
-					      <option selected>Choose Subject...</option>
-					      <option>...</option>
-					</select>
+				<div class="row">
+					<div class="col-11"></div>
+					<div class="col-1">
+						<input class="btn btn-primary" type="submit" value="Submit"/>
+					</div>
 				</div>
-								
-				<table class="table table-hover">
-				  <thead>
-				    <tr>
-				      <th scope="col">Sr No.</th>
-				      <th scope="col">Roll No.</th>
-				      <th scope="col">Name</th>
-				      <th scope="col">MST </th>
-				      <th scope="col">Internal</th>
-				      <th scope="col">Theory</th>
-				      <th scope="col">Practical</th>
-				      <th scope="col">Viva</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <th scope="col">1105</th>
-				      <th scope="col">Naina</th>
-				      <th scope="col">45</th>
-				      <th scope="col">08</th>
-				      <th scope="col">56</th>
-				      <th scope="col">35</th>
-				      <th scope="col">10</th>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <th scope="col">1106</th>
-				      <th scope="col">Mehar</th>
-				      <th scope="col">45</th>
-				      <th scope="col">08</th>
-				      <th scope="col">56</th>
-				      <th scope="col">35</th>
-				      <th scope="col">10</th>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <th scope="col">1107</th>
-				      <th scope="col">Sandeep</th>
-				      <th scope="col">45</th>
-				      <th scope="col">08</th>
-				      <th scope="col">56</th>
-				      <th scope="col">35</th>
-				      <th scope="col">10</th>
-				    </tr>
-				    <tr>
-				    <th scope="row">4</th>
-				      <th scope="col">1108</th>
-				      <th scope="col">Mandeep</th>
-				      <th scope="col">35</th>
-				      <th scope="col">06</th>
-				      <th scope="col">46</th>
-				      <th scope="col">35</th>
-				      <th scope="col">09</th>
-				    </tr>
-				     <tr>
-				    <th scope="row">5</th>
-				      <th scope="col">1109</th>
-				      <th scope="col">Bhanu</th>
-				      <th scope="col">45</th>
-				      <th scope="col">08</th>
-				      <th scope="col">57</th>
-				      <th scope="col">32</th>
-				      <th scope="col">09</th>
-				    </tr>
-				     <tr>
-				      <th scope="col">6</th>
-				      <th scope="col">1110</th>
-				      <th scope="col">Rabia</th>
-				      <th scope="col">46</th>
-				      <th scope="col">09</th>
-				      <th scope="col">55</th>
-				      <th scope="col">35</th>
-				      <th scope="col">08</th>
-				    </tr>
-				     <tr>
-				      <th scope="col">7</th>
-				      <th scope="col">1111</th>
-				      <th scope="col">Mehak</th>
-				      <th scope="col">48</th>
-				      <th scope="col">09</th>
-				      <th scope="col">58</th>
-				      <th scope="col">38</th>
-				      <th scope="col">08</th>
-				    </tr>
-				    <tr>
-				      <th scope="col">8</th>
-				      <th scope="col">1112</th>
-				      <th scope="col">Nisha</th>
-				      <th scope="col">38</th>
-				      <th scope="col">05</th>
-				      <th scope="col">48</th>
-				      <th scope="col">30</th>
-				      <th scope="col">07</th>
-				    </tr>
-				     <tr>
-				      <th scope="col">9</th>
-				      <th scope="col">1113</th>
-				      <th scope="col">Isha</th>
-				      <th scope="col">36</th>
-				      <th scope="col">04</th>
-				      <th scope="col">45</th>
-				      <th scope="col">30</th>
-				      <th scope="col">07</th>
-				    </tr>
-				     <tr>
-				      <th scope="col">10</th>
-				      <th scope="col">1114</th>
-				      <th scope="col">Manisha</th>
-				      <th scope="col">38</th>
-				      <th scope="col">05</th>
-				      <th scope="col">48</th>
-				      <th scope="col">30</th>
-				      <th scope="col">07</th>
-				    </tr>
-				  </tbody>
-				</table>
-				  	</div>
-		  		</div>
-		  	    
-		  		<input class="btn btn-primary" type="submit" value="Submit">
+			</div>
 		</div>
-</body>
+	</body>
 </html>
