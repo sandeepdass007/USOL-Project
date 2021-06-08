@@ -61,17 +61,17 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="/images/result-mg-Ants.png" class="d-block w-100" alt="..."/>
+					<img src="/images/arm-carousel.jpg" class="d-block w-100" alt="..."/>
+					<div class="carousel-caption d-none d-sm-block d-md-block">
+					</div>
+				</div>
+				<div class="carousel-item ">
+					<img src="/images/carousel-ii.jpeg" class="d-block w-100" alt="..."/>
 					<div class="carousel-caption d-none d-sm-block d-md-block">
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="/images/User-friendly.png" class="d-block w-100" alt="..."/>
-					<div class="carousel-caption d-none d-sm-block d-md-block">
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="/images/carousel-1.jpg" class="d-block w-100" alt="..."/>
+					<img src="/images/stats-car.jpg" class="d-block w-100" alt="..."/>
 					<div class="carousel-caption d-none d-sm-block d-md-block">
 					</div>
 				</div>
@@ -90,11 +90,11 @@
 		<br/>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-4">
+				<div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 					<div id="courseWiseStudentsEnrolled" style="width:100%; height:15rem;">
 					</div>
 				</div>
-				<div class="col-4 border rounded" style="background-color: #ecb0b012">
+				<div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4 border rounded" style="background-color: #ecb0b012">
 					<form id="loginForm">
 						<div class="mb-3">
 							<label class="form-label">Username</label>
@@ -113,7 +113,7 @@
 						</button>
 					</form>
 				</div>
-				<div class="col-4">
+				<div class="col-4 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 					<div id="categoryWiseEnrollments" style="width:100%; height:15rem;">
 					</div>
 				</div>

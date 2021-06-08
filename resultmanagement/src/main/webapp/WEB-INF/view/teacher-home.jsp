@@ -93,100 +93,100 @@
 									<td scope="col">1105</td>
 									<td scope="col">Naina</td>
 									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
-									<td scope="col">08</td>
-									<td scope="col">56</td>
-									<td scope="col">35</td>
-									<td scope="col">10</td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="row">2</td>
 									<td scope="col">1106</td>
 									<td scope="col">Mehar</td>
-									<td scope="col">45</td>
-									<td scope="col">08</td>
-									<td scope="col">56</td>
-									<td scope="col">35</td>
-									<td scope="col">10</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="row">3</td>
 									<td scope="col">1107</td>
 									<td scope="col">Sandeep</td>
-									<td scope="col">45</td>
-									<td scope="col">08</td>
-									<td scope="col">56</td>
-									<td scope="col">35</td>
-									<td scope="col">10</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="row">4</td>
 									<td scope="col">1108</td>
 									<td scope="col">Mandeep</td>
-									<td scope="col">35</td>
-									<td scope="col">06</td>
-									<td scope="col">46</td>
-									<td scope="col">35</td>
-									<td scope="col">09</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="row">5</td>
 									<td scope="col">1109</td>
 									<td scope="col">Bhanu</td>
-									<td scope="col">45</td>
-									<td scope="col">08</td>
-									<td scope="col">57</td>
-									<td scope="col">32</td>
-									<td scope="col">09</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="col">6</td>
 									<td scope="col">1110</td>
 									<td scope="col">Rabia</td>
-									<td scope="col">46</td>
-									<td scope="col">09</td>
-									<td scope="col">55</td>
-									<td scope="col">35</td>
-									<td scope="col">08</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="col">7</td>
 									<td scope="col">1111</td>
 									<td scope="col">Mehak</td>
-									<td scope="col">48</td>
-									<td scope="col">09</td>
-									<td scope="col">58</td>
-									<td scope="col">38</td>
-									<td scope="col">08</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="col">8</td>
 									<td scope="col">1112</td>
 									<td scope="col">Nisha</td>
-									<td scope="col">38</td>
-									<td scope="col">05</td>
-									<td scope="col">48</td>
-									<td scope="col">30</td>
-									<td scope="col">07</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="col">9</td>
 									<td scope="col">1113</td>
 									<td scope="col">Isha</td>
-									<td scope="col">36</td>
-									<td scope="col">04</td>
-									<td scope="col">45</td>
-									<td scope="col">30</td>
-									<td scope="col">07</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 								<tr>
 									<td scope="col">10</td>
 									<td scope="col">1114</td>
 									<td scope="col">Manisha</td>
-									<td scope="col">38</td>
-									<td scope="col">05</td>
-									<td scope="col">48</td>
-									<td scope="col">30</td>
-									<td scope="col">07</td>
+									<td scope="col"><input type="number" min="0" max="50" placeholder="MST"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="Internal"></td>
+									<td scope="col"><input type="number" min="0" max="60" placeholder="Theory"></td>
+									<td scope="col"><input type="number" min="0" max="40" placeholder="Practical"></td>
+									<td scope="col"><input type="number" min="0" max="10" placeholder="viva"></td>
 								</tr>
 							</tbody>
 						</table>
