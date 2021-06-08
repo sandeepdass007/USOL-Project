@@ -53,7 +53,7 @@ function populateOverallCourseChart() {
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
 
 	$.ajax({
-		url: '/chart/student-sem-sub-marks?courseId='+activeCourseId,
+		url: '/chart/student-sem-sub-marks?courseId=' + activeCourseId,
 		async: true,
 		type: 'GET',
 		processData: false,
@@ -105,25 +105,48 @@ function populateClassVersusPercentage() {
 			}
 		},
 		chart: {
+			type: 'spline',
 			backgroundColor: 'none'
 		},
 		title: {
-			text: 'Avg. Class vs Sandeep'
+			text: 'Avg. Class vs Sandeep',
+			style: {
+				color: 'white'
+			}
 		},
 		yAxis: {
 			title: {
-				text: 'Marks (in %)'
+				text: 'Marks (in %)',
+				style: {
+					color: 'white'
+				}
+			},
+			labels: {
+				style: {
+					color: 'white'
+				}
 			}
 		},
 
 		xAxis: {
 			type: 'category',
+			labels: {
+				style: {
+					color: 'white'
+				}
+			}
 		},
 
 		legend: {
 			layout: 'vertical',
 			align: 'right',
-			verticalAlign: 'middle'
+			verticalAlign: 'middle',
+			itemStyle: {
+				color: 'white'
+			},
+			itemHoverStyle: {
+				color: 'grey'
+			}
 		},
 
 		plotOptions: {
@@ -171,6 +194,7 @@ function populateSemesterWiseDistributionPerformance() {
 			}
 		},
 		chart: {
+			backgroundColor: 'none',
 			type: 'column',
 			options3d: {
 				enabled: true,
@@ -181,18 +205,37 @@ function populateSemesterWiseDistributionPerformance() {
 			}
 		},
 		title: {
-			text: 'Distribution Performance'
+			text: 'Distribution Performance',
+			style: {
+				color: 'white'
+			}
 		},
 		subtitle: {
-			text: 'Semester Wise'
+			text: 'Semester Wise',
+			style: {
+				color: 'white'
+			}
 		},
 		xAxis: {
+			labels: {
+				style: {
+					color: 'white'
+				}
+			},
 			categories: ['Semester-1', 'Semester-2', 'Semester-3', 'Semester-4', 'Semester-5', 'Semester-6', 'Semester-7', 'Semester-8']
 		},
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'Percentage with distribution'
+				text: 'Percentage with distribution',
+				style: {
+					color: 'white'
+				}
+			},
+			labels: {
+				style: {
+					color: 'white'
+				}
 			}
 		},
 		legend: {
@@ -232,6 +275,7 @@ function populateDistributionWiseCourseLevelPerformance() {
 			}
 		},
 		chart: {
+			backgroundColor: 'none',
 			type: 'pie',
 			options3d: {
 				enabled: true,
@@ -240,7 +284,10 @@ function populateDistributionWiseCourseLevelPerformance() {
 			}
 		},
 		title: {
-			text: 'Distribution Wise Performance'
+			text: 'Distribution Wise Performance',
+			style: {
+				color: 'white'
+			}
 		},
 		accessibility: {
 			point: {
