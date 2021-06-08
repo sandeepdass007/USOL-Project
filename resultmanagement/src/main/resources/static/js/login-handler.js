@@ -4,7 +4,7 @@
  // Registering the event when document is  ready
 $("document").ready(function() {
 	
-	// Registering the click event on login button
+	// Registering the submit event on login form
 	$("#loginForm").submit(function(e) {
 		// get username and password from the provided input fields
 		var username = $("#loginUsername").val();

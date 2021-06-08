@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pgdca.resultmanagement.dto.LoginCredentials;
 import com.pgdca.resultmanagement.dto.LoginCredentials.Debug;
 import com.pgdca.resultmanagement.dto.LoginResponse;
-import com.pgdca.resultmanagement.jdbc.entity.Credentials;
 import com.pgdca.resultmanagement.jpa.JpaRepository;
+import com.pgdca.resultmanagement.mvc.dao.CredentialsDao;
 import com.pgdca.resultmanagement.utils.Constants;
 
 @Controller
@@ -46,7 +46,7 @@ public class LoginController {
 		 * */
 		String error = "Username/Password combination doesn't match";
 		String userType = Constants.EMPTY_STRING;
-		Credentials credentials = jpaRepository.isUserValid(username, password);
+		CredentialsDao credentials = jpaRepository.getCredentials(username, password);
 		if(credentials != null) {
 			httpSession.setAttribute("username", username);
 			httpSession.setAttribute("userType", credentials.getUserType());

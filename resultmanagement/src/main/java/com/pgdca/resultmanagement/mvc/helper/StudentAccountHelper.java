@@ -24,4 +24,12 @@ public class StudentAccountHelper extends StudentHelper {
 		modelAttributes.put("studentDetailDao", studentProfileDao);
 		return modelAttributes;
 	}
+
+	public boolean isUserValid(String username, String currentPassword) {
+		return jpaRepository.isUserValid(username, currentPassword);
+	}
+
+	public boolean changePassword(String username, String newPassword) {
+		return jpaRepository.changePassword(username, newPassword);
+	}
 }

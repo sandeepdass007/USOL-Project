@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.chart.dao.SubjectMarksDao;
 import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
-import com.pgdca.resultmanagement.jdbc.entity.Credentials;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.AddressTypeDao;
 import com.pgdca.resultmanagement.mvc.dao.CityInfoDao;
 import com.pgdca.resultmanagement.mvc.dao.ContactDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.CountryInfoDao;
+import com.pgdca.resultmanagement.mvc.dao.CredentialsDao;
 import com.pgdca.resultmanagement.mvc.dao.ParentDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.PhoneDetailDao;
 import com.pgdca.resultmanagement.mvc.dao.PhoneTypeDao;
@@ -68,8 +68,8 @@ public class JpaRepository {
 	@Autowired
 	private CountryInfoJpaRepository countryInfoJpaRepository;
 	
-	public Credentials isUserValid(final String username, final String password) {
-		Credentials credentials = credJpaRepository.isUserValid(username, password);
+	public CredentialsDao getCredentials(final String username, final String password) {
+		CredentialsDao credentials = credJpaRepository.getCredentials(username, password);
 		return credentials;
 	}
 
@@ -177,5 +177,13 @@ public class JpaRepository {
 			});
 		}
 		return map;
+	}
+
+	public boolean isUserValid(String username, String currentPassword) {
+		return credJpaRepository.isUserValid(username, currentPassword);
+	}
+
+	public boolean changePassword(String username, String newPassword) {
+		return credJpaRepository.changePassword(username, newPassword);
 	}
 }
