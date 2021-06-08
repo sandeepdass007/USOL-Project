@@ -27,9 +27,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="card text-center ms-2 bg-secondary bg-#ff0013 border border-dark border border-4 ">
+			<div class="card text-center ms-2 border border-1 rounder-1" style="background-color: #00000040;">
 				<div class="card-body">
-		    	<h1 class="card-title">Student Registration Form</h1>
+		    	<h1 class="card-title text-white">Student Registration Form</h1>
 		    	</div>
 	    	</div>
 			<div class="container" id="studentRegistrationForm">

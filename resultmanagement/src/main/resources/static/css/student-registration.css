@@ -8,13 +8,13 @@ body, html {
 	right: 0;
 	z-index: 1;
 	display: block;
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
 	/* The image used */
-	background-image: url("/images/student-home-bg.jpg");
+	background-image: url("/images/student-registration-bg.jpg");
 	/* Full height */
 	height: 100%;
 	/* Center and scale the image nicely */
@@ -57,15 +57,4 @@ body, html {
 
 body, html {
 	height: 100%;
-}
-
-.bg {
-	/* The image used */
-	background-image: url("/images/pan-uni-bg.png");
-	/* Full height */
-	height: 100%;
-	/* Center and scale the image nicely */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 }
