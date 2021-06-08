@@ -10,6 +10,7 @@
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/modules/exporting.js"></script>
 		<script src="/js/utils/constants.js"></script>
 		<script src="/js/login-handler.js"></script>
 		<script src="/js/home.js"></script>
@@ -70,7 +71,7 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="/images/Statistical-representation.png" class="d-block w-100" alt="..."/>
+					<img src="/images/carousel-1.jpg" class="d-block w-100" alt="..."/>
 					<div class="carousel-caption d-none d-sm-block d-md-block">
 					</div>
 				</div>

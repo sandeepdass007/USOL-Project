@@ -19,6 +19,13 @@ $("document").ready(function() {
 
 function populateOverallCourseChart() {
 	var chart = Highcharts.chart('overallCourseChart', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		series: [{
 			type: "treemap",
 			layoutAlgorithm: 'stripes',
@@ -90,6 +97,13 @@ function populateOverallCourseChart() {
 
 function populateClassVersusPercentage() {
 	Highcharts.chart('classVersusPercentage', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		chart: {
 			backgroundColor: 'none'
 		},
@@ -149,6 +163,13 @@ function populateClassVersusPercentage() {
 
 function populateSemesterWiseDistributionPerformance() {
 	Highcharts.chart('semesterWiseDistributionPerformance', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		chart: {
 			type: 'column',
 			options3d: {
@@ -203,6 +224,13 @@ function populateSemesterWiseDistributionPerformance() {
 
 function populateDistributionWiseCourseLevelPerformance() {
 	Highcharts.chart('distributionWiseCourseLevelPerformance', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		chart: {
 			type: 'pie',
 			options3d: {

@@ -14,6 +14,7 @@
 		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/highcharts/highcharts-9.1.0/highcharts-3d.js"></script>
 		<script src="/highcharts/highcharts-9.1.0/modules/treemap.js"></script>
+		<script src="/highcharts/highcharts-9.1.0/modules/exporting.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
 		<script src="/js/chart-handler/student-academics-chart-handler.js"></script>

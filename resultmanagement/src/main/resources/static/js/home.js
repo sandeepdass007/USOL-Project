@@ -15,6 +15,13 @@ $("document").ready(function() {
 
 function populateCategoryWiseEnrollments() {
 	var chart = Highcharts.chart('categoryWiseEnrollments', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		chart: {
 			backgroundColor: 'none'
 		},
@@ -130,6 +137,13 @@ function populateCourseWiseStudEnrollChart() {
 
 
 	var chart = Highcharts.chart('courseWiseStudentsEnrolled', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: null,
