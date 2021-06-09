@@ -1,0 +1,45 @@
+body, html {
+	height: 100%;
+}
+
+.bg {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: block;
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-o-filter: blur(10px);
+	-ms-filter: blur(10px);
+	filter: blur(10px);
+	/* The image used */
+	background-image: url("/images/student-academics-bg.jpg");
+	/* Full height */
+	height: 100%;
+	/* Center and scale the image nicely */
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#course-wise-details-tab .nav-item {
+	margin-bottom: 0.25rem !important;
+}
+
+#course-wise-details-tab .nav-link {
+	background-color: transparent;
+	border: 1px solid;
+	color: darkslategray;
+	margin-left: 0.5rem;
+}
+
+#course-wise-details-tab .nav-link.active {
+	background-color: transparent;
+	border: 1px solid;
+	color: white;
+}
+
+#course-wise-details-tabContent .badge {
+	margin-bottom: 0.25rem !important;
+}

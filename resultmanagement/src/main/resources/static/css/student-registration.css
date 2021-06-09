@@ -1,0 +1,60 @@
+body, html {
+	height: 100%;
+}
+
+.bg {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: block;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+	/* The image used */
+	background-image: url("/images/student-registration-bg.jpg");
+	/* Full height */
+	height: 100%;
+	/* Center and scale the image nicely */
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mainbodycontent {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	height: 100%;
+	overflow: auto;
+}
+
+::-webkit-scrollbar {
+	width: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #d6dee1;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a8bbbf;
+}
+
+#studentRegistrationForm {
+	background-color: #00000040;
+}
+
+body, html {
+	height: 100%;
+}
