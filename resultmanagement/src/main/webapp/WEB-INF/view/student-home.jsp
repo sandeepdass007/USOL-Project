@@ -30,6 +30,20 @@
 				</div>
 			</div>
 			<h1 class="display-3 text-center">Student Home Page</h1>
+			<br/>
+			<div class="container" style="opacity: 0.5">
+				<div class="row mb-2" style="height: 15rem;">
+					<div class="col-4 bg-primary"></div>
+					<div class="col-4 bg-secondary"></div>
+					<div class="col-4 bg-danger"></div>
+				</div>
+				<div class="row" style="height: 15rem;">
+					<div class="col-3 bg-success"></div>
+					<div class="col-3 bg-warning"></div>
+					<div class="col-3 bg-info"></div>
+					<div class="col-3 bg-dark"></div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
