@@ -20,7 +20,7 @@
 				<div class="row mt-2 mb-2">
 					<div class="col-6 col-sm-3 col-md-2 col-lg-2"><img style="height:8rem; width:8rem" src="/images/pu-logo.png" alt="pu logo"></div>
 					<div class="col-6 col-sm-9 col-md-10 col-lg-10 d-flex align-content-center flex-wrap justify-content-center">
-						<h1 class="display-3 text-center">University School Of Open Learning</h1>
+						<h1 class="display-3 text-center fw-bold top-title-heading">University School Of Open Learning</h1>
 					</div>
 				</div>
 				<div class="row">
