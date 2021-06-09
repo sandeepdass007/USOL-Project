@@ -169,7 +169,7 @@ Insert into subject_distribution_ref_info values('Eng13Rf2',70,24,'Subtyp2');
 Insert into subject_distribution_ref_info values('Eng14Rf1',30,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('Eng14Rf2',70,24,'Subtyp2');
 Insert into subject_distribution_ref_info values('Eng15Rf1',30,null,'Subtyp1');
-Insert into subject_distribution_ref_info values('Eng15R2',70,24,'Subtyp2');
+Insert into subject_distribution_ref_info values('Eng15Rf2',70,24,'Subtyp2');
 Insert into subject_distribution_ref_info values('Eng16Rf1',30,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('Eng16Rf2',70,24,'Subtyp2');
 Insert into subject_distribution_ref_info values('Eng17Rf1',15,null,'Subtyp1');

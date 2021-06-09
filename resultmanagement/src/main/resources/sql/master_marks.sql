@@ -32,3 +32,21 @@ Insert into master_marks values('230','BAEngHS','1012',13,'2017-07-01','Eng4Rf1'
 Insert into master_marks values('231','BAEngHS','1012',43,'2017-07-01','Eng4Rf2','Eng1Sub4');
 Insert into master_marks values('232','BAEngHS','1012',18,'2017-07-01','Eng5Rf1','Eng1Sub5');
 Insert into master_marks values('233','BAEngHS','1012',49,'2017-07-01','Eng5Rf2','Eng1Sub5');
+
+
+-- step 2
+
+
+Insert into master_marks values('244','BECSE','1011',22,'2013-01-01','CSE6Rf1','CSE2Sub1');
+Insert into master_marks values('245','BECSE','1011',42,'2013-01-01','CSE6Rf2','CSE2Sub1');
+Insert into master_marks values('246','BECSE','1011',12,'2013-01-01','CSE6Rf3','CSE2Sub1');
+Insert into master_marks values('247','BECSE','1011',18,'2013-01-01','CSE7Rf1','CSE2Sub2');
+Insert into master_marks values('248','BECSE','1011',52,'2013-01-01','CSE7Rf2','CSE2Sub2');
+Insert into master_marks values('249','BECSE','1011',24,'2013-01-01','CSE8Rf1','CSE2Sub3');
+Insert into master_marks values('250','BECSE','1011',43,'2013-01-01','CSE8Rf2','CSE2Sub3');
+Insert into master_marks values('251','BECSE','1011',15,'2013-01-01','CSE9Rf1','CSE2Sub4');
+Insert into master_marks values('252','BECSE','1011',60,'2013-01-01','CSE9Rf2','CSE2Sub4');
+Insert into master_marks values('253','BECSE','1011',9,'2013-01-01','CSE10Rf1','CSE2Sub5');
+Insert into master_marks values('254','BECSE','1011',36,'2013-01-01','CSE10Rf2','CSE2Sub5');
+Insert into master_marks values('255','BECSE','1011',17,'2013-01-01','CSE10Rf3','CSE2Sub5');
+

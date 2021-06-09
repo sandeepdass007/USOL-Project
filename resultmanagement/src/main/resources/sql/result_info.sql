@@ -18,3 +18,13 @@ Insert into result_info values('616','1010','2019-07-01','Res1','MatDis4','Mat1S
 Insert into result_info values('617','1011','2013-07-01','Res1','CSEDis3','CSE1Sub3');
 Insert into result_info values('618','1011','2013-07-01','Res2','CSEDis5','CSE1Sub5');
 Insert into result_info values('619','1012','2018-07-01','Res1','EngDis3','Eng1Sub3');
+
+
+-- step 2
+
+Insert into result_info values('620','1011','2013-07-01','Res1','CSEDis6','CSE2Sub1');
+Insert into result_info values('621','1011','2013-07-01','Res1','CSEDis7','CSE2Sub2');
+Insert into result_info values('622','1011','2013-07-01','Res1','CSEDis8','CSE2Sub3');
+Insert into result_info values('623','1011','2013-07-01','Res1','CSEDis9','CSE2Sub4');
+Insert into result_info values('624','1011','2013-07-01','Res1','CSEDis10','CSE2Sub5');
+Insert into result_info values('625','1011','2014-01-01','Res1','CSEDis5','CSE1Sub5');
