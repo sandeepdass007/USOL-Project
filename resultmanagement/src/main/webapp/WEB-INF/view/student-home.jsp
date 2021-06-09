@@ -9,10 +9,8 @@
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
-		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
-		<script src="/js/chart-handler/student-home-chart-handler.js"></script>
 	</head>
 	
 	<body>
