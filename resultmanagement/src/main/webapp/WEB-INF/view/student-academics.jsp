@@ -38,11 +38,11 @@
 			<br/>
 			<div class="container">
 				<div class="row mb-2">
-					<div class="col-4">
+					<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-1">
 						<div id="overallCourseChart" style="width:100%; height:15rem;">
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1">
 						<ul class="nav nav-pills mb-3" id="course-wise-details-tab" role="tablist">
 							<c:forEach var="courseWiseSubjects" items="${courseWiseSubjectsList}">
 								<li class="nav-item" role="presentation">
@@ -61,21 +61,21 @@
 							</c:forEach>
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1">
 						<div id="classVersusPercentage" style="width:100%; height:15rem;">
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-4">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1">
 						<div id="semesterWiseDistributionPerformance" style="width:100%; height:15rem;">
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1">
 						<div id="distributionWiseCourseLevelPerformance" style="width:100%; height:15rem;">
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-1">
 						<div id="percentageHistory" style="width:100%; height:15rem;">
 						</div>
 					</div>
