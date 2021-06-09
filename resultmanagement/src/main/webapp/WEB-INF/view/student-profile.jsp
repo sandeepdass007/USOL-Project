@@ -29,7 +29,7 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="display-3">Student Profile Page</h1>
+			<h1 class="display-3 text-center">Student Profile Page</h1>
 			<div class="container">
 				<div class="row">
 					<div class="col">
