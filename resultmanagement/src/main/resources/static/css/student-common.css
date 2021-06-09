@@ -32,6 +32,10 @@ body, html {
 	overflow: auto;
 }
 
+.top-title-heading {
+	-webkit-text-stroke: 1px grey;
+}
+
 ::-webkit-scrollbar {
 	width: 20px;
 }
