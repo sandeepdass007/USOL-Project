@@ -14,7 +14,7 @@ body, html {
 	-ms-filter: blur(15px);
 	filter: blur(15px);
 	/* The image used */
-	background-image: url("/images/home-background.png");
+	background-image: url("/images/homepage-bg.jpeg");
 	/* Full height */
 	height: 100%;
 	/* Center and scale the image nicely */
