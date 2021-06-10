@@ -55,3 +55,7 @@ body, html {
 	height: 68vw !important;
 	max-height: 53vh !important;
 }
+
+#loginErrorModal {
+	z-index: 99999;
+}
