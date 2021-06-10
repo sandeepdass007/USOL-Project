@@ -33,14 +33,14 @@
 			<br/>
 			<div class="container" style="opacity: 0.5">
 				<div class="row mb-2" style="height: 15rem;">
-					<div class="col-4 bg-primary"></div>
-					<div class="col-4 bg-secondary"></div>
-					<div class="col-4 bg-danger"></div>
+					<div class="col-4 bg-primary"> <p>NOTICE</p></div>
+					<div class="col-4 bg-secondary"><p>Gallery</p></div>
+					<div class="col-4 bg-danger"><p>Extra-curricular Activities</p></div>
 				</div>
 				<div class="row" style="height: 15rem;">
-					<div class="col-3 bg-success"></div>
-					<div class="col-3 bg-warning"></div>
-					<div class="col-3 bg-info"></div>
+					<div class="col-3 bg-success"><p>Homework</p></div>
+					<div class="col-3 bg-warning"><p>Assignment</p></div>
+					<div class="col-3 bg-info"><p> House Activity</p></div>
 					<div class="col-3 bg-dark"></div>
 				</div>
 			</div>
