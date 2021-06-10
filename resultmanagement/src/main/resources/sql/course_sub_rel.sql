@@ -95,4 +95,18 @@ Insert into course_sub_rel values('BAEngHS',6,'Eng6Sub4');
 Insert into course_sub_rel values('BAEngHS',6,'Eng6Sub5');
 Insert into course_sub_rel values('BAEngHS',6,'Eng6Sub6');
 
+-- Step 3 (Depicting the New course pgdca and its relation to the subjects )
+insert into course_sub_rel values('PGDCA', 1, 'PGD1Sub1');
+insert into course_sub_rel values('PGDCA', 1, 'PGD1Sub2');
+insert into course_sub_rel values('PGDCA', 1, 'PGD1Sub3');
+insert into course_sub_rel values('PGDCA', 1, 'PGD1Sub4');
+insert into course_sub_rel values('PGDCA', 1, 'PGD1Sub5');
+insert into course_sub_rel values('PGDCA', 1, 'PGD1Sub6');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub1');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub2');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub3');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub4');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub5');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub6');
+insert into course_sub_rel values('PGDCA', 2, 'PGD2Sub7');
 

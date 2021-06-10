@@ -34,7 +34,7 @@ Insert into master_marks values('232','BAEngHS','1012',18,'2017-07-01','Eng5Rf1'
 Insert into master_marks values('233','BAEngHS','1012',49,'2017-07-01','Eng5Rf2','Eng1Sub5');
 
 
--- step 2
+-- step 2 (Entering marks for CSE SEM 2)
 
 
 Insert into master_marks values('244','BECSE','1011',22,'2013-01-01','CSE6Rf1','CSE2Sub1');
@@ -50,3 +50,108 @@ Insert into master_marks values('253','BECSE','1011',9,'2013-01-01','CSE10Rf1','
 Insert into master_marks values('254','BECSE','1011',36,'2013-01-01','CSE10Rf2','CSE2Sub5');
 Insert into master_marks values('255','BECSE','1011',17,'2013-01-01','CSE10Rf3','CSE2Sub5');
 
+-- select * from master_marks;
+
+-- Step 3 (Entering marks for CSE SEM 3-8)
+Insert into master_marks values('256','BECSE','1011',24,'2014-01-01','CSE11Rf1','CSE3Sub1');
+Insert into master_marks values('257','BECSE','1011',40,'2014-01-01','CSE11Rf2','CSE3Sub1');
+Insert into master_marks values('258','BECSE','1011',13,'2014-01-01','CSE11Rf3','CSE3Sub1');
+Insert into master_marks values('259','BECSE','1011',18,'2014-01-01','CSE12Rf1','CSE3Sub2');
+Insert into master_marks values('260','BECSE','1011',47,'2014-01-01','CSE12Rf2','CSE3Sub2');
+Insert into master_marks values('261','BECSE','1011',15,'2014-01-01','CSE13Rf1','CSE3Sub3');
+Insert into master_marks values('262','BECSE','1011',53,'2014-01-01','CSE13Rf2','CSE3Sub3');
+Insert into master_marks values('263','BECSE','1011',17,'2014-01-01','CSE14Rf1','CSE3Sub4');
+Insert into master_marks values('264','BECSE','1011',69,'2014-01-01','CSE14Rf2','CSE3Sub4');
+Insert into master_marks values('265','BECSE','1011',11,'2014-01-01','CSE15Rf1','CSE3Sub5');
+Insert into master_marks values('266','BECSE','1011',37,'2014-01-01','CSE15Rf2','CSE3Sub5');
+Insert into master_marks values('267','BECSE','1011',13,'2014-01-01','CSE15Rf3','CSE3Sub5');
+Insert into master_marks values('268','BECSE','1011',12,'2014-07-01','CSE16Rf1','CSE4Sub1');
+Insert into master_marks values('269','BECSE','1011',13,'2014-07-01','CSE16Rf2','CSE4Sub1');
+Insert into master_marks values('270','BECSE','1011',8,'2014-07-01','CSE16Rf3','CSE4Sub1');
+Insert into master_marks values('271','BECSE','1011',10,'2014-07-01','CSE17Rf1','CSE4Sub2');
+Insert into master_marks values('272','BECSE','1011',34,'2014-07-01','CSE17Rf2','CSE4Sub2');
+Insert into master_marks values('273','BECSE','1011',19,'2014-07-01','CSE18Rf1','CSE4Sub3');
+Insert into master_marks values('274','BECSE','1011',42,'2014-07-01','CSE18Rf2','CSE4Sub3');
+Insert into master_marks values('275','BECSE','1011',22,'2014-07-01','CSE19Rf1','CSE4Sub4');
+Insert into master_marks values('276','BECSE','1011',51,'2014-07-01','CSE19Rf2','CSE4Sub4');
+Insert into master_marks values('277','BECSE','1011',20,'2014-07-01','CSE20Rf1','CSE4Sub5');
+Insert into master_marks values('278','BECSE','1011',19,'2014-07-01','CSE20Rf2','CSE4Sub5');
+Insert into master_marks values('279','BECSE','1011',16,'2014-07-01','CSE20Rf3','CSE4Sub5');
+Insert into master_marks values('280','BECSE','1011',28,'2015-01-01','CSE21Rf1','CSE5Sub1');
+Insert into master_marks values('281','BECSE','1011',46,'2015-01-01','CSE21Rf2','CSE5Sub1');
+Insert into master_marks values('282','BECSE','1011',18,'2015-01-01','CSE21Rf3','CSE5Sub1');
+Insert into master_marks values('283','BECSE','1011',22,'2015-01-01','CSE22Rf1','CSE5Sub2');
+Insert into master_marks values('284','BECSE','1011',63,'2015-01-01','CSE22Rf2','CSE5Sub2');
+Insert into master_marks values('285','BECSE','1011',21,'2015-01-01','CSE23Rf1','CSE5Sub3');
+Insert into master_marks values('286','BECSE','1011',56,'2015-01-01','CSE23Rf2','CSE5Sub3');
+Insert into master_marks values('287','BECSE','1011',19,'2015-01-01','CSE24Rf1','CSE5Sub4');
+Insert into master_marks values('288','BECSE','1011',65,'2015-01-01','CSE24Rf2','CSE5Sub4');
+Insert into master_marks values('289','BECSE','1011',21,'2015-01-01','CSE25Rf1','CSE5Sub5');
+Insert into master_marks values('290','BECSE','1011',50,'2015-01-01','CSE25Rf2','CSE5Sub5');
+Insert into master_marks values('291','BECSE','1011',18,'2015-01-07','CSE26Rf1','CSE6Sub1');
+Insert into master_marks values('292','BECSE','1011',33,'2015-01-07','CSE26Rf2','CSE6Sub1');
+Insert into master_marks values('293','BECSE','1011',15,'2015-01-07','CSE26Rf3','CSE6Sub1');
+Insert into master_marks values('294','BECSE','1011',14,'2015-01-07','CSE27Rf1','CSE6Sub2');
+Insert into master_marks values('295','BECSE','1011',42,'2015-01-07','CSE27Rf2','CSE6Sub2');
+Insert into master_marks values('296','BECSE','1011',12,'2015-01-07','CSE27Rf3','CSE6Sub2');
+Insert into master_marks values('297','BECSE','1011',23,'2015-01-07','CSE28Rf1','CSE6Sub3');
+Insert into master_marks values('298','BECSE','1011',36,'2015-01-07','CSE28Rf2','CSE6Sub3');
+Insert into master_marks values('299','BECSE','1011',19,'2015-01-07','CSE28Rf3','CSE6Sub3');
+Insert into master_marks values('300','BECSE','1011',15,'2015-01-07','CSE29Rf1','CSE6Sub4');
+Insert into master_marks values('301','BECSE','1011',35,'2015-01-07','CSE29Rf2','CSE6Sub4');
+Insert into master_marks values('302','BECSE','1011',11,'2015-01-07','CSE30Rf1','CSE6Sub5');
+Insert into master_marks values('303','BECSE','1011',46,'2015-01-07','CSE30Rf2','CSE6Sub5');
+Insert into master_marks values('304','BECSE','1011',11,'2016-01-01','CSE31Rf1','CSE7Sub1');
+Insert into master_marks values('305','BECSE','1011',32,'2016-01-01','CSE31Rf2','CSE7Sub1');
+Insert into master_marks values('306','BECSE','1011',18,'2016-01-01','CSE31Rf3','CSE7Sub1');
+Insert into master_marks values('307','BECSE','1011',14,'2016-01-01','CSE32Rf1','CSE7Sub2');
+Insert into master_marks values('308','BECSE','1011',47,'2016-01-01','CSE32Rf2','CSE7Sub2');
+Insert into master_marks values('309','BECSE','1011',21,'2016-01-01','CSE33Rf1','CSE7Sub3');
+Insert into master_marks values('310','BECSE','1011',53,'2016-01-01','CSE33Rf2','CSE7Sub3');
+Insert into master_marks values('311','BECSE','1011',19,'2016-01-01','CSE34Rf1','CSE7Sub4');
+Insert into master_marks values('312','BECSE','1011',44,'2016-01-01','CSE34Rf2','CSE7Sub4');
+Insert into master_marks values('313','BECSE','1011',12,'2016-01-01','CSE35Rf1','CSE7Sub5');
+Insert into master_marks values('314','BECSE','1011',48,'2016-01-01','CSE35Rf2','CSE7Sub5');
+Insert into master_marks values('315','BECSE','1011',21,'2016-07-01','CSE36Rf1','CSE8Sub1');
+Insert into master_marks values('316','BECSE','1011',16,'2016-07-01','CSE36Rf2','CSE8Sub1');
+Insert into master_marks values('317','BECSE','1011',11,'2016-07-01','CSE36Rf3','CSE8Sub1');
+Insert into master_marks values('318','BECSE','1011',13,'2016-07-01','CSE37Rf1','CSE8Sub2');
+Insert into master_marks values('319','BECSE','1011',33,'2016-07-01','CSE37Rf2','CSE8Sub2');
+Insert into master_marks values('320','BECSE','1011',12,'2016-07-01','CSE37Rf3','CSE8Sub2');
+Insert into master_marks values('321','BECSE','1011',20,'2016-07-01','CSE38Rf1','CSE8Sub3');
+Insert into master_marks values('322','BECSE','1011',40,'2016-07-01','CSE38Rf2','CSE8Sub3');
+Insert into master_marks values('323','BECSE','1011',10,'2016-07-01','CSE38Rf3','CSE8Sub3');
+Insert into master_marks values('324','BECSE','1011',26,'2016-07-01','CSE39Rf1','CSE8Sub4');
+Insert into master_marks values('325','BECSE','1011',47,'2016-07-01','CSE39Rf2','CSE8Sub4');
+Insert into master_marks values('326','BECSE','1011',16,'2016-07-01','CSE39Rf3','CSE8Sub4');
+Insert into master_marks values('327','BECSE','1011',12,'2016-07-01','CSE40Rf1','CSE8Sub5');
+Insert into master_marks values('328','BECSE','1011',57,'2016-07-01','CSE40Rf2','CSE8Sub5');
+
+
+
+-- Step 4 (Entering marks for PGDCA)
+Insert into master_marks values('329','PGDCA','1013',11,'2021-01-01','PGD1Rf1','PGD1Sub1');
+Insert into master_marks values('330','PGDCA','1013',49,'2021-01-01','PGD1Rf2','PGD1Sub1');
+Insert into master_marks values('331','PGDCA','1013',10,'2021-01-01','PGD2Rf1','PGD1Sub2');
+Insert into master_marks values('332','PGDCA','1013',55,'2021-01-01','PGD2Rf2','PGD1Sub2');
+Insert into master_marks values('333','PGDCA','1013',7,'2021-01-01','PGD3Rf1','PGD1Sub3');
+Insert into master_marks values('334','PGDCA','1013',38,'2021-01-01','PGD3Rf2','PGD1Sub3');
+Insert into master_marks values('335','PGDCA','1013',14,'2021-01-01','PGD4Rf1','PGD1Sub4');
+Insert into master_marks values('336','PGDCA','1013',29,'2021-01-01','PGD4Rf2','PGD1Sub4');
+Insert into master_marks values('337','PGDCA','1013',14,'2021-01-01','PGD5Rf1','PGD1Sub5');
+Insert into master_marks values('338','PGDCA','1013',58,'2021-01-01','PGD5Rf2','PGD1Sub5');
+Insert into master_marks values('339','PGDCA','1013',13,'2021-01-01','PGD6Rf1','PGD1Sub6');
+Insert into master_marks values('340','PGDCA','1013',46,'2021-01-01','PGD6Rf2','PGD1Sub6');
+Insert into master_marks values('341','PGDCA','1013',9,'2021-07-01','PGD7Rf1','PGD2Sub1');
+Insert into master_marks values('342','PGDCA','1013',43,'2021-07-01','PGD7Rf2','PGD2Sub1');
+Insert into master_marks values('343','PGDCA','1013',12,'2021-07-01','PGD8Rf1','PGD2Sub2');
+Insert into master_marks values('344','PGDCA','1013',52,'2021-07-01','PGD8Rf2','PGD2Sub2');
+Insert into master_marks values('345','PGDCA','1013',8,'2021-07-01','PGD9Rf1','PGD2Sub3');
+Insert into master_marks values('346','PGDCA','1013',56,'2021-07-01','PGD9Rf2','PGD2Sub3');
+Insert into master_marks values('347','PGDCA','1013',12,'2021-07-01','PGD10Rf1','PGD2Sub4');
+Insert into master_marks values('348','PGDCA','1013',47,'2021-07-01','PGD10Rf2','PGD2Sub4');
+Insert into master_marks values('349','PGDCA','1013',14,'2021-07-01','PGD11Rf1','PGD2Sub5');
+Insert into master_marks values('350','PGDCA','1013',50,'2021-07-01','PGD11Rf2','PGD2Sub5');
+Insert into master_marks values('351','PGDCA','1013',10,'2021-07-01','PGD12Rf1','PGD2Sub6');
+Insert into master_marks values('352','PGDCA','1013',59,'2021-07-01','PGD12Rf2','PGD2Sub6');
+Insert into master_marks values('353','PGDCA','1013',95,'2021-07-01','PGD13Rf1','PGD2Sub7');
