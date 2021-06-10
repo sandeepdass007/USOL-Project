@@ -50,6 +50,8 @@ function populateOverallCourseChart() {
 			text: 'Overall Performance'
 		}
 	});
+	
+	chart.showLoading("Loading...");
 
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
 
@@ -97,7 +99,7 @@ function populateOverallCourseChart() {
 }
 
 function populateClassVersusPercentage() {
-	Highcharts.chart('classVersusPercentage', {
+	var chart = Highcharts.chart('classVersusPercentage', {
 		exporting: {
 			buttons: {
 				contextButton: {
@@ -110,14 +112,14 @@ function populateClassVersusPercentage() {
 			backgroundColor: 'none'
 		},
 		title: {
-			text: 'Avg. Class vs Sandeep',
+			text: 'Avg. Class vs You',
 			style: {
 				color: 'white'
 			}
 		},
 		yAxis: {
 			title: {
-				text: 'Marks (in %)',
+				text: 'Avg. Marks',
 				style: {
 					color: 'white'
 				}
@@ -159,13 +161,7 @@ function populateClassVersusPercentage() {
 			}
 		},
 
-		series: [{
-			name: 'Class Avg.',
-			data: [78.25, 79.55, 77.56, 80.82, 72.43, 85.11, 75.01, 77.25]
-		}, {
-			name: 'Sandeep',
-			data: [65.25, 88.25, 75.15, 85.82, 77.27, 83.02, 82.82, 79.29]
-		}],
+		series: [],
 
 		responsive: {
 			rules: [{
@@ -181,7 +177,47 @@ function populateClassVersusPercentage() {
 				}
 			}]
 		}
-
+	});
+	
+	chart.showLoading("Loading...");
+	
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+	
+	$.ajax({
+		url: '/chart/student-avg-marks-by-sem?courseId=' + activeCourseId,
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!data || Object.keys(data).length == 0) {
+				chart.showLoading("No data available!");
+				return;
+			}
+			var clsAvgJsonObj = {
+				name: 'Class Avg.',
+				data: []
+			};
+			data["class"].forEach(entry => {
+				clsAvgJsonObj["data"].push(entry["marks"]);
+			});
+			
+			chart.addSeries(clsAvgJsonObj, false);
+			
+			var studentAvgJsonObj = {
+				name: 'You',
+				data: []
+			};
+			data["student"].forEach(entry => {
+				studentAvgJsonObj["data"].push(entry["marks"]);
+			});
+			chart.addSeries(studentAvgJsonObj, false);
+			chart.redraw();
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
+		}
 	});
 }
 
