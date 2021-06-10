@@ -50,7 +50,7 @@ function populateOverallCourseChart() {
 			text: 'Overall Performance'
 		}
 	});
-	
+
 	chart.showLoading("Loading...");
 
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
@@ -178,11 +178,11 @@ function populateClassVersusPercentage() {
 			}]
 		}
 	});
-	
+
 	chart.showLoading("Loading...");
-	
+
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
-	
+
 	$.ajax({
 		url: '/chart/student-avg-marks-by-sem?courseId=' + activeCourseId,
 		async: true,
@@ -201,9 +201,9 @@ function populateClassVersusPercentage() {
 			data["class"].forEach(entry => {
 				clsAvgJsonObj["data"].push(entry["marks"]);
 			});
-			
+
 			chart.addSeries(clsAvgJsonObj, false);
-			
+
 			var studentAvgJsonObj = {
 				name: 'You',
 				data: []
@@ -310,7 +310,7 @@ function populateSemesterWiseDistributionPerformance() {
 }
 
 function populateDistributionWiseCourseLevelPerformance() {
-	Highcharts.chart('distributionWiseCourseLevelPerformance', {
+	var chart = Highcharts.chart('distributionWiseCourseLevelPerformance', {
 		exporting: {
 			buttons: {
 				contextButton: {
@@ -355,20 +355,35 @@ function populateDistributionWiseCourseLevelPerformance() {
 		series: [{
 			type: 'pie',
 			name: 'Distribution',
-			data: [
-				['Theory', 45.0],
-				['Practical', 26.8],
-				{
-					name: 'Assignment',
-					y: 12.8,
-					sliced: true,
-					selected: true
-				},
-				['Viva', 8.5],
-				['Mid-Terms', 6.2],
-				['Others', 0.7]
-			]
+			data: []
 		}]
+	});
+
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+
+	$.ajax({
+		url: '/chart/student-dist-wise-per?courseId=' + activeCourseId,
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!data || data.length == 0) {
+				chart.showLoading("No data available!");
+				return;
+			}
+
+			data.forEach(entry => {
+				chart.series[0].addPoint({
+					name: entry["type"],
+					y: entry["percentage"]
+				});
+			});
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
+		}
 	});
 }
 

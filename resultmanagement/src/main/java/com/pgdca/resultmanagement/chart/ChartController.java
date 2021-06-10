@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.pgdca.resultmanagement.chart.dao.DistributionTypePercentageDao;
 import com.pgdca.resultmanagement.chart.dao.SemMarksDao;
 import com.pgdca.resultmanagement.chart.dao.SubjectMarksDao;
 import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
@@ -60,5 +61,14 @@ public class ChartController {
 		jResponse.add("student", new Gson().toJsonTree(avgMarksBySem));
 		jResponse.add("class", new Gson().toJsonTree(classAvgMarksBySem));
 		return jResponse.toString();
+	}
+
+	@GetMapping(value = "/student-dist-wise-per", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(
+			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
+		final String univRegNo = (String) httpSession.getAttribute("username");
+		List<DistributionTypePercentageDao> studentDistributionWisePercentage = jpaRepository.getStudentDistributionWisePercentage(univRegNo, courseId);
+		return studentDistributionWisePercentage;
 	}
 }
