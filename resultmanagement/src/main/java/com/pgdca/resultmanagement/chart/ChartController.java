@@ -51,9 +51,10 @@ public class ChartController {
 		return map;
 	}
 
-	@GetMapping(value = "/student-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/student-class-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String getStudentAvgMarksBySem(@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
+	public String getStudentClassAvgMarksBySem(@RequestParam(name = "courseId") String courseId,
+			HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");
 		List<SemMarksDao> avgMarksBySem = jpaRepository.getStudentAvgMarksBySem(univRegNo, courseId);
 		List<SemMarksDao> classAvgMarksBySem = jpaRepository.getClassAvgMarksBySem(courseId);
@@ -63,12 +64,22 @@ public class ChartController {
 		return jResponse.toString();
 	}
 
+	@GetMapping(value = "/student-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<SemMarksDao> getStudentAvgMarksBySem(@RequestParam(name = "courseId") String courseId,
+			HttpSession httpSession) {
+		final String univRegNo = (String) httpSession.getAttribute("username");
+		List<SemMarksDao> avgMarksBySem = jpaRepository.getStudentAvgMarksBySem(univRegNo, courseId);
+		return avgMarksBySem;
+	}
+
 	@GetMapping(value = "/student-dist-wise-per", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(
 			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");
-		List<DistributionTypePercentageDao> studentDistributionWisePercentage = jpaRepository.getStudentDistributionWisePercentage(univRegNo, courseId);
+		List<DistributionTypePercentageDao> studentDistributionWisePercentage = jpaRepository
+				.getStudentDistributionWisePercentage(univRegNo, courseId);
 		return studentDistributionWisePercentage;
 	}
 }

@@ -184,7 +184,7 @@ function populateClassVersusPercentage() {
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
 
 	$.ajax({
-		url: '/chart/student-avg-marks-by-sem?courseId=' + activeCourseId,
+		url: '/chart/student-class-avg-marks-by-sem?courseId=' + activeCourseId,
 		async: true,
 		type: 'GET',
 		processData: false,
@@ -388,66 +388,95 @@ function populateDistributionWiseCourseLevelPerformance() {
 }
 
 function populatePercentageHistoryChart() {
-	const chart = Highcharts.chart('percentageHistory', {
+	const chart = new Highcharts.Chart({
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
 		chart: {
+			renderTo: 'percentageHistory',
 			type: 'column',
-			backgroundColor: 'none'
+			backgroundColor: 'none',
+			options3d: {
+				enabled: true,
+				alpha: 15,
+				beta: 15,
+				depth: 50,
+				viewDistance: 25
+			}
+		},
+		xAxis: {
+			labels: {
+				style: {
+					color: 'white'
+				}
+			}
+		},
+		yAxis: {
+			title: {
+				text: 'Avg Score',
+				style: {
+					color: 'white',
+				},
+				margin: 30
+			},
+			labels: {
+				style: {
+					color: 'white'
+				}
+			}
 		},
 		title: {
 			text: 'Percentage History',
 			style: {
-				color: "white"
+				color: 'white'
 			}
 		},
-		xAxis: {
-			title: {
-				text: 'Semester',
-				style: {
-					color: "white"
-				}
-			},
-			labels: {
-				style: {
-					color: "white"
-				}
-			},
-			categories: [1, 2, 3, 4, 5, 6, 7, 8]
-		},
-		yAxis: {
-			max: 100,
-			title: {
-				text: 'Percentage',
-				style: {
-					color: "white"
-				}
-			},
-			labels: {
-				format: '{value}%',
-				style: {
-					color: "white"
-				}
-			}
-		},
-		series: [{
-			showInLegend: false,
-			data: [89.90, 78.24, 80.22, 92.00, 88.87, 78.65, 97.32, 65.89],
-			color: "grey"
-		}],
-		tooltip: {
-			formatter: function() {
-				return '<b> Semester - ' + this.x + '</b>: ' + Highcharts.numberFormat(this.y, 2) + ' %';
+		legend: {
+			itemStyle: {
+				color: 'white'
 			}
 		},
 		plotOptions: {
+			column: {
+				depth: 25
+			},
 			series: {
-				dataLabels: {
-					enabled: true,
-					allowOverlap: true,
-					rotation: -90,
-					y: 20
-				}
+				pointStart: 1
 			}
+		},
+		series: []
+	});
+
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+
+	$.ajax({
+		url: '/chart/student-avg-marks-by-sem?courseId=' + activeCourseId,
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!data || data.length == 0) {
+				chart.showLoading("No data available!");
+				return;
+			}
+			var seriesData = {
+				name: 'Semester',
+				data: []
+			};
+			data.forEach(entry => {
+				seriesData["data"].push(entry["marks"]);
+			});
+			chart.addSeries(seriesData, false);
+			chart.redraw();
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
 		}
 	});
-	return chart;
 }
