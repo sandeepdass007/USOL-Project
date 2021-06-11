@@ -105,4 +105,25 @@ public interface StudentAcademicJpaRepository extends JpaRepository<StudentAcade
 			+ " where sdt.type is not null"
 			+ " group by sdt.type;", nativeQuery = true)
 	public List<Object[]> getStudentDistributionWisePercentage(String univRegNo, String courseId);
+
+	/**
+	 * @param univRegNo
+	 * @param courseId
+	 * @return List of [{semester, distribution type, marks obtained}]
+	 */
+	@Query(value = "SELECT sad.result_of_semester, sdt.type, sum(if(rpi.marks is not null, rpi.marks, mm.marks)) as TotalMarks"
+			+ " from student_detail sd"
+			+ " left join course_sub_rel csr on csr.course_id = sd.course_id "
+			+ " left join subject_info si on si.id = csr.subject_id"
+			+ " left join subject_distribution_info sdi on sdi.subject_distribution_id = si.subject_distribution_id"
+			+ " left join subject_distribution_ref_info sdri on sdri.id = sdi.subject_distribution_ref_id"
+			+ " left join subject_distribution_type sdt on sdt.id = sdri.subject_distribution_type_id"
+			+ " left join master_marks mm on sdri.id = mm.subject_distribution_ref_id"
+			+ " left join reappear_info rpi on rpi.subject_distribution_ref_id = sdri.id"
+			+ " left join student_academic_detail sad on sad.enrollment_no = sd.enrollment_no and sad.result_of_semester = csr.semester"
+			+ " left join result_status rs on rs.id = sad.result_status_id"
+			+ " where sd.university_reg_no = ?1 and sd.course_id = ?2 and rs.status = 'Pass' and sad.result_of_semester >= 1"
+			+ " group by sd.enrollment_no, sad.result_of_semester, sdt.type"
+			+ " order by sad.result_of_semester, sdt.type", nativeQuery = true)
+	public List<Object[]> getStudentSemDistributionTypeMarks(String univRegNo, String courseId);
 }

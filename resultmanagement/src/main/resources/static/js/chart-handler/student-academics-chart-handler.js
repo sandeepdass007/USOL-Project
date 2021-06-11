@@ -222,7 +222,7 @@ function populateClassVersusPercentage() {
 }
 
 function populateSemesterWiseDistributionPerformance() {
-	Highcharts.chart('semesterWiseDistributionPerformance', {
+	var chart = Highcharts.chart('semesterWiseDistributionPerformance', {
 		exporting: {
 			buttons: {
 				contextButton: {
@@ -264,7 +264,7 @@ function populateSemesterWiseDistributionPerformance() {
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'Percentage with distribution',
+				text: 'Marks Obtained',
 				style: {
 					color: 'white',
 				},
@@ -293,19 +293,53 @@ function populateSemesterWiseDistributionPerformance() {
 				stacking: 'normal'
 			}
 		},
-		series: [{
-			name: 'Theory',
-			data: [78.05, 82.92, 94.24, 65.01, 77.25, 66.34, 73.22, 92.92]
-		}, {
-			name: 'Practical',
-			data: [52.05, 62.92, 74.24, 45.01, 57.25, 46.34, 53.22, 72.92]
-		}, {
-			name: 'Mid Terms',
-			data: [68.05, 72.92, 84.24, 55.01, 67.25, 56.34, 63.22, 82.92]
-		}, {
-			name: 'Assignment',
-			data: [72.05, 89.92, 76.24, 82.01, 56.25, 78.34, 45.22, 98.92]
-		}]
+		series: []
+	});
+	
+	chart.showLoading("Loading...");
+
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
+
+	$.ajax({
+		url: '/chart/student-sem-dist-type-wise-marks?courseId=' + activeCourseId,
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!data || data.length == 0) {
+				chart.showLoading("No data available!");
+				return;
+			}
+			var seriesData = [];
+			data.forEach(entry => {
+				var semester = entry["semester"];
+				var type = entry["type"];
+				var marks = entry["marks"];
+				
+				var queriedSeriesData = seriesData.filter(x => {
+					return x["name"] == type;
+				});
+				
+				if(queriedSeriesData && queriedSeriesData.length) {
+					queriedSeriesData[0]["data"].push(marks);
+				} else {
+					seriesData.push({
+						name: type,
+						data: [marks]
+					});
+				}
+			});
+			
+			seriesData.forEach(seriesDatum => {
+				chart.addSeries(seriesDatum, false);
+			});
+			chart.redraw();
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
+		}
 	});
 }
 
@@ -358,6 +392,8 @@ function populateDistributionWiseCourseLevelPerformance() {
 			data: []
 		}]
 	});
+
+	chart.showLoading("Loading...");
 
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
 
@@ -450,6 +486,8 @@ function populatePercentageHistoryChart() {
 		},
 		series: []
 	});
+
+	chart.showLoading("Loading...");
 
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
 

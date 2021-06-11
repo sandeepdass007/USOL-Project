@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.chart.dao.DistributionTypePercentageDao;
+import com.pgdca.resultmanagement.chart.dao.SemDistributionTypeMarksDao;
 import com.pgdca.resultmanagement.chart.dao.SemMarksDao;
 import com.pgdca.resultmanagement.chart.dao.SubjectMarksDao;
 import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
@@ -218,6 +219,18 @@ public class JpaRepository {
 			String type = (String)entry[0];
 			Float percentage = ((BigDecimal)entry[1]).floatValue();
 			list.add(new DistributionTypePercentageDao(type, percentage));
+		}
+		return list;
+	}
+
+	public List<SemDistributionTypeMarksDao> getStudentSemDistributionTypeMarks(String univRegNo, String courseId) {
+		final List<Object[]> studentSemDistributionTypeMarks = studentAcademicJpaRepository.getStudentSemDistributionTypeMarks(univRegNo, courseId);
+		List<SemDistributionTypeMarksDao> list = new LinkedList<SemDistributionTypeMarksDao>();
+		for(Object[] entry : studentSemDistributionTypeMarks) {
+			Integer semester = (Integer)entry[0];
+			String type = (String)entry[1];
+			Integer marks = ((BigDecimal)entry[2]).intValue();
+			list.add(new SemDistributionTypeMarksDao(type, marks, semester));
 		}
 		return list;
 	}
