@@ -13,6 +13,89 @@ $("document").ready(function() {
 
 });
 
+function populateCourseWiseStudEnrollChart() {
+
+
+
+	var chart = Highcharts.chart('courseWiseStudentsEnrolled', {
+		exporting: {
+			buttons: {
+				contextButton: {
+					menuItems: ["viewFullscreen"]
+				}
+			}
+		},
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false,
+			type: 'pie',
+			backgroundColor: '#00000010'
+		},
+		title: {
+			text: 'Course Wise Student Enrollment',
+			style: {
+				color: 'black',
+				fontWeight: 'bold'
+			}
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		accessibility: {
+			point: {
+				valueSuffix: '%'
+			}
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+				}
+			}
+		},
+		series: [{
+			name: 'Course',
+			colorByPoint: true,
+			data: null // to be loaded by rest api below
+		}]
+	});
+
+	chart.showLoading("Loading...");
+
+	$.ajax({
+		url: '/chart/course-wise-student-enrollment/',
+		async: true,
+		type: 'GET',
+		processData: false,
+		contentType: 'application/json',
+		success: function(data) {
+			if (!data || Object.keys(data).length == 0) {
+				chart.showLoading("No data available!");
+				return;
+			}
+
+			var seriesData = [];
+			var courseNames = Object.keys(data);
+			courseNames.forEach(courseName => {
+				var entry = {
+					name: courseName,
+					y: data[courseName]
+				};
+				seriesData.push(entry);
+			});
+			chart.series[0].setData(seriesData);
+			chart.hideLoading();
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			chart.showLoading("Error while fetching details from server!");
+		}
+	});
+}
+
 function populateCategoryWiseEnrollments() {
 	var chart = Highcharts.chart('categoryWiseEnrollments', {
 		exporting: {
@@ -23,10 +106,14 @@ function populateCategoryWiseEnrollments() {
 			}
 		},
 		chart: {
-			backgroundColor: 'none'
+			backgroundColor: '#00000010'
 		},
 		title: {
-			text: 'Course Type Wise Enrollments'
+			text: 'Course Type Wise Enrollments',
+			style: {
+				color: 'black',
+				fontWeight: 'bold'
+			}
 		},
 
 		/*subtitle: {
@@ -35,7 +122,16 @@ function populateCategoryWiseEnrollments() {
 
 		yAxis: {
 			title: {
-				text: 'Number of Students'
+				text: 'Number of Students',
+				style: {
+					color: 'white',
+					fontWeight: 'bold'
+				}
+			},
+			labels: {
+				style: {
+					color: 'white'
+				}
 			}
 		},
 
@@ -45,14 +141,23 @@ function populateCategoryWiseEnrollments() {
 				rangeDescription: 'Range: 2015 to 2021'
 			},
 			labels: {
-				rotation: -45
+				rotation: -45,
+				style: {
+					color: 'white'
+				}
 			}
 		},
 
 		legend: {
 			layout: 'vertical',
 			align: 'right',
-			verticalAlign: 'middle'
+			verticalAlign: 'middle',
+			itemStyle: {
+				color: 'white'
+			},
+			itemHoverStyle: {
+				color: 'grey'
+			}
 		},
 
 		plotOptions: {
@@ -122,87 +227,14 @@ function populateCategoryWiseEnrollments() {
 					pointStart: startPoint
 				})
 			})
-			chart.setSubtitle({text: "Since: " + startPoint})
-			chart.redraw();
-			chart.hideLoading();
-		},
-		error: function(xhr, textStatus, errorThrown) {
-			chart.showLoading("Error while fetching details from server!");
-		}
-	});
-}
-
-function populateCourseWiseStudEnrollChart() {
-
-
-
-	var chart = Highcharts.chart('courseWiseStudentsEnrolled', {
-		exporting: {
-			buttons: {
-				contextButton: {
-					menuItems: ["viewFullscreen"]
+			chart.setSubtitle({
+				text: "Since: " + startPoint,
+				style: {
+					color: 'black',
+					fontWeight: 'bold'
 				}
-			}
-		},
-		chart: {
-			plotBackgroundColor: null,
-			plotBorderWidth: null,
-			plotShadow: false,
-			type: 'pie',
-			backgroundColor: 'none'
-		},
-		title: {
-			text: 'Year - 2021 : Course Wise Student Enrollment'
-		},
-		tooltip: {
-			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-		},
-		accessibility: {
-			point: {
-				valueSuffix: '%'
-			}
-		},
-		plotOptions: {
-			pie: {
-				allowPointSelect: true,
-				cursor: 'pointer',
-				dataLabels: {
-					enabled: true,
-					format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-				}
-			}
-		},
-		series: [{
-			name: 'Course',
-			colorByPoint: true,
-			data: null // to be loaded by rest api below
-		}]
-	});
-
-	chart.showLoading("Loading...");
-
-	$.ajax({
-		url: '/chart/course-wise-student-enrollment/',
-		async: true,
-		type: 'GET',
-		processData: false,
-		contentType: 'application/json',
-		success: function(data) {
-			if (!data || Object.keys(data).length == 0) {
-				chart.showLoading("No data available!");
-				return;
-			}
-
-			var seriesData = [];
-			var courseNames = Object.keys(data);
-			courseNames.forEach(courseName => {
-				var entry = {
-					name: courseName,
-					y: data[courseName]
-				};
-				seriesData.push(entry);
 			});
-			chart.series[0].setData(seriesData);
+			chart.redraw();
 			chart.hideLoading();
 		},
 		error: function(xhr, textStatus, errorThrown) {
