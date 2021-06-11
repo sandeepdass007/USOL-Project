@@ -53,7 +53,7 @@ function populateOverallCourseChart() {
 
 	chart.showLoading("Loading...");
 
-	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
 
 	$.ajax({
 		url: '/chart/student-sem-sub-marks?courseId=' + activeCourseId,
@@ -181,7 +181,7 @@ function populateClassVersusPercentage() {
 
 	chart.showLoading("Loading...");
 
-	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
 
 	$.ajax({
 		url: '/chart/student-class-avg-marks-by-sem?courseId=' + activeCourseId,
@@ -359,7 +359,7 @@ function populateDistributionWiseCourseLevelPerformance() {
 		}]
 	});
 
-	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
 
 	$.ajax({
 		url: '/chart/student-dist-wise-per?courseId=' + activeCourseId,
@@ -451,7 +451,7 @@ function populatePercentageHistoryChart() {
 		series: []
 	});
 
-	var activeCourseId = $("#course-wise-details-tabContent .tab-pane").attr("id");
+	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
 
 	$.ajax({
 		url: '/chart/student-avg-marks-by-sem?courseId=' + activeCourseId,

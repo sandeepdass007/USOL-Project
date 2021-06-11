@@ -17,6 +17,7 @@
 		<script src="/highcharts/highcharts-9.1.0/modules/exporting.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
+		<script src="/js/student-academic-handler.js"></script>
 		<script src="/js/chart-handler/student-academics-chart-handler.js"></script>
 	</head>
 	<body>
@@ -46,14 +47,14 @@
 						<ul class="nav nav-pills mb-3" id="course-wise-details-tab" role="tablist">
 							<c:forEach var="courseWiseSubjects" items="${courseWiseSubjectsList}">
 								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="${courseWiseSubjects.getCourseId()}-tab" data-bs-toggle="pill" data-bs-target="#${courseWiseSubjects.getCourseId()}"
-										type="button" role="tab" aria-controls="${courseWiseSubjects.getCourseName()}" aria-selected="true">${courseWiseSubjects.getCourseName()}</button>
+									<button class="nav-link" id="${courseWiseSubjects.getCourseId()}-tab" data-bs-toggle="pill" data-bs-target="#${courseWiseSubjects.getCourseId()}"
+										type="button" role="tab" aria-controls="${courseWiseSubjects.getCourseId()}" aria-selected="true">${courseWiseSubjects.getCourseName()}</button>
 								</li>
 							</c:forEach>
 						</ul>
 						<div class="tab-content" id="course-wise-details-tabContent">
 							<c:forEach var="courseWiseSubjects" items="${courseWiseSubjectsList}">
-								<div class="tab-pane fade show active" id="${courseWiseSubjects.getCourseId()}" role="tabpanel" aria-labelledby="${courseWiseSubjects.getCourseName()}-tab">
+								<div class="tab-pane fade" id="${courseWiseSubjects.getCourseId()}" role="tabpanel" aria-labelledby="${courseWiseSubjects.getCourseName()}-tab">
 									<c:forEach var="subjectName" items="${courseWiseSubjects.getSubjects()}">
 										<span class="badge rounded-pill bg-danger">${subjectName}</span>
 									</c:forEach>

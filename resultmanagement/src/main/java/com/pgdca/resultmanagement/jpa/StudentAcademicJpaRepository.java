@@ -102,6 +102,7 @@ public interface StudentAcademicJpaRepository extends JpaRepository<StudentAcade
 			+ " order by si.name) as innertable"
 			+ " left join subject_distribution_ref_info sdri on sdri.id = innertable.subject_distribution_ref_id"
 			+ " left join subject_distribution_type sdt on sdt.id = sdri.subject_distribution_type_id"
+			+ " where sdt.type is not null"
 			+ " group by sdt.type;", nativeQuery = true)
 	public List<Object[]> getStudentDistributionWisePercentage(String univRegNo, String courseId);
 }
