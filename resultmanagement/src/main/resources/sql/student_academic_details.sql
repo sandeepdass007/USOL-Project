@@ -25,3 +25,47 @@ insert into student_academic_detail values('815','BECSE','1011',8,'2016-07-01','
 
 insert into student_academic_detail values('816','PGDCA','1013',1,'2021-01-01','Res1');
 insert into student_academic_detail values('817','PGDCA','1013',2,'2021-07-01','Res1');
+
+
+-- step 4 (Entering dummy result for 4 students CSE 1-8 , PGDCA (1-2))
+insert into student_academic_detail values('818','CSE','1014',1,'2013-01-01','Res1');
+insert into student_academic_detail values('819','CSE','1014',2,'2013-07-01','Res1');
+insert into student_academic_detail values('820','CSE','1014',3,'2014-01-01','Res1');
+insert into student_academic_detail values('821','CSE','1014',4,'2014-07-01','Res1');
+insert into student_academic_detail values('822','CSE','1014',5,'2015-01-01','Res1');
+insert into student_academic_detail values('823','CSE','1014',6,'2015-01-07','Res1');
+insert into student_academic_detail values('824','CSE','1014',7,'2016-01-01','Res1');
+insert into student_academic_detail values('825','CSE','1014',8,'2016-07-01','Res1');
+insert into student_academic_detail values('826','CSE','1015',1,'2013-01-01','Res1');
+insert into student_academic_detail values('827','CSE','1015',2,'2013-07-01','Res1');
+insert into student_academic_detail values('828','CSE','1015',3,'2014-01-01','Res1');
+insert into student_academic_detail values('829','CSE','1015',4,'2014-07-01','Res1');
+insert into student_academic_detail values('830','CSE','1015',5,'2015-01-01','Res1');
+insert into student_academic_detail values('831','CSE','1015',6,'2015-01-07','Res1');
+insert into student_academic_detail values('832','CSE','1015',7,'2016-01-01','Res1');
+insert into student_academic_detail values('833','CSE','1015',8,'2016-07-01','Res1');
+insert into student_academic_detail values('834','CSE','1016',1,'2013-01-01','Res1');
+insert into student_academic_detail values('835','CSE','1016',2,'2013-07-01','Res1');
+insert into student_academic_detail values('836','CSE','1016',3,'2014-01-01','Res1');
+insert into student_academic_detail values('837','CSE','1016',4,'2014-07-01','Res1');
+insert into student_academic_detail values('838','CSE','1016',5,'2015-01-01','Res1');
+insert into student_academic_detail values('839','CSE','1016',6,'2015-01-07','Res1');
+insert into student_academic_detail values('840','CSE','1016',7,'2016-01-01','Res1');
+insert into student_academic_detail values('841','CSE','1016',8,'2016-07-01','Res1');
+insert into student_academic_detail values('842','CSE','1017',1,'2013-01-01','Res1');
+insert into student_academic_detail values('843','CSE','1017',2,'2013-07-01','Res1');
+insert into student_academic_detail values('844','CSE','1017',3,'2014-01-01','Res1');
+insert into student_academic_detail values('845','CSE','1017',4,'2014-07-01','Res1');
+insert into student_academic_detail values('846','CSE','1017',5,'2015-01-01','Res1');
+insert into student_academic_detail values('847','CSE','1017',6,'2015-01-07','Res1');
+insert into student_academic_detail values('848','CSE','1017',7,'2016-01-01','Res1');
+insert into student_academic_detail values('849','CSE','1017',8,'2016-07-01','Res1');
+
+insert into student_academic_detail values('850','PGDCA','1014',1,'2021-01-01','Res1');
+insert into student_academic_detail values('851','PGDCA','1014',2,'2021-07-01','Res1');
+insert into student_academic_detail values('852','PGDCA','1015',1,'2021-01-01','Res1');
+insert into student_academic_detail values('853','PGDCA','1015',2,'2021-07-01','Res1');
+insert into student_academic_detail values('854','PGDCA','1016',1,'2021-01-01','Res1');
+insert into student_academic_detail values('855','PGDCA','1016',2,'2021-07-01','Res1');
+insert into student_academic_detail values('856','PGDCA','1017',1,'2021-01-01','Res1');
+insert into student_academic_detail values('857','PGDCA','1017',2,'2021-07-01','Res1');

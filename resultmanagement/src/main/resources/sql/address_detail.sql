@@ -4,8 +4,9 @@ Insert into address_detail values ('Address03','Ad003', 'AddTyp2', '14-8-346/1-2
 Insert into address_detail values ('Address04','Ad001', 'AddTyp2', '50, Jangpura, Temple Tank Road',"1273294", 'IND', 'Sports Complex', '110014', 'DL'); 
 INsert into address_detail values ('Address05', 'Ad002', 'AddTyp2', '12-2-825/8, Mehdipatnam', "1176734", 'IND', 'Near Main Market', '500028', 'AD');
 INsert into address_detail values ('Address06' , 'Ad003', 'AddTyp1', '10 Floor 1, Gandhi Road' , "1279233", 'IND', 'Near Gurudwara Sahib', '380001', 'GJ');
+
+-- STEP 4 (Inserting dummy address data) 
+INsert into address_detail values ('Address07' , 'Ad004', 'AddTyp1', 'HNo 2907 Sector 37 C', ' 1274746' , 'IND', 'Near Gurudwara Sahib', '160036','CH');
+INsert into address_detail values ('Address08' , 'Ad004', 'AddTyp2', '113 Building 1 Brooklyn Road', '1277333', 'IND', 'Near Central Library', '123655', 'KA');
+
 -- Select * from address_detail;
--- select * from address_type;
--- delete from address_detail where id ='uuid223';
--- truncate table address_detail;
--- desc city_info;

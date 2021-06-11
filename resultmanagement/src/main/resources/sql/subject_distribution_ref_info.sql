@@ -238,4 +238,4 @@ Insert into subject_distribution_ref_info values('PGD11Rf1',15,null,'Subtyp5');
 Insert into subject_distribution_ref_info values('PGD11Rf2',60,null,'Subtyp3');
 Insert into subject_distribution_ref_info values('PGD12Rf1',15,null,'Subtyp5');
 Insert into subject_distribution_ref_info values('PGD12Rf2',60,null,'Subtyp3');
-
+Insert into subject_distribution_ref_info values('PGD13Rf1',100,40,'Subtyp6');
