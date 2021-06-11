@@ -40,17 +40,17 @@
 			<div id="login-carousel" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="/images/carousel-1.jpg" class="d-block w-100 img-fluid" alt="..."/>
+						<img src="/images/carousel-1.jpg" class="d-block w-100 img-fluid kenburns-top-left" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="/images/carousel-2.jpg" class="d-block w-100 img-fluid" alt="..."/>
+						<img src="/images/carousel-2.jpg" class="d-block w-100 img-fluid kenburns-top" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="/images/carousel-3.jpg" class="d-block w-100 img-fluid" alt="..."/>
+						<img src="/images/carousel-3.jpg" class="d-block w-100 img-fluid kenburns-top" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
