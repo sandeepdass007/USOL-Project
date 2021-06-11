@@ -29,7 +29,7 @@ Insert into result_info values('623','1011','2013-07-01','Res1','CSEDis9','CSE2S
 Insert into result_info values('624','1011','2013-07-01','Res1','CSEDis10','CSE2Sub5');
 Insert into result_info values('625','1011','2014-01-01','Res1','CSEDis5','CSE1Sub5');
 
--- Step 3 (Entering subject level results for CSE Sem 3-8)
+-- Step 3 (Entering subject level results for PGDCA)
 Insert into result_info values('656','1013','2021-01-01','Res1','PGDDis1','PGD1Sub1');
 Insert into result_info values('657','1013','2021-01-01','Res1','PGDDis2','PGD1Sub2');
 Insert into result_info values('658','1013','2021-01-01','Res1','PGDDis3','PGD1Sub3');
@@ -43,22 +43,3 @@ Insert into result_info values('665','1013','2021-07-01','Res1','PGDDis10','PGD2
 Insert into result_info values('666','1013','2021-07-01','Res1','PGDDis11','PGD2Sub5');
 Insert into result_info values('667','1013','2021-07-01','Res1','PGDDis12','PGD2Sub6');
 Insert into result_info values('668','1013','2021-07-01','Res1','PGDDis13','PGD2Sub7');
-
-
-
-
--- Step 4 (Entering subject level results for PGDCA)
-Insert into result_info values('656','1013','2021-01-01','Res1','PGDDis1','PGD1Sub1');
-Insert into result_info values('657','1013','2021-01-01','Res1','PGDDis2','PGD1Sub2');
-Insert into result_info values('658','1013','2021-01-01','Res1','PGDDis3','PGD1Sub3');
-Insert into result_info values('659','1013','2021-01-01','Res1','PGDDis4','PGD1Sub4');
-Insert into result_info values('660','1013','2021-01-01','Res1','PGDDis5','PGD1Sub5');
-Insert into result_info values('661','1013','2021-01-01','Res1','PGDDis6','PGD1Sub6');
-Insert into result_info values('662','1013','2021-07-01','Res1','PGDDis7','PGD2Sub1');
-Insert into result_info values('663','1013','2021-07-01','Res1','PGDDis8','PGD2Sub2');
-Insert into result_info values('664','1013','2021-07-01','Res1','PGDDis9','PGD2Sub3');
-Insert into result_info values('665','1013','2021-07-01','Res1','PGDDis10','PGD2Sub4');
-Insert into result_info values('666','1013','2021-07-01','Res1','PGDDis11','PGD2Sub5');
-Insert into result_info values('667','1013','2021-07-01','Res1','PGDDis12','PGD2Sub6');
-Insert into result_info values('668','1013','2021-07-01','Res1','PGDDis13','PGD2Sub7');
-

@@ -212,7 +212,7 @@ Insert into subject_distribution_info values('309','EngDis33','Eng33Rf2');
 Insert into subject_distribution_info values('310','EngDis34','Eng34Rf1');
 Insert into subject_distribution_info values('311','EngDis34','Eng34Rf2');
 
--- step 2 (Entering subject distribution information of new course pgdca)
+-- step 3 (Entering subject distribution information of new course pgdca)
 Insert into subject_distribution_info values('312','PGDDis1','PGD1Rf1');
 Insert into subject_distribution_info values('313','PGDDis1','PGD1Rf2');
 Insert into subject_distribution_info values('314','PGDDis2','PGD2Rf1');
@@ -238,4 +238,3 @@ Insert into subject_distribution_info values('333','PGDDis11','PGD11Rf2');
 Insert into subject_distribution_info values('334','PGDDis12','PGD12Rf1');
 Insert into subject_distribution_info values('335','PGDDis12','PGD12Rf2');
 Insert into subject_distribution_info values('336','PGDDis13','PGD13Rf1');
-

@@ -110,5 +110,3 @@ insert into subject_info values('PGD2Sub4','PGD-2104','Computer Based Accounting
 insert into subject_info values('PGD2Sub5','PGD-2105','Lab 3',75,30,'PGDDis11');
 insert into subject_info values('PGD2Sub6','PGD-2106','Lab 4',75,30,'PGDDis12');
 insert into subject_info values('PGD2Sub7','PGD-2107','Project Work',100,40,'PGDDis13');
-
-
