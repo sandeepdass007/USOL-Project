@@ -50,7 +50,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="/images/carousel-3.jpg" class="d-block w-100 img-fluid kenburns-top" alt="..."/>
+						<img src="/images/carousel-3.jpg" class="d-block w-100 img-fluid kenburns-left" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
