@@ -30,14 +30,14 @@ body, html {
 #course-wise-details-tab .nav-link {
 	background-color: transparent;
 	border: 1px solid;
-	color: darkslategray;
+	color: white;
 	margin-left: 0.5rem;
 }
 
 #course-wise-details-tab .nav-link.active {
-	background-color: transparent;
+	background-color: lightgrey;
 	border: 1px solid;
-	color: white;
+	color: black;
 }
 
 #course-wise-details-tabContent .badge {

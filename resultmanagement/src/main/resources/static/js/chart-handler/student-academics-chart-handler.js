@@ -38,14 +38,19 @@ function populateOverallCourseChart() {
 					enabled: true,
 					align: 'left',
 					verticalAlign: 'top',
-					style: {
-						fontSize: '15px',
-						fontWeight: 'bold'
-					}
 				}
 			}],
-			data: []
+			data: [],
 		}],
+		plotOptions: {
+			treemap: {
+				dataLabels:{
+					style: {
+						color: 'black'
+					}
+				}
+			}
+		},
 		title: {
 			text: 'Overall Performance'
 		}
@@ -71,17 +76,17 @@ function populateOverallCourseChart() {
 			semesters.forEach(semester => {
 				seriesData.push({
 					id: 'sem' + semester,
-					name: 'Semester - ' + semester,
-					color: CommonUtils.getRandomColor()
+					name: 'Semester - ' + semester
 				});
 			});
 
 			semesters.forEach(semester => {
 				data[semester].forEach(record => {
 					seriesData.push({
-						name: record["subjectName"],
 						parent: 'sem' + semester,
-						value: record["marks"]
+						value: record["marks"],
+						name: record["subjectName"],
+						color: CommonUtils.getRandomColor()
 					});
 				});
 			});
@@ -206,7 +211,8 @@ function populateClassVersusPercentage() {
 
 			var studentAvgJsonObj = {
 				name: 'You',
-				data: []
+				data: [],
+				color: 'green'
 			};
 			data["student"].forEach(entry => {
 				studentAvgJsonObj["data"].push(entry["marks"]);
@@ -295,7 +301,7 @@ function populateSemesterWiseDistributionPerformance() {
 		},
 		series: []
 	});
-	
+
 	chart.showLoading("Loading...");
 
 	var activeCourseId = $("#course-wise-details-tabContent .tab-pane.active").attr("id");
@@ -316,12 +322,12 @@ function populateSemesterWiseDistributionPerformance() {
 				var semester = entry["semester"];
 				var type = entry["type"];
 				var marks = entry["marks"];
-				
+
 				var queriedSeriesData = seriesData.filter(x => {
 					return x["name"] == type;
 				});
-				
-				if(queriedSeriesData && queriedSeriesData.length) {
+
+				if (queriedSeriesData && queriedSeriesData.length) {
 					queriedSeriesData[0]["data"].push(marks);
 				} else {
 					seriesData.push({
@@ -330,7 +336,7 @@ function populateSemesterWiseDistributionPerformance() {
 					});
 				}
 			});
-			
+
 			seriesData.forEach(seriesDatum => {
 				chart.addSeries(seriesDatum, false);
 			});

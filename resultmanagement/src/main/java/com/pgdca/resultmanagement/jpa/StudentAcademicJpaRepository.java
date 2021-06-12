@@ -77,7 +77,7 @@ public interface StudentAcademicJpaRepository extends JpaRepository<StudentAcade
 			+ " left join master_marks mm on mm.enrollment_no = sd.enrollment_no and mm.subject_id = ri.subject_id"
 			+ " left join reappear_info rpi on rpi.enrollment_no = sd.enrollment_no and rpi.subject_id = ri.subject_id and rpi.subject_distribution_ref_id = mm.subject_distribution_ref_id"
 			+ " where si.id = ri.subject_id and rs.status = 'pass' and sd.course_id = ?1"
-			+ " group by mm.subject_id"
+			+ " group by sd.enrollment_no, mm.subject_id"
 			+ " order by si.name) innertable"
 			+ " group by innertable.semester;", nativeQuery = true)
 	public List<Object[]> getClassAvgMarksBySem(String courseId);
