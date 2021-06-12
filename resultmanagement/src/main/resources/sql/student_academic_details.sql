@@ -61,11 +61,11 @@ insert into student_academic_detail values('847','CSE','1017',6,'2015-01-07','Re
 insert into student_academic_detail values('848','CSE','1017',7,'2016-01-01','Res1');
 insert into student_academic_detail values('849','CSE','1017',8,'2016-07-01','Res1');
 
-insert into student_academic_detail values('850','PGDCA','1014',1,'2021-01-01','Res1');
-insert into student_academic_detail values('851','PGDCA','1014',2,'2021-07-01','Res1');
-insert into student_academic_detail values('852','PGDCA','1015',1,'2021-01-01','Res1');
-insert into student_academic_detail values('853','PGDCA','1015',2,'2021-07-01','Res1');
-insert into student_academic_detail values('854','PGDCA','1016',1,'2021-01-01','Res1');
-insert into student_academic_detail values('855','PGDCA','1016',2,'2021-07-01','Res1');
-insert into student_academic_detail values('856','PGDCA','1017',1,'2021-01-01','Res1');
-insert into student_academic_detail values('857','PGDCA','1017',2,'2021-07-01','Res1');
+insert into student_academic_detail values('850','PGDCA','1018',1,'2021-01-01','Res1');
+insert into student_academic_detail values('851','PGDCA','1018',2,'2021-07-01','Res1');
+insert into student_academic_detail values('852','PGDCA','1019',1,'2021-01-01','Res1');
+insert into student_academic_detail values('853','PGDCA','1019',2,'2021-07-01','Res1');
+insert into student_academic_detail values('854','PGDCA','1020',1,'2021-01-01','Res1');
+insert into student_academic_detail values('855','PGDCA','1020',2,'2021-07-01','Res1');
+insert into student_academic_detail values('856','PGDCA','1021',1,'2021-01-01','Res1');
+insert into student_academic_detail values('857','PGDCA','1021',2,'2021-07-01','Res1');
