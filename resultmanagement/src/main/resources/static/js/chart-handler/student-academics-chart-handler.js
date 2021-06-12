@@ -27,6 +27,9 @@ function populateOverallCourseChart() {
 				}
 			}
 		},
+		chart: {
+			backgroundColor: 'none'
+		},
 		series: [{
 			type: "treemap",
 			layoutAlgorithm: 'stripes',
@@ -44,7 +47,7 @@ function populateOverallCourseChart() {
 		}],
 		plotOptions: {
 			treemap: {
-				dataLabels:{
+				dataLabels: {
 					style: {
 						color: 'black'
 					}
@@ -52,7 +55,10 @@ function populateOverallCourseChart() {
 			}
 		},
 		title: {
-			text: 'Overall Performance'
+			text: 'Overall Performance',
+			style: {
+				color: 'white'
+			}
 		}
 	});
 
@@ -317,25 +323,72 @@ function populateSemesterWiseDistributionPerformance() {
 				chart.showLoading("No data available!");
 				return;
 			}
-			var seriesData = [];
-			data.forEach(entry => {
-				var semester = entry["semester"];
-				var type = entry["type"];
-				var marks = entry["marks"];
 
-				var queriedSeriesData = seriesData.filter(x => {
-					return x["name"] == type;
-				});
-
-				if (queriedSeriesData && queriedSeriesData.length) {
-					queriedSeriesData[0]["data"].push(marks);
-				} else {
-					seriesData.push({
-						name: type,
-						data: [marks]
-					});
+			// all type names
+			var types = new Set();
+			var maxSem = 1;
+			// find out max semesters available in the database
+			data.forEach(x => {
+				types.add(x["type"]);
+				if (x["semester"] > maxSem) {
+					maxSem = x["semester"];
 				}
 			});
+
+			var seriesData = [];
+			for (var offset = 1; offset <= maxSem; offset++) {
+				// filter array to get data of specific semester
+				var queriedSemesterData = data.filter(x => {
+					return x["semester"] == offset;
+				});
+
+				// if semester data is found then well and good
+				if (queriedSemesterData && queriedSemesterData.length) {
+					queriedSemesterData.forEach(entry => {
+						var type = entry["type"];
+						var marks = entry["marks"];
+						var queriedSeriesData = seriesData.filter(x => {
+							return x["name"] == type;
+						});
+
+						if (queriedSeriesData && queriedSeriesData.length) {
+							queriedSeriesData[0]["data"].push(marks);
+						} else {
+							seriesData.push({
+								name: type,
+								data: [marks]
+							});
+						}
+					});
+				} else { // fill the entries with null
+					types.forEach(type => {
+						var queriedNASeriesData = seriesData.filter(x => {
+							return x["name"] == type;
+						});
+						if (queriedNASeriesData && queriedNASeriesData.length) {
+							queriedNASeriesData[0].data.push(null);
+						} else {
+							seriesData.push({
+								name: type,
+								data: [null]
+							});
+						}
+					});
+				}
+
+				// if new distribution type is added just now which wasn't
+				// available for other series data, then hydate them with null
+				// to maintain the balance
+				var queriedUnhydratedData = seriesData.filter(x => {
+					return x["data"].length < offset;
+				});
+
+				if (queriedUnhydratedData && queriedUnhydratedData.length) {
+					queriedUnhydratedData.forEach(x => {
+						x["data"].splice(x["data"].length - 1, 0, null);
+					});
+				}
+			}
 
 			seriesData.forEach(seriesDatum => {
 				chart.addSeries(seriesDatum, false);

@@ -65,6 +65,10 @@ body, html {
 	        animation: pulsate-bck 0.5s ease-in-out infinite both;
 }
 
+.highcharts-credits {
+	display: none !important;
+}
+
 .pulsate-bck {
 	-webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
 	        animation: pulsate-bck 0.5s ease-in-out infinite both;
