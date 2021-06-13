@@ -57,23 +57,44 @@
 				<div class="row mt-2 mb-2">
 				  	<div class="col-md-4">
 			    		<label for="validationCustom01" class="form-label text-white">Date</label>
-			   			<input type="text" class="form-control" id="birthDate" placeholder="01" required>
+			   			<input type="number" min="01" max="31" class="form-control" id="birthDate" placeholder="01" required>
 				    	<div class="valid-feedback">
 				    	</div>
 				  	</div>
 				  	<div class="col-md-4">
 			    		<label for="validationCustom02" class="form-label text-white">Month</label>
-			    		<input type="text" class="form-control" id="birthMonth" placeholder="12" required>
+			    		<input type="number" min="01" max="12" class="form-control" id="birthMonth" placeholder="12" required>
 				   		<div class="valid-feedback">
 				   		</div>
 				  	 </div>
 				  	 <div class="col-md-4">
 			    		<label for="validationCustom03" class="form-label text-white">Year</label>
-			   			<input type="text" class="form-control" id="birthYear" placeholder="1990" required>
+			   			<input type="number" min="1970" max="2021"class="form-control"class="form-control" id="birthYear" placeholder="1990" required>
 			     		<div class="valid-feedback">
 			    		</div>
 				  	</div>
 			  	</div>
+			  	<div class="row mt-2 mb-2">
+				  	<div class="col-md-4">
+			    		<label for="validationCustom01" class="form-label text-white">Personal Contact No.</label>
+			   			<input type="text" class="form-control" id="Contact details" placeholder="Enter Your No." required>
+				    	<div class="valid-feedback">
+				    	</div>
+				  	</div>
+				  	<div class="col-md-4">
+			    		<label for="validationCustom02" class="form-label text-white">Home/Landline Contact No.</label>
+			    		<input type="text" class="form-control" id="Contact Details" placeholder="Enter your Landline No." required>
+				   		<div class="valid-feedback">
+				   		</div>
+				  	 </div>
+				  	 <div class="col-md-4">
+			    		<label for="validationCustom03" class="form-label text-white">Other Contact No</label>
+			   			<input type="text" class="form-control" id="Contact Details" placeholder="Other Contact No.">
+			     		<div class="valid-feedback">
+			    		</div>
+				  	</div>
+			  	</div>
+			  	
 			  	
 			  	<div class="row mt-2 mb-2">
 				  	<div class="col-md-6">
@@ -106,11 +127,15 @@
 			   </div>
 			   
 				<div class="row mt-2 mb-2">
-					<div class="col-6">
+					<div class="col-4">
 						<label for="PermanentAddress" class="form-label text-white">Permanent Address</label>
 						<input type="text" class="form-control" id="PermanentAddress" placeholder="Building No.">
 					</div>
-					<div class="col-6">
+					<div class="col-4">
+						<label for="PermanentAddress" class="form-label text-white">Locality</label>
+						<input type="text" class="form-control" id="PermanentAddress" placeholder="Area/locality">
+					</div>
+					<div class="col-4">
 						<label for="PermanentAddress" class="form-label text-white">Landmark</label>
 						<input type="text" class="form-control" id="PermanentAddress" placeholder="Landmark">
 					</div>
@@ -145,11 +170,15 @@
 				</div>
 				
 				<div class="row mt-2 mb-2">
-					<div class="col-6">
+					<div class="col-4">
 						<label for="CorrespondenceAddress" class="form-label text-white">Correspondence Address</label>
 						<input type="text" class="form-control" id="CorrespondenceAddress" placeholder="Building No.">
 					</div>
-					<div class="col-6">
+					<div class="col-4">
+						<label for="CorrespondenceAddress" class="form-label text-white">Locality</label>
+						<input type="text" class="form-control" id="CorrespondenceAddress" placeholder="Area/Locality">
+					</div>
+					<div class="col-4">
 						<label for="CorrespondenceAddress" class="form-label text-white">Landmark</label>
 						<input type="text" class="form-control" id="CorrespondenceAddress" placeholder="Landmark">
 					</div>
@@ -213,6 +242,14 @@
 				<div class="col-md-2">
 					<label for="inputSession" class="form-label text-white">Session</label>
 					<input type="text" class="form-control" id="inputSession">
+				</div>
+				<p>                         </p>
+				<p>                         </p>
+				<div class="row">
+					<div class="col-6"></div>
+					<div class="col-6">
+						<input class="btn btn-primary" type="submit" value="Register"/>
+					</div>
 				</div>
 	  		</div>
 	  		</div>
