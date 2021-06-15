@@ -118,7 +118,7 @@ public interface StudentAcademicJpaRepository extends JpaRepository<StudentAcade
 			+ " left join subject_distribution_info sdi on sdi.subject_distribution_id = si.subject_distribution_id"
 			+ " left join subject_distribution_ref_info sdri on sdri.id = sdi.subject_distribution_ref_id"
 			+ " left join subject_distribution_type sdt on sdt.id = sdri.subject_distribution_type_id"
-			+ " left join master_marks mm on sdri.id = mm.subject_distribution_ref_id"
+			+ " left join master_marks mm on sdri.id = mm.subject_distribution_ref_id and sd.enrollment_no = mm.enrollment_no"
 			+ " left join reappear_info rpi on rpi.subject_distribution_ref_id = sdri.id"
 			+ " left join student_academic_detail sad on sad.enrollment_no = sd.enrollment_no and sad.result_of_semester = csr.semester"
 			+ " left join result_status rs on rs.id = sad.result_status_id"
