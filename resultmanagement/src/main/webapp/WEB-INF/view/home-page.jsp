@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div class="mainbodycontent">
-			<div id="login-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
+			<div id="login-carousel" class="carousel slide mb-2 scale-in-center" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<img src="/images/carousel-1.jpg" class="d-block w-100 img-fluid kenburns-top-left" alt="..."/>
@@ -64,15 +64,15 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
-			<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2 mb-2"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
+			<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2 mb-2 scale-in-center"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
 			<br/>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-						<div id="courseWiseStudentsEnrolled" style="width:100%; height:15rem;">
+						<div id="courseWiseStudentsEnrolled" class="scale-in-center" style="width:100%; height:15rem;">
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 border rounded" style="background-color: #ecb0b012">
+					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 border rounded scale-in-center" style="background-color: #ecb0b012">
 						<form id="loginForm">
 							<div class="mb-3">
 								<label class="form-label">Username</label>
@@ -85,14 +85,14 @@
 								<input type="password" class="form-control"	id="loginPassword">
 								<div class="invalid-feedback"> Password can't be empty or whitespaces.</div>
 							</div>
-							<button id="loginSubmitBtn" type="submit" class="btn btn-primary">
+							<button id="loginSubmitBtn" type="submit" class="btn btn-primary scale-in-center">
 								<span>Login</span>
 								<span id="loginLoadingSpinner" class="spinner-grow spinner-grow-sm d-none" role="status" aria-hidden="true"></span>
 							</button>
 						</form>
 					</div>
 					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-						<div id="categoryWiseEnrollments" style="width:100%; height:15rem;">
+						<div id="categoryWiseEnrollments" class="scale-in-center" style="width:100%; height:15rem;">
 						</div>
 					</div>
 				</div>
