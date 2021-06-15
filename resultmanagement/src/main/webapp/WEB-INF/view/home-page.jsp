@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div class="mainbodycontent">
-			<div id="login-carousel" class="carousel slide" data-bs-ride="carousel">
+			<div id="login-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<img src="/images/carousel-1.jpg" class="d-block w-100 img-fluid kenburns-top-left" alt="..."/>
@@ -64,8 +64,7 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
-			<br/>
-			<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
+			<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2 mb-2"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
 			<br/>
 			<div class="container-fluid">
 				<div class="row">

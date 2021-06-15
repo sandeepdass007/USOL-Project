@@ -30,7 +30,7 @@ function populateCourseWiseStudEnrollChart() {
 			plotBorderWidth: null,
 			plotShadow: false,
 			type: 'pie',
-			backgroundColor: '#00000010'
+			backgroundColor: '#00000030'
 		},
 		title: {
 			text: 'Course Wise Student Enrollment',
@@ -106,7 +106,7 @@ function populateCategoryWiseEnrollments() {
 			}
 		},
 		chart: {
-			backgroundColor: '#00000010'
+			backgroundColor: '#00000030'
 		},
 		title: {
 			text: 'Course Type Wise Enrollments',
@@ -201,32 +201,54 @@ function populateCategoryWiseEnrollments() {
 				return;
 			}
 			var startPoint = null;
+			var endPoint = null;
 			var jsonObj = {};
 			data.forEach(entry => {
 				var enrollments = entry["count"];
 				var courseType = entry["courseType"];
 				var year = entry["year"];
-				startPoint = year < startPoint || startPoint == null ? year : startPoint;
+				startPoint = startPoint == null || year < startPoint ? year : startPoint;
+				endPoint = endPoint == null || year > endPoint ? year : endPoint;
 				if (!jsonObj[courseType]) {
-					jsonObj[courseType] = [];
+					jsonObj[courseType] = {
+						[year] : enrollments
+					};
+				} else {					
+					jsonObj[courseType][year] = enrollments;
 				}
-				jsonObj[courseType].push(enrollments);
 			});
+			
+			// hydrate the ones which are not present for that year
+			
 			var courseTypes = Object.keys(jsonObj);
-			if (courseTypes && courseTypes.length) {
-				courseTypes.forEach(courseType => {
-					chart.addSeries({
-						name: courseType,
-						data: jsonObj[courseType]
-					}, false);
+			
+			courseTypes.forEach(courseType => {
+				var courseTypeInfo = jsonObj[courseType];
+				for(var offset = startPoint; offset <= endPoint; offset++) {
+					if(courseTypeInfo.hasOwnProperty(offset) == false) {
+						courseTypeInfo[offset] = null;
+					}
+				}
+			});
+			
+			courseTypes.forEach(courseType => {
+				var enrollments = [];
+				var years = Object.keys(jsonObj[courseType]);
+				years.forEach(year => {
+					enrollments.push(jsonObj[courseType][year]);
 				});
-			}
-
+				chart.addSeries({
+					name: courseType,
+					data: enrollments
+				}, false);
+			});
+			
 			chart.series.forEach(series => {
 				series.update({
 					pointStart: startPoint
 				})
-			})
+			});
+			
 			chart.setSubtitle({
 				text: "Since: " + startPoint,
 				style: {
