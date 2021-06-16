@@ -55,11 +55,11 @@ insert into subject_info values('CSE7Sub2','CSE7Cd2','CseNam32',100,40,'CSEDis32
 insert into subject_info values('CSE7Sub3','CSE7Cd3','CseNam33',100,40,'CSEDis33');
 insert into subject_info values('CSE7Sub4','CSE7Cd4','CseNam34',100,40,'CSEDis34');
 insert into subject_info values('CSE7Sub5','CSE7Cd5','CseNam35',100,40,'CSEDis35');
-insert into subject_info values('CSE8Sub1','CSE8Cd1','CseNam36',100,40,'CSEDis36');
-insert into subject_info values('CSE8Sub2','CSE8Cd2','CseNam37',100,40,'CSEDis37');
-insert into subject_info values('CSE8Sub3','CSE8Cd3','CseNam38',100,40,'CSEDis38');
-insert into subject_info values('CSE8Sub4','CSE8Cd4','CseNam39',100,40,'CSEDis39');
-insert into subject_info values('CSE8Sub5','CSE8Cd5','CseNam40',100,40,'CSEDis40');
+insert into subject_info values('CSE8Sub1','CSE8Cd1','Advanced Java',100,40,'CSEDis36');
+insert into subject_info values('CSE8Sub2','CSE8Cd2','Advanced Software Engineering',100,40,'CSEDis37');
+insert into subject_info values('CSE8Sub3','CSE8Cd3','Advanced Database Management System',100,40,'CSEDis38');
+insert into subject_info values('CSE8Sub4','CSE8Cd4','Digital Image Processing',100,40,'CSEDis39');
+insert into subject_info values('CSE8Sub5','CSE8Cd5','Major Project',100,40,'CSEDis40');
 insert into subject_info values('Eng1Sub1','Eng1Cd1','EngNam1',100,34,'EngDis1');
 insert into subject_info values('Eng1Sub2','Eng1Cd2','EngNam2',100,34,'EngDis2');
 insert into subject_info values('Eng1Sub3','Eng1Cd3','EngNam3',100,34,'EngDis3');
