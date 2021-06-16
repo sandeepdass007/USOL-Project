@@ -4,6 +4,8 @@
  // Registering the event when document is  ready
 $("document").ready(function() {
 	
+	$("#loginUsername").focus();
+	
 	// Registering the submit event on login form
 	$("#loginForm").submit(function(e) {
 		// get username and password from the provided input fields

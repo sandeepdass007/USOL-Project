@@ -3,6 +3,9 @@
  */
 $("document").ready(function(){
 	
+	var modalEl = document.getElementById("logoutConfirmModal");
+	var myModal = new bootstrap.Modal(modalEl);
+	
 	$("#nav-home").click(function(){
 		window.location.href = "/student/home/";
 	});
@@ -20,6 +23,11 @@ $("document").ready(function(){
 	});
 	
 	$("#logoutBtn").click(function() {
+		myModal.show();
+	});
+	
+	$("#okLogout").click(function() {
+		$("#logoutLoadingSpinner").removeClass("d-none");
 		$.ajax({
 			url: '/logout/',
 			async: true,
@@ -28,14 +36,20 @@ $("document").ready(function(){
 			dataType: 'json',
 			contentType: 'application/json',
 			success: function (data) {
-				console.log(data);
+				
 				var success = data["success"];
 				if(success == true || success == "true") {
 					window.location.href = "/";
 				} else {
+					myModal.hide();
 					alert("Logout Failed!");
 				}
 			}
 		});
 	});
+	
+	$("#cancelLogout").click(function() {
+		myModal.hide();
+	});
 });
+
