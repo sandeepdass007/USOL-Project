@@ -16,6 +16,7 @@
 		<script src="/js/login-handler.js"></script>
 		<script src="/js/home.js"></script>
 		
+		<title>Statistical Result Management - Home</title>
 	</head>
 	<body>
 		<div class = "bg"></div>

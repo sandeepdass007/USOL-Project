@@ -20,6 +20,8 @@
 		<script src="/js/student-handler.js"></script>
 		<script src="/js/student-academic-handler.js"></script>
 		<script src="/js/chart-handler/student-academics-chart-handler.js"></script>
+		
+		<title>Statistical Result Management - Student Academics</title>
 	</head>
 	<body>
 		<div class = "bg"></div>

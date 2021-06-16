@@ -13,6 +13,8 @@
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
+		
+		<title>Statistical Result Management - Student Profile</title>
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -30,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="display-3 text-center">Student Profile Page</h1>
+			<h1 class="display-3 text-center tracking-in-contract-bck">Student Profile Page</h1>
 			<div class="container slide-in-bck-center">
 				<div class="row">
 					<div class="col">

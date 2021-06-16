@@ -12,6 +12,8 @@
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
+		
+		<title>Statistical Result Management - Student Home</title>
 	</head>
 	
 	<body>
@@ -30,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="display-3 text-center">Student Home Page</h1>
+			<h1 class="display-3 text-center tracking-in-contract-bck">Student Home Page</h1>
 			<br/>
 			<div class="container" style="opacity: 0.5">
 				<div class="row mb-2" style="height: 15rem;">
