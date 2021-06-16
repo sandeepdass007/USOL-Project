@@ -10,7 +10,7 @@ insert into course_info values ('BAEngHS', 'Bachelor of Arts (English Hons)', 'C
 insert into course_info values ('PGDCA', 'Post Graduate Diploma in Computer Applications' , 'CrsTyp4', 2, 1);
 
 
--- step 6 (Adding new courses for homepage visuals)
+-- step 5 (Adding new courses for homepage visuals)
 insert into course_info values ('LLB', 'Bachelor of Legislative Law' , 'CrsTyp1', 6, 3);
 insert into course_info values ('MBBS' , 'Bachelor of Medicine and a Bachelor of Surgery', 'CrsTyp1', 10,5);
 insert into course_info values ('PhD(Urdu)', 'Doctor of Philosophy (Urdu)', 'CrsTyp3', 14, 7);
