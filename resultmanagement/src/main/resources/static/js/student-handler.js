@@ -1,33 +1,35 @@
 /**
  *  Student Page Handler
  */
-$("document").ready(function(){
-	
+$("document").ready(function() {
+
 	var modalEl = document.getElementById("logoutConfirmModal");
-	var myModal = new bootstrap.Modal(modalEl);
-	
+	if (modalEl) {
+		var myModal = new bootstrap.Modal(modalEl);
+	}
+
 	enableToolTips();
-	
-	$("#nav-home").click(function(){
+
+	$("#nav-home").click(function() {
 		window.location.href = "/student/home/";
 	});
-	
-	$("#nav-profile").click(function(){
+
+	$("#nav-profile").click(function() {
 		window.location.href = "/student/profile/";
 	});
-	
-	$("#nav-account").click(function(){
+
+	$("#nav-account").click(function() {
 		window.location.href = "/student/account/";
 	});
-	
-	$("#nav-academics").click(function(){
+
+	$("#nav-academics").click(function() {
 		window.location.href = "/student/academics/";
 	});
-	
+
 	$("#logoutBtn").click(function() {
 		myModal.show();
 	});
-	
+
 	$("#okLogout").click(function() {
 		$("#logoutLoadingSpinner").removeClass("d-none");
 		$.ajax({
@@ -37,10 +39,10 @@ $("document").ready(function(){
 			processData: false,
 			dataType: 'json',
 			contentType: 'application/json',
-			success: function (data) {
-				
+			success: function(data) {
+
 				var success = data["success"];
-				if(success == true || success == "true") {
+				if (success == true || success == "true") {
 					window.location.href = "/";
 				} else {
 					myModal.hide();
@@ -49,7 +51,7 @@ $("document").ready(function(){
 			}
 		});
 	});
-	
+
 	$("#cancelLogout").click(function() {
 		myModal.hide();
 	});
