@@ -168,7 +168,12 @@ function populateClassVersusPercentage() {
 				label: {
 					connectorAllowed: false
 				},
-				pointStart: 1
+				pointStart: 1,
+				lineWidth: 3,
+				marker: {
+					enabled: true,
+					radius: 5
+				}
 			}
 		},
 
