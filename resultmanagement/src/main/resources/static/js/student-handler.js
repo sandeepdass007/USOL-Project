@@ -6,6 +6,8 @@ $("document").ready(function(){
 	var modalEl = document.getElementById("logoutConfirmModal");
 	var myModal = new bootstrap.Modal(modalEl);
 	
+	enableToolTips();
+	
 	$("#nav-home").click(function(){
 		window.location.href = "/student/home/";
 	});
@@ -53,3 +55,8 @@ $("document").ready(function(){
 	});
 });
 
+function enableToolTips() {
+	$("[data-bs-toggle]").each(function(index, el) {
+		new bootstrap.Tooltip(el);
+	});
+}

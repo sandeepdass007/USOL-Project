@@ -77,16 +77,18 @@
 						<form id="loginForm">
 							<div class="mb-3">
 								<label class="form-label">Username</label>
-								<input type="text" class="form-control" id="loginUsername" aria-describedby="usernameHelp"/>
+								<input type="text" class="form-control" id="loginUsername" aria-describedby="usernameHelp"
+									data-bs-toggle="tooltip" data-bs-placement="right" title="Username" data-bs-container="form#loginForm" />
 								<div class="invalid-feedback"> Please provide a valid username.</div>
 								<div id="usernameHelp" class="form-text text-dark">Usually it is your university registration number or employee id</div>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Password</label>
-								<input type="password" class="form-control"	id="loginPassword">
+								<input type="password" class="form-control"	id="loginPassword"
+									data-bs-toggle="tooltip" title="Password" data-bs-placement="right" data-bs-container="form#loginForm" >
 								<div class="invalid-feedback"> Password can't be empty or whitespaces.</div>
 							</div>
-							<button id="loginSubmitBtn" type="submit" class="btn btn-primary scale-in-center">
+							<button id="loginSubmitBtn" type="submit" class="btn btn-primary scale-in-center" data-bs-toggle="tooltip" title="Login" data-bs-placement="right" >
 								<span>Login</span>
 								<span id="loginLoadingSpinner" class="spinner-grow spinner-grow-sm d-none" role="status" aria-hidden="true"></span>
 							</button>
