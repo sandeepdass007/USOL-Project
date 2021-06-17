@@ -15,4 +15,4 @@ insert into course_info values ('LLB', 'Bachelor of Legislative Law' , 'CrsTyp1'
 insert into course_info values ('MBBS' , 'Bachelor of Medicine and a Bachelor of Surgery', 'CrsTyp1', 10,5);
 insert into course_info values ('PhD(Urdu)', 'Doctor of Philosophy (Urdu)', 'CrsTyp3', 14, 7);
 insert into course_info values ('CC(French)', 'Certificate Course in French', 'CrsTyp5', 2,1);
-insert into course_info values('BCA', 'Bachelor of Computer Applications', 'CrsTyp6', 6, 3);
+insert into course_info values('BCA', 'Bachelor of Computer Applications', 'CrsTyp1', 6, 3);
