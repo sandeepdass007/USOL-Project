@@ -8,13 +8,13 @@ body, html {
 	right: 0;
 	z-index: 1;
 	display: block;
-	-webkit-filter: blur(10px);
-	-moz-filter: blur(10px);
-	-o-filter: blur(10px);
-	-ms-filter: blur(10px);
-	filter: blur(10px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
 	/* The image used */
-	background-image: url("/images/student-academics-bg.jpg");
+	background-image: url("https://cdn.hipwallpaper.com/i/3/93/nULE0k.jpg");
 	/* Full height */
 	height: 100%;
 	/* Center and scale the image nicely */
@@ -30,16 +30,20 @@ body, html {
 #course-wise-details-tab .nav-link {
 	background-color: transparent;
 	border: 1px solid;
-	color: darkslategray;
+	color: white;
 	margin-left: 0.5rem;
 }
 
 #course-wise-details-tab .nav-link.active {
-	background-color: transparent;
+	background-color: lightgrey;
 	border: 1px solid;
-	color: white;
+	color: black;
 }
 
 #course-wise-details-tabContent .badge {
 	margin-bottom: 0.25rem !important;
+}
+
+.highcharts-credits {
+	display: none !important;
 }

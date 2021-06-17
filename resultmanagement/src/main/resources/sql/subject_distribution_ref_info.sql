@@ -1,4 +1,4 @@
--- select * from subject_distribution_ref_info;
+select * from subject_distribution_ref_info;
 -- desc subject_distribution_ref_info;
 Insert into subject_distribution_ref_info values('Mat1Rf1',20,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('Mat1Rf2',80,null,'Subtyp2');
@@ -211,3 +211,31 @@ Insert into subject_distribution_ref_info values('Eng33Rf1',30,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('Eng33Rf2',70,24,'Subtyp2');
 Insert into subject_distribution_ref_info values('Eng34Rf1',30,null,'Subtyp1');
 Insert into subject_distribution_ref_info values('Eng34Rf2',70,24,'Subtyp2');
+
+
+-- Step 3 (Entering subject distribution reference information for new course PGDCA)
+Insert into subject_distribution_ref_info values('PGD1Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD1Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD2Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD2Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD3Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD3Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD4Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD4Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD5Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD5Rf2',60,null,'Subtyp3');
+Insert into subject_distribution_ref_info values('PGD6Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD6Rf2',60,null,'Subtyp3');
+Insert into subject_distribution_ref_info values('PGD7Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD7Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD8Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD8Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD9Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD9Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD10Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD10Rf2',60,null,'Subtyp2');
+Insert into subject_distribution_ref_info values('PGD11Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD11Rf2',60,null,'Subtyp3');
+Insert into subject_distribution_ref_info values('PGD12Rf1',15,null,'Subtyp5');
+Insert into subject_distribution_ref_info values('PGD12Rf2',60,null,'Subtyp3');
+Insert into subject_distribution_ref_info values('PGD13Rf1',100,40,'Subtyp6');

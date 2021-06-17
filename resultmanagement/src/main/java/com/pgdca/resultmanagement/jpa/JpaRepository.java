@@ -8,6 +8,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.pgdca.resultmanagement.chart.dao.DistributionTypePercentageDao;
+import com.pgdca.resultmanagement.chart.dao.SemDistributionTypeMarksDao;
+import com.pgdca.resultmanagement.chart.dao.SemMarksDao;
 import com.pgdca.resultmanagement.chart.dao.SubjectMarksDao;
 import com.pgdca.resultmanagement.chart.dao.YearCourseWiseEnrollmentDao;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
@@ -185,5 +188,50 @@ public class JpaRepository {
 
 	public boolean changePassword(String username, String newPassword) {
 		return credJpaRepository.changePassword(username, newPassword);
+	}
+
+	public List<SemMarksDao> getStudentAvgMarksBySem(String univRegNo, String courseId) {
+		final List<Object[]> studentAvgMarksBySem = studentAcademicJpaRepository.getStudentAvgMarksBySem(univRegNo, courseId);
+		List<SemMarksDao> avgMarksBySem = new LinkedList<SemMarksDao>();
+		for(Object[] entry : studentAvgMarksBySem) {
+			Float avgMarks = ((BigDecimal)entry[0]).floatValue();
+			Integer semester = ((Integer)entry[1]);
+			avgMarksBySem.add(new SemMarksDao(semester, avgMarks));
+		}
+		return avgMarksBySem;
+	}
+
+	public List<SemMarksDao> getClassAvgMarksBySem(String courseId) {
+		final List<Object[]> studentAvgMarksBySem = studentAcademicJpaRepository.getClassAvgMarksBySem(courseId);
+		List<SemMarksDao> classAvgMarksBySem = new LinkedList<SemMarksDao>();
+		for(Object[] entry : studentAvgMarksBySem) {
+			Float avgMarks = ((BigDecimal)entry[0]).floatValue();
+			Integer semester = (Integer)entry[1];
+			classAvgMarksBySem.add(new SemMarksDao(semester, avgMarks));
+		}
+		return classAvgMarksBySem;
+	}
+
+	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(String univRegNo, String courseId) {
+		final List<Object[]> studentDistributionWisePercentage = studentAcademicJpaRepository.getStudentDistributionWisePercentage(univRegNo, courseId);
+		List<DistributionTypePercentageDao> list = new LinkedList<DistributionTypePercentageDao>();
+		for(Object[] entry : studentDistributionWisePercentage) {
+			String type = (String)entry[0];
+			Float percentage = ((BigDecimal)entry[1]).floatValue();
+			list.add(new DistributionTypePercentageDao(type, percentage));
+		}
+		return list;
+	}
+
+	public List<SemDistributionTypeMarksDao> getStudentSemDistributionTypeMarks(String univRegNo, String courseId) {
+		final List<Object[]> studentSemDistributionTypeMarks = studentAcademicJpaRepository.getStudentSemDistributionTypeMarks(univRegNo, courseId);
+		List<SemDistributionTypeMarksDao> list = new LinkedList<SemDistributionTypeMarksDao>();
+		for(Object[] entry : studentSemDistributionTypeMarks) {
+			Integer semester = (Integer)entry[0];
+			String type = (String)entry[1];
+			Integer marks = ((BigDecimal)entry[2]).intValue();
+			list.add(new SemDistributionTypeMarksDao(type, marks, semester));
+		}
+		return list;
 	}
 }

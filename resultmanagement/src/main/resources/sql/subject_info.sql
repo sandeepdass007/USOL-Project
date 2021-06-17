@@ -1,4 +1,4 @@
--- select * from subject_info;
+select * from subject_info;
 -- desc subject_info;
 insert into subject_info values('Mat1Sub1','Mat1Cd1','MatNam1',100,40,'MatDis1');
 insert into subject_info values('Mat1Sub2','Mat1Cd2','MatNam2',100,40,'MatDis2');
@@ -55,11 +55,11 @@ insert into subject_info values('CSE7Sub2','CSE7Cd2','CseNam32',100,40,'CSEDis32
 insert into subject_info values('CSE7Sub3','CSE7Cd3','CseNam33',100,40,'CSEDis33');
 insert into subject_info values('CSE7Sub4','CSE7Cd4','CseNam34',100,40,'CSEDis34');
 insert into subject_info values('CSE7Sub5','CSE7Cd5','CseNam35',100,40,'CSEDis35');
-insert into subject_info values('CSE8Sub1','CSE8Cd1','CseNam36',100,40,'CSEDis36');
-insert into subject_info values('CSE8Sub2','CSE8Cd2','CseNam37',100,40,'CSEDis37');
-insert into subject_info values('CSE8Sub3','CSE8Cd3','CseNam38',100,40,'CSEDis38');
-insert into subject_info values('CSE8Sub4','CSE8Cd4','CseNam39',100,40,'CSEDis39');
-insert into subject_info values('CSE8Sub5','CSE8Cd5','CseNam40',100,40,'CSEDis40');
+insert into subject_info values('CSE8Sub1','CSE8Cd1','Advanced Java',100,40,'CSEDis36');
+insert into subject_info values('CSE8Sub2','CSE8Cd2','Advanced Software Engineering',100,40,'CSEDis37');
+insert into subject_info values('CSE8Sub3','CSE8Cd3','Advanced Database Management System',100,40,'CSEDis38');
+insert into subject_info values('CSE8Sub4','CSE8Cd4','Digital Image Processing',100,40,'CSEDis39');
+insert into subject_info values('CSE8Sub5','CSE8Cd5','Major Project',100,40,'CSEDis40');
 insert into subject_info values('Eng1Sub1','Eng1Cd1','EngNam1',100,34,'EngDis1');
 insert into subject_info values('Eng1Sub2','Eng1Cd2','EngNam2',100,34,'EngDis2');
 insert into subject_info values('Eng1Sub3','Eng1Cd3','EngNam3',100,34,'EngDis3');
@@ -95,4 +95,18 @@ insert into subject_info values('Eng6Sub4','Eng6Cd4','EngNam32',100,34,'EngDis32
 insert into subject_info values('Eng6Sub5','Eng6Cd5','EngNam33',100,34,'EngDis33');
 insert into subject_info values('Eng6Sub6','Eng6Cd6','EngNam34',100,34,'EngDis34');
 
--- truncate subject_info; truncate course_sub_rel;
+-- step 3 (Adding subject information for new course pgdca)
+-- alter table subject_info modify column name varchar(50);
+insert into subject_info values('PGD1Sub1','PGD-1101','Computer Fundamentals',75,30,'PGDDis1');
+insert into subject_info values('PGD1Sub2','PGD-1102','Computer Programming using C',75,30,'PGDDis2');
+insert into subject_info values('PGD1Sub3','PGD-1103','DataBase Management System',75,30,'PGDDis3');
+insert into subject_info values('PGD1Sub4','PGD-1104','Data Communications and Networks',75,30,'PGDDis4');
+insert into subject_info values('PGD1Sub5','PGD-1105','Lab 1',75,30,'PGDDis5');
+insert into subject_info values('PGD1Sub6','PGD-1106','Lab 2',75,30,'PGDDis6');
+insert into subject_info values('PGD2Sub1','PGD-2101','Object Oriented Concepts Using JAVA',75,30,'PGDDis7');
+insert into subject_info values('PGD2Sub2','PGD-2102','Web Technologies',75,30,'PGDDis8');
+insert into subject_info values('PGD2Sub3','PGD-2103','Software Engineering',75,30,'PGDDis9');
+insert into subject_info values('PGD2Sub4','PGD-2104','Computer Based Accounting',75,30,'PGDDis10');
+insert into subject_info values('PGD2Sub5','PGD-2105','Lab 3',75,30,'PGDDis11');
+insert into subject_info values('PGD2Sub6','PGD-2106','Lab 4',75,30,'PGDDis12');
+insert into subject_info values('PGD2Sub7','PGD-2107','Project Work',100,40,'PGDDis13');

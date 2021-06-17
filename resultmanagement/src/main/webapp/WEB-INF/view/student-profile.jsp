@@ -5,6 +5,7 @@
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
 		<link href="/css/student-common.css" rel="stylesheet">
+		<link href="/css/student-common-animation.css" rel="stylesheet">
 		
 		<!-- JavaScripts -->
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
@@ -12,6 +13,8 @@
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
+		
+		<title>Statistical Result Management - Student Profile</title>
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -29,8 +32,8 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="display-3 text-center">Student Profile Page</h1>
-			<div class="container">
+			<h1 class="display-3 text-center tracking-in-contract-bck">Student Profile Page</h1>
+			<div class="container slide-in-bck-center">
 				<div class="row">
 					<div class="col">
 						<div class="accordion">

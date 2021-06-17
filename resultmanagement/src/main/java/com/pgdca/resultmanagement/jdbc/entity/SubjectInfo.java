@@ -22,7 +22,7 @@ public class SubjectInfo {
 	@Column(name = "overallMaxMarks")
 	private Integer overallMaxMarks;
 
-	@Column(name = "name", nullable = false, length = 30)
+	@Column(name = "name", nullable = false, length = 50)
 	private String name;
 
 	@Column(name = "code", nullable = false, length = 10)

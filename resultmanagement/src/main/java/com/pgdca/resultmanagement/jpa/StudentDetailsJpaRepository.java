@@ -34,7 +34,7 @@ public class StudentDetailsJpaRepository {
 
 	public StudentDetail getStudentDetail(String uniRegNo) {
 		final StudentDetail studentDetail = entityManager.createQuery("SELECT sd from StudentDetail sd where sd.universityRegNo=:uniRegNo", StudentDetail.class).setParameter("uniRegNo", uniRegNo)
-			.getSingleResult();
+			.getResultStream().findFirst().get();
 		return studentDetail;
 	}
 

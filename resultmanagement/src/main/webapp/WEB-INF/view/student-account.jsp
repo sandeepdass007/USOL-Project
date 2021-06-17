@@ -4,6 +4,7 @@
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
 		<link href="/css/student-account.css" rel="stylesheet">
+		<link href="/css/student-common-animation.css" rel="stylesheet">
 		
 		<!-- JavaScripts -->
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
@@ -12,6 +13,8 @@
 		<script src="/js/utils/common-utils.js"></script>
 		<script src="/js/student-handler.js"></script>
 		<script src="/js/student-account-handler.js"></script>
+		
+		<title>Statistical Result Management - Student Account</title>
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -63,25 +66,25 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="display-3 text-center">Student Account Page</h1>
+			<h1 class="display-3 text-center tracking-in-contract-bck">Student Account Page</h1>
 			<div class="container">
 				<div class="row">
 					<div class="col-4">
 					</div>
-					<div class="col-4 border rounded" style="background-color: #ecb0b012">
+					<div class="col-4 border rounded" style="background-color: #00000040">
 						<form id="changePasswordForm">
 							<div class="mb-3">
-								<label class="form-label">Current Password</label>
+								<label class="form-label fw-bold">Current Password</label>
 								<input type="password" class="form-control" id="currentPassword" aria-describedby="usernameHelp"/>
 								<div class="invalid-feedback">Password can't be empty or whitespaces.</div>
 							</div>
 							<div class="mb-3">
-								<label class="form-label">New Password</label>
+								<label class="form-label fw-bold">New Password</label>
 								<input type="password" class="form-control"	id="newPassword">
 								<div class="invalid-feedback">Password can't be empty or whitespaces.</div>
 							</div>
 							<div class="mb-3">
-								<label class="form-label">Confirm New Password</label>
+								<label class="form-label fw-bold">Confirm New Password</label>
 								<input type="password" class="form-control"	id="confirmNewPassword">
 								<div class="invalid-feedback">Do not match with new password</div>
 							</div>

@@ -16,6 +16,7 @@
 		<script src="/js/login-handler.js"></script>
 		<script src="/js/home.js"></script>
 		
+		<title>Statistical Result Management - Home</title>
 	</head>
 	<body>
 		<div class = "bg"></div>
@@ -37,20 +38,20 @@
 			</div>
 		</div>
 		<div class="mainbodycontent">
-			<div id="login-carousel" class="carousel slide" data-bs-ride="carousel">
+			<div id="login-carousel" class="carousel slide mb-2 scale-in-center" data-bs-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="https://wallpaperaccess.com/full/30100.jpg" class="d-block w-100 img-fluid" alt="..."/>
+						<img src="/images/carousel-1.jpg" class="d-block w-100 img-fluid kenburns-top-left" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
-					<div class="carousel-item active">
-						<img src="https://wallpaperaccess.com/full/30100.jpg" class="d-block w-100 img-fluid" alt="..."/>
+					<div class="carousel-item">
+						<img src="/images/carousel-2.jpg" class="d-block w-100 img-fluid kenburns-top" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
-					<div class="carousel-item active">
-						<img src="https://wallpaperaccess.com/full/30100.jpg" class="d-block w-100 img-fluid" alt="..."/>
+					<div class="carousel-item">
+						<img src="/images/carousel-3.jpg" class="d-block w-100 img-fluid kenburns-left" alt="..."/>
 						<div class="carousel-caption d-none d-sm-block d-md-block">
 						</div>
 					</div>
@@ -64,36 +65,37 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
-			<br/>
-			<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
+			<button type="button" id="studentRegistrationBtn" class="btn btn-warning ms-2 mb-2 scale-in-center"><span>Registration</span>&nbsp;<span class="badge bg-danger">NEW</span></button>
 			<br/>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-						<div id="courseWiseStudentsEnrolled" style="width:100%; height:15rem;">
+						<div id="courseWiseStudentsEnrolled" class="scale-in-center" style="width:100%; height:15rem;">
 						</div>
 					</div>
-					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 border rounded" style="background-color: #ecb0b012">
+					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 border rounded scale-in-center" style="background-color: #ecb0b012">
 						<form id="loginForm">
 							<div class="mb-3">
 								<label class="form-label">Username</label>
-								<input type="text" class="form-control" id="loginUsername" aria-describedby="usernameHelp"/>
+								<input type="text" class="form-control" id="loginUsername" aria-describedby="usernameHelp"
+									data-bs-toggle="tooltip" data-bs-placement="right" title="Username" data-bs-container="form#loginForm" />
 								<div class="invalid-feedback"> Please provide a valid username.</div>
-								<div id="usernameHelp" class="form-text">Usually it is your university registration number or employee id</div>
+								<div id="usernameHelp" class="form-text text-dark">Usually it is your university registration number or employee id</div>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Password</label>
-								<input type="password" class="form-control"	id="loginPassword">
+								<input type="password" class="form-control"	id="loginPassword"
+									data-bs-toggle="tooltip" title="Password" data-bs-placement="right" data-bs-container="form#loginForm" >
 								<div class="invalid-feedback"> Password can't be empty or whitespaces.</div>
 							</div>
-							<button id="loginSubmitBtn" type="submit" class="btn btn-primary">
+							<button id="loginSubmitBtn" type="submit" class="btn btn-primary scale-in-center" data-bs-toggle="tooltip" title="Login" data-bs-placement="right" >
 								<span>Login</span>
 								<span id="loginLoadingSpinner" class="spinner-grow spinner-grow-sm d-none" role="status" aria-hidden="true"></span>
 							</button>
 						</form>
 					</div>
 					<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-						<div id="categoryWiseEnrollments" style="width:100%; height:15rem;">
+						<div id="categoryWiseEnrollments" class="scale-in-center" style="width:100%; height:15rem;">
 						</div>
 					</div>
 				</div>
