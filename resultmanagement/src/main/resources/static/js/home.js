@@ -165,7 +165,12 @@ function populateCategoryWiseEnrollments() {
 				label: {
 					connectorAllowed: false
 				},
-				pointStart: 2015
+				pointStart: 2015,
+				lineWidth: 3,
+				marker: {
+					enabled: true,
+					radius: 7
+				}
 			}
 		},
 
@@ -211,26 +216,26 @@ function populateCategoryWiseEnrollments() {
 				endPoint = endPoint == null || year > endPoint ? year : endPoint;
 				if (!jsonObj[courseType]) {
 					jsonObj[courseType] = {
-						[year] : enrollments
+						[year]: enrollments
 					};
-				} else {					
+				} else {
 					jsonObj[courseType][year] = enrollments;
 				}
 			});
-			
+
 			// hydrate the ones which are not present for that year
-			
+
 			var courseTypes = Object.keys(jsonObj);
-			
+
 			courseTypes.forEach(courseType => {
 				var courseTypeInfo = jsonObj[courseType];
-				for(var offset = startPoint; offset <= endPoint; offset++) {
-					if(courseTypeInfo.hasOwnProperty(offset) == false) {
+				for (var offset = startPoint; offset <= endPoint; offset++) {
+					if (courseTypeInfo.hasOwnProperty(offset) == false) {
 						courseTypeInfo[offset] = null;
 					}
 				}
 			});
-			
+
 			courseTypes.forEach(courseType => {
 				var enrollments = [];
 				var years = Object.keys(jsonObj[courseType]);
@@ -242,13 +247,13 @@ function populateCategoryWiseEnrollments() {
 					data: enrollments
 				}, false);
 			});
-			
+
 			chart.series.forEach(series => {
 				series.update({
 					pointStart: startPoint
 				})
 			});
-			
+
 			chart.setSubtitle({
 				text: "Since: " + startPoint,
 				style: {
