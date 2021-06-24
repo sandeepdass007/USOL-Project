@@ -90,7 +90,7 @@ function showChangePasswordErrorModal(msg = "Error while changing password"){
 }
 
 function showPasswordChangedModal(){
-	var modalEl = document.getElementById("logoutConfirmModal");
+	var modalEl = document.getElementById("passwordChangedModal");
 	var myModal = new bootstrap.Modal(modalEl);
 	myModal.show();
 }
