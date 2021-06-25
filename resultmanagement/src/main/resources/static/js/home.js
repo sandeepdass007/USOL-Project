@@ -231,7 +231,7 @@ function populateCategoryWiseEnrollments() {
 				var courseTypeInfo = jsonObj[courseType];
 				for (var offset = startPoint; offset <= endPoint; offset++) {
 					if (courseTypeInfo.hasOwnProperty(offset) == false) {
-						courseTypeInfo[offset] = null;
+						courseTypeInfo[offset] = 0;
 					}
 				}
 			});
