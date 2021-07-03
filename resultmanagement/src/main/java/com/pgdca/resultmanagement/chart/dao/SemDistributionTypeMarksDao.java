@@ -1,7 +1,10 @@
 package com.pgdca.resultmanagement.chart.dao;
 
-public class SemDistributionTypeMarksDao {
+import java.io.Serializable;
 
+public class SemDistributionTypeMarksDao implements Serializable {
+
+	private static final long serialVersionUID = -3087314835191508128L;
 	private String type;
 	private Integer marks;
 	private Integer semester;

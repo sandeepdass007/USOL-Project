@@ -1,7 +1,10 @@
 package com.pgdca.resultmanagement.chart.dao;
 
-public class SubjectMarksDao {
+import java.io.Serializable;
 
+public class SubjectMarksDao implements Serializable {
+
+	private static final long serialVersionUID = 1478974454493534435L;
 	private String subjectName;
 	private Integer marks;
 
