@@ -55,6 +55,6 @@ body, html {
 	background-color: #00000040;
 }
 
-body, html {
-	height: 100%;
+.select2DropDown {
+	z-index: 9999 !important;
 }

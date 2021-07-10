@@ -27,6 +27,11 @@ public class HazelcastConfigurator {
 						.setEvictionConfig(new EvictionConfig().setEvictionPolicy(EvictionPolicy.LRU)
 								.setMaxSizePolicy(MaxSizePolicy.FREE_HEAP_SIZE).setSize(1000))
 						.setTimeToLiveSeconds(120));
+		config.addMapConfig(
+				new MapConfig("staticcache")
+						.setEvictionConfig(new EvictionConfig().setEvictionPolicy(EvictionPolicy.LRU)
+								.setMaxSizePolicy(MaxSizePolicy.FREE_HEAP_SIZE).setSize(10))
+						.setTimeToLiveSeconds(2000));
 		NetworkConfig network = config.getNetworkConfig();
 		network.setPort(5701).setPortCount(20);
 		network.setPortAutoIncrement(true);

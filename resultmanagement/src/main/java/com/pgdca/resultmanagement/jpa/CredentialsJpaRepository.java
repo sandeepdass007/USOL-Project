@@ -3,11 +3,13 @@ package com.pgdca.resultmanagement.jpa;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.pgdca.resultmanagement.jdbc.entity.Credentials;
+import com.pgdca.resultmanagement.jdbc.entity.modelmapper.EntityModelMapper;
 import com.pgdca.resultmanagement.mvc.dao.CredentialsDao;
 
 @Repository
@@ -16,13 +18,16 @@ public class CredentialsJpaRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
+	
+	@Autowired
+	private EntityModelMapper entityModelMapper;
 
 	public CredentialsDao getCredentials(String username, String password) {
 		final Credentials credentials = entityManager.find(Credentials.class, username);
 		if(credentials == null || !credentials.getPassword().equals(password)) {
 			return null;
 		}
-		CredentialsDao credentialsDao = new CredentialsDao(credentials.getUsername(), credentials.getUserType());
+		CredentialsDao credentialsDao = entityModelMapper.mapCredentialsToDao(credentials);
 		return credentialsDao;
 	}
 

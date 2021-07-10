@@ -7,12 +7,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pgdca.resultmanagement.jdbc.entity.AddressDetail;
+import com.pgdca.resultmanagement.jdbc.entity.modelmapper.EntityModelMapper;
 import com.pgdca.resultmanagement.mvc.dao.AddressDetailDao;
-import com.pgdca.resultmanagement.mvc.dao.builder.AddressDetailDaoBuilder;
 
 @Repository
 @Transactional
@@ -20,6 +21,9 @@ public class AddressDetailJpaRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
+	
+	@Autowired
+	private EntityModelMapper entityModelMapper;
 	
 	public List<AddressDetail> getAddressDetail(final String addressId) {
 		final TypedQuery<AddressDetail> addressDetail = entityManager
@@ -32,15 +36,7 @@ public class AddressDetailJpaRepository {
 		final List<AddressDetail> addressDetailList = getAddressDetail(addressId);
 		List<AddressDetailDao> addressDetailDaoList = new ArrayList<AddressDetailDao>();
 		for(AddressDetail addressDetail : addressDetailList) {
-			final AddressDetailDao addressDetailDao = AddressDetailDaoBuilder.getBuilder()
-				.setType(jpaRepository.getAddressTypeDao(addressDetail.getAddressTypeId()).getType())
-				.setBuildingHouseNo(addressDetail.getBuildingHouseNo())
-				.setPincode(addressDetail.getPincode())
-				.setLandmark(addressDetail.getLandmark())
-				.setCity(jpaRepository.getCityInfoDao(addressDetail.getCityId()).getName())
-				.setState(jpaRepository.getStateInfoDao(addressDetail.getStateId()).getName())
-				.setCountry(jpaRepository.getCountryInfoDao(addressDetail.getCountryId()).getName())
-				.build();
+			final AddressDetailDao addressDetailDao = entityModelMapper.mapAddressEntityToDao(addressDetail);
 			addressDetailDaoList.add(addressDetailDao);
 		}
 		return addressDetailDaoList;

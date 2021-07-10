@@ -3,13 +3,13 @@ package com.pgdca.resultmanagement.jpa;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pgdca.resultmanagement.jdbc.entity.StudentDetail;
-import com.pgdca.resultmanagement.mvc.dao.DateDao;
+import com.pgdca.resultmanagement.jdbc.entity.modelmapper.EntityModelMapper;
 import com.pgdca.resultmanagement.mvc.dao.StudentDetailDao;
-import com.pgdca.resultmanagement.mvc.dao.builder.StudentDetailDaoBuilder;
 import com.pgdca.resultmanagement.utils.CommonUtil;
 
 @Repository
@@ -18,6 +18,9 @@ public class StudentDetailsJpaRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
+	
+	@Autowired
+	private EntityModelMapper entityModelMapper;
 	
 	public String getStudentFullName(final String uniRegNo) {
 		final StudentDetail studentDetail = entityManager.createQuery("SELECT sd from StudentDetail sd where sd.universityRegNo=:uniRegNo", StudentDetail.class).setParameter("uniRegNo", uniRegNo)
@@ -38,20 +41,8 @@ public class StudentDetailsJpaRepository {
 		return studentDetail;
 	}
 
-	public StudentDetailDao getStudentDetailDao(String enrollmentNo, JpaRepository jpaRepository) {
+	public StudentDetailDao getStudentDetailDao(String enrollmentNo) {
 		final StudentDetail studentDetail = getStudentDetail(enrollmentNo);
-		return StudentDetailDaoBuilder.getBuilder()
-			.setFirstName(studentDetail.getFirstName())
-			.setMiddleName(studentDetail.getMiddleName())
-			.setLastName(studentDetail.getLastName())
-			.setEnrollmentNo(studentDetail.getEnrollmentNo())
-			.setEmailId(studentDetail.getEmailId())
-			.setUniversityRegNo(studentDetail.getUniversityRegNo())
-			.setCurrentSemester(studentDetail.getCurrentSemester())
-			.setStudentType(jpaRepository.getStudentTypeDao(studentDetail.getStudentTypeId()).getType())
-			.setDateOfBirth(new DateDao(studentDetail.getDateOfBirth()))
-			.setParentDetailDao(jpaRepository.getParentDetailDao(studentDetail.getParentDetailsId()))
-			.setContactDetailDao(jpaRepository.getContactDetailDao(studentDetail.getContactDetailId()))
-			.build();
+		return entityModelMapper.mapStudentEntityToDao(studentDetail);
 	}
 }

@@ -4,13 +4,17 @@
 		<link href="/bootstrap/bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="/fontawesome/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
 		<link href="/css/student-registration.css" rel="stylesheet">
+		<link href="/select2/select2-4.1.0/css/select2.min.css" rel="stylesheet">
 		
 		<!-- JavaScripts -->
 		<script src="/jquery/jquery-3.6.0/jquery-3.6.0.min.js"></script>		
 		<script src="/bootstrap/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/select2/select2-4.1.0/js/select2.full.min.js"></script>
 		<script src="/fontawesome/fontawesome-5.15.3/js/all.min.js"></script>
 		<script src="/highcharts/highcharts-9.1.0/highcharts.js"></script>
 		<script src="/js/utils/common-utils.js"></script>
+		<script src="/js/DataCache.js"></script>
+		<script src="/js/student-registration-handler.js"></script>
 		<script src="/js/student-handler.js"></script>
 
 	</head>
@@ -142,10 +146,10 @@
 				
 				<div class="row mt-2 mb-2">
 					<div class="col-md-3">
-						<label for="inputCountry" class="form-label text-white">Country</label>
-						<select id="inputCountry" class="form-select">
-						      <option selected>Choose...</option>
-						      <option>...</option>
+						<label for="permanentAddrCountry" class="form-label text-white">Country</label>
+						<select id="permanentAddrCountry" class="form-select">
+							<option selected>Choose...</option>
+							<option>...</option>
 						</select>
 				</div>
 					<div class="col-md-3">
@@ -185,10 +189,10 @@
 				
 				<div class="row mt-2 mb-2">
 					<div class="col-md-3">
-						<label for="inputCountry" class="form-label text-white">Country</label>
-						<select id="inputCountry" class="form-select">
-						      <option selected>Choose...</option>
-						      <option>...</option>
+						<label for="correspondenceAddrCountry" class="form-label text-white">Country</label>
+						<select id="correspondenceAddrCountry" class="form-select">
+							<option selected>Choose...</option>
+							<option>...</option>
 						</select>
 				</div>
 					<div class="col-md-3">
