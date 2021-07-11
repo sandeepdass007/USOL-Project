@@ -96,12 +96,12 @@ public class JpaRepository {
 	}
 
 	public ContactDetailDao getContactDetailDao(String contactDetailId) {
-		ContactDetailDao contactDetailDao = contactDetailJpaRepository.getContactDetailDao(contactDetailId, this);
+		ContactDetailDao contactDetailDao = contactDetailJpaRepository.getContactDetailDao(contactDetailId);
 		return contactDetailDao;
 	}
 
 	public List<PhoneDetailDao> getPhoneDetailDaoList(String phoneDetailId) {
-		List<PhoneDetailDao> phoneDetailDaoList = phoneDetailJpaRepository.getPhoneDetailDaoList(phoneDetailId, this);
+		List<PhoneDetailDao> phoneDetailDaoList = phoneDetailJpaRepository.getPhoneDetailDaoList(phoneDetailId);
 		return phoneDetailDaoList;
 	}
 
@@ -111,8 +111,7 @@ public class JpaRepository {
 	}
 
 	public List<AddressDetailDao> getAddressDetailDaoList(String addressId) {
-		List<AddressDetailDao> addressDetailDaoList = addressDetailJpaRepository.getAddressDetailDaoList(addressId,
-				this);
+		List<AddressDetailDao> addressDetailDaoList = addressDetailJpaRepository.getAddressDetailDaoList(addressId);
 		return addressDetailDaoList;
 	}
 
@@ -132,7 +131,7 @@ public class JpaRepository {
 	}
 
 	public AddressTypeDao getAddressTypeDao(String addressTypeId) {
-		final AddressTypeDao addressType = addressTypeJpaRepository.getAddressTypeDao(addressTypeId, this);
+		final AddressTypeDao addressType = addressTypeJpaRepository.getAddressTypeDao(addressTypeId);
 		return addressType;
 	}
 

@@ -21,7 +21,7 @@ public class PhoneTypeJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public PhoneType getPhoneType(final String id) {
+	private PhoneType getPhoneType(final String id) {
 		return entityManager.find(PhoneType.class, id);
 	}
 

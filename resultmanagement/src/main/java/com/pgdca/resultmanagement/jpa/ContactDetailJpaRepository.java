@@ -21,12 +21,12 @@ public class ContactDetailJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 
-	public ContactDetail getContactDetail(final String id) {
+	private ContactDetail getContactDetail(final String id) {
 		ContactDetail contactDetail = entityManager.find(ContactDetail.class, id);
 		return contactDetail;
 	}
 
-	public ContactDetailDao getContactDetailDao(String contactDetailId, JpaRepository jpaRepository) {
+	public ContactDetailDao getContactDetailDao(String contactDetailId) {
 		final ContactDetail contactDetail = getContactDetail(contactDetailId);
 		
 		return entityModelMapper.mapContactDetailEntityToDao(contactDetail);

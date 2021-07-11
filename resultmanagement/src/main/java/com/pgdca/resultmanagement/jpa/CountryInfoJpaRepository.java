@@ -24,7 +24,7 @@ public class CountryInfoJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 
-	public CountryInfo getCountryInfo(final String id) {
+	private CountryInfo getCountryInfo(final String id) {
 		return entityManager.find(CountryInfo.class, id);
 	}
 

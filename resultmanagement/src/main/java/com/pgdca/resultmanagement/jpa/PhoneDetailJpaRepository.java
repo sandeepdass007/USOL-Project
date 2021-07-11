@@ -25,14 +25,14 @@ public class PhoneDetailJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public List<PhoneDetail> getPhoneDetail(final String id) {
+	private List<PhoneDetail> getPhoneDetail(final String id) {
 		final TypedQuery<PhoneDetail> phoneDetail = entityManager
 				.createQuery("SELECT p FROM PhoneDetail p where phoneDetailId = :id", PhoneDetail.class)
 				.setParameter("id", id);
 		return phoneDetail.getResultList();
 	}
 
-	public List<PhoneDetailDao> getPhoneDetailDaoList(String phoneDetailId, JpaRepository jpaRepository) {
+	public List<PhoneDetailDao> getPhoneDetailDaoList(String phoneDetailId) {
 		final List<PhoneDetail> phoneDetailList = getPhoneDetail(phoneDetailId);
 		List<PhoneDetailDao> phoneDetailDaoList = new ArrayList<PhoneDetailDao>();
 		for(PhoneDetail phoneDetail : phoneDetailList) {

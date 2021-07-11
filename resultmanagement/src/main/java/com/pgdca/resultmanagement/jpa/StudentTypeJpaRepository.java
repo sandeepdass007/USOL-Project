@@ -21,7 +21,7 @@ public class StudentTypeJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public StudentType getStudentType(final String id) {
+	private StudentType getStudentType(final String id) {
 		StudentType studentType = entityManager.find(StudentType.class, id);
 		return studentType;
 	}

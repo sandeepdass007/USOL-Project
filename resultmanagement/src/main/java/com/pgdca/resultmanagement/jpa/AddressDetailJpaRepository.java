@@ -25,14 +25,14 @@ public class AddressDetailJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public List<AddressDetail> getAddressDetail(final String addressId) {
+	private List<AddressDetail> getAddressDetail(final String addressId) {
 		final TypedQuery<AddressDetail> addressDetail = entityManager
 				.createQuery("SELECT addrsDtl FROM AddressDetail addrsDtl where addressDetailId = :id", AddressDetail.class)
 				.setParameter("id", addressId);
 		return addressDetail.getResultList();
 	}
 
-	public List<AddressDetailDao> getAddressDetailDaoList(String addressId, JpaRepository jpaRepository) {
+	public List<AddressDetailDao> getAddressDetailDaoList(String addressId) {
 		final List<AddressDetail> addressDetailList = getAddressDetail(addressId);
 		List<AddressDetailDao> addressDetailDaoList = new ArrayList<AddressDetailDao>();
 		for(AddressDetail addressDetail : addressDetailList) {

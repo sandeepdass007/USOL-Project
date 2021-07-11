@@ -21,7 +21,7 @@ public class CityInfoJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public CityInfo getCityInfo(final String id) {
+	private CityInfo getCityInfo(final String id) {
 		return entityManager.find(CityInfo.class, id);
 	}
 

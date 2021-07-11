@@ -21,7 +21,7 @@ public class ParentDetailJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public ParentDetail getParentDetail(final String id) {
+	private ParentDetail getParentDetail(final String id) {
 		ParentDetail parentDetail = entityManager.find(ParentDetail.class, id);
 		return parentDetail;
 	}

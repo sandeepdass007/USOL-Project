@@ -21,11 +21,11 @@ public class AddressTypeJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public AddressType getAddressType(final String id) {
+	private AddressType getAddressType(final String id) {
 		return entityManager.find(AddressType.class, id);
 	}
 
-	public AddressTypeDao getAddressTypeDao(String addressDetailTypeId, JpaRepository jpaRepository) {
+	public AddressTypeDao getAddressTypeDao(String addressDetailTypeId) {
 		final AddressType addressType = getAddressType(addressDetailTypeId);
 		return entityModelMapper.mapAddressTypeEntityToDao(addressType);
 	}

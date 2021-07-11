@@ -21,7 +21,7 @@ public class StateInfoJpaRepository {
 	@Autowired
 	private EntityModelMapper entityModelMapper;
 	
-	public StateInfo getStateInfo(final String id) {
+	private StateInfo getStateInfo(final String id) {
 		return entityManager.find(StateInfo.class, id);
 	}
 
