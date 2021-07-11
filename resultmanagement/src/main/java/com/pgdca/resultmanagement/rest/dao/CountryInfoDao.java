@@ -8,6 +8,16 @@ public class CountryInfoDao implements Serializable {
 	private String id;
 	private String name;
 
+	public CountryInfoDao() {
+		super();
+	}
+
+	public CountryInfoDao(String id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+
 	public String getId() {
 		return id;
 	}
