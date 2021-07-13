@@ -1,7 +1,9 @@
 package com.pgdca.resultmanagement.jpa;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -30,6 +32,15 @@ public class AddressDetailJpaRepository {
 				.createQuery("SELECT addrsDtl FROM AddressDetail addrsDtl where addressDetailId = :id", AddressDetail.class)
 				.setParameter("id", addressId);
 		return addressDetail.getResultList();
+	}
+	
+	public Set<String> getAllAddressIds() {
+		final List<AddressDetail> resultList = entityManager.createQuery("SELECT addrsDtl from AddressDetail addrsDtl", AddressDetail.class).getResultList();
+		final Set<String> addressIds = new HashSet<String>();
+		resultList.forEach(x -> {
+			addressIds.add(x.getAddressDetailId());
+		});
+		return addressIds;
 	}
 
 	public List<AddressDetailDao> getAddressDetailDaoList(String addressId) {
