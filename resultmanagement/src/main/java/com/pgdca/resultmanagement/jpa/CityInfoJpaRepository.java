@@ -1,5 +1,9 @@
 package com.pgdca.resultmanagement.jpa;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -29,4 +33,14 @@ public class CityInfoJpaRepository {
 		final CityInfo cityInfo = getCityInfo(cityId);
 		return entityModelMapper.mapCityInfoEntityToDao(cityInfo);
 	}
+	
+	public Set<String> getAllCityIds() {
+		final List<CityInfo> resultList = entityManager.createQuery("SELECT cityInfo from CityInfo cityInfo",CityInfo.class).getResultList();
+		final Set<String> cityIds = new HashSet<String>();
+		resultList.forEach(x -> {
+			cityIds.add(x.getId());
+		});
+		return cityIds;
+	}
+ 	
 }
