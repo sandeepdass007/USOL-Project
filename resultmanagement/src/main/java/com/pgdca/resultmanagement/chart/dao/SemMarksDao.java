@@ -1,6 +1,9 @@
 package com.pgdca.resultmanagement.chart.dao;
 
-public class SemMarksDao {
+import java.io.Serializable;
+
+public class SemMarksDao implements Serializable{
+	private static final long serialVersionUID = 8949572231726552916L;
 	private Integer semester;
 	private Float marks;
 

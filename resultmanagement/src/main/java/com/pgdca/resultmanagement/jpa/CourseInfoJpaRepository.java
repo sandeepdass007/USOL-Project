@@ -6,12 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.pgdca.resultmanagement.jdbc.entity.StudentDetail;
+import com.pgdca.resultmanagement.jdbc.entity.CourseInfo;
 
 @Repository
-public interface CourseInfoJpaRepository extends JpaRepository<StudentDetail, String> {
+public interface CourseInfoJpaRepository extends JpaRepository<CourseInfo, String> {
 
-	
 	/**
 	 * @return List of [{count of distinct enrollment no, course name}]
 	 */

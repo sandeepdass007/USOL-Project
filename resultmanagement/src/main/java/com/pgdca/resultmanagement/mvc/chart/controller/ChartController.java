@@ -1,4 +1,4 @@
-package com.pgdca.resultmanagement.chart;
+package com.pgdca.resultmanagement.mvc.chart.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,7 @@ public class ChartController {
 
 	@GetMapping(value = "/course-wise-student-enrollment", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "publiccharts", key = "#root.methodName")
 	public HashMap<String, Long> getCourseWiseStudentEnrollment(final HttpSession httpSession) {
 		HashMap<String, Long> map = jpaRepository.getCourseWiseStudentEnrollment();
 		return map;
@@ -38,6 +40,7 @@ public class ChartController {
 
 	@GetMapping(value = "/year-course-wise-enrollment", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "publiccharts", key = "#root.methodName")
 	public List<YearCourseWiseEnrollmentDao> getYearCourseWiseEnrollment(final HttpSession httpSession) {
 		List<YearCourseWiseEnrollmentDao> listOfDao = jpaRepository.getCourseTypeWiseEnrollment();
 		return listOfDao;
@@ -45,6 +48,7 @@ public class ChartController {
 
 	@GetMapping(value = "/student-sem-sub-marks", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "studentcharts", key = "#httpSession.getAttribute('username')")
 	public HashMap<Integer, List<SubjectMarksDao>> getStudentSemSubMarks(
 			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");
@@ -54,6 +58,7 @@ public class ChartController {
 
 	@GetMapping(value = "/student-class-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
 	public String getStudentClassAvgMarksBySem(@RequestParam(name = "courseId") String courseId,
 			HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");
@@ -67,6 +72,7 @@ public class ChartController {
 
 	@GetMapping(value = "/student-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
 	public List<SemMarksDao> getStudentAvgMarksBySem(@RequestParam(name = "courseId") String courseId,
 			HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");
@@ -76,6 +82,7 @@ public class ChartController {
 
 	@GetMapping(value = "/student-dist-wise-per", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
 	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(
 			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");
@@ -86,6 +93,7 @@ public class ChartController {
 
 	@GetMapping(value = "/student-sem-dist-type-wise-marks", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
 	public List<SemDistributionTypeMarksDao> getStudentSemDistributionTypeMarks(
 			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
 		final String univRegNo = (String) httpSession.getAttribute("username");

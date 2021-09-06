@@ -1,7 +1,10 @@
 package com.pgdca.resultmanagement.chart.dao;
 
-public class DistributionTypePercentageDao {
+import java.io.Serializable;
 
+public class DistributionTypePercentageDao implements Serializable {
+
+	private static final long serialVersionUID = -8258227029483889461L;
 	private String type;
 	private float percentage;
 

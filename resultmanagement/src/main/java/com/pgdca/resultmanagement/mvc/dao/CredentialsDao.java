@@ -4,6 +4,10 @@ public class CredentialsDao {
 
 	private String username;
 	private String userType;
+	
+	public CredentialsDao() {
+		super();
+	}
 
 	public CredentialsDao(String username, String userType) {
 		super();

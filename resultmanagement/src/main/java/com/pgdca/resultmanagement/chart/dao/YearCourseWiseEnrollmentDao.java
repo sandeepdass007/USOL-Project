@@ -1,7 +1,10 @@
 package com.pgdca.resultmanagement.chart.dao;
 
-public class YearCourseWiseEnrollmentDao {
+import java.io.Serializable;
 
+public class YearCourseWiseEnrollmentDao implements Serializable {
+
+	private static final long serialVersionUID = 3339458381897104166L;
 	private Long count;
 	private String courseType;
 	private Integer year;

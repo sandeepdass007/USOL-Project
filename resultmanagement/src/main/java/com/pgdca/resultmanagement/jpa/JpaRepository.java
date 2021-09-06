@@ -34,10 +34,10 @@ public class JpaRepository {
 
 	@Autowired
 	private StudentDetailsJpaRepository studentDetailsJpaRepository;
-	
+
 	@Autowired
 	private StudentAcademicJpaRepository studentAcademicJpaRepository;
-	
+
 	@Autowired
 	private CourseInfoJpaRepository courseInfoJpaRepository;
 
@@ -49,28 +49,28 @@ public class JpaRepository {
 
 	@Autowired
 	private ContactDetailJpaRepository contactDetailJpaRepository;
-	
+
 	@Autowired
 	private PhoneDetailJpaRepository phoneDetailJpaRepository;
-	
+
 	@Autowired
 	private PhoneTypeJpaRepository phoneTypeJpaRepository;
 
 	@Autowired
 	private AddressDetailJpaRepository addressDetailJpaRepository;
-	
+
 	@Autowired
 	private AddressTypeJpaRepository addressTypeJpaRepository;
-	
+
 	@Autowired
 	private CityInfoJpaRepository cityInfoJpaRepository;
-	
+
 	@Autowired
 	private StateInfoJpaRepository stateInfoJpaRepository;
-	
+
 	@Autowired
 	private CountryInfoJpaRepository countryInfoJpaRepository;
-	
+
 	public CredentialsDao getCredentials(final String username, final String password) {
 		CredentialsDao credentials = credJpaRepository.getCredentials(username, password);
 		return credentials;
@@ -81,27 +81,27 @@ public class JpaRepository {
 	}
 
 	public StudentDetailDao getStudentDetailDao(String username) {
-		StudentDetailDao studentDetailDao = studentDetailsJpaRepository.getStudentDetailDao(username, this);
+		StudentDetailDao studentDetailDao = studentDetailsJpaRepository.getStudentDetailDao(username);
 		return studentDetailDao;
 	}
-	
+
 	public ParentDetailDao getParentDetailDao(String parentDetailId) {
 		ParentDetailDao parentDetailDao = parentDetailJpaRepository.getParentDetailDao(parentDetailId);
 		return parentDetailDao;
 	}
-	
+
 	public StudentTypeDao getStudentTypeDao(String studentTypeId) {
 		StudentTypeDao studentTypeDao = studentTypeJpaRepository.getStudentTypeDao(studentTypeId);
 		return studentTypeDao;
 	}
 
 	public ContactDetailDao getContactDetailDao(String contactDetailId) {
-		ContactDetailDao contactDetailDao = contactDetailJpaRepository.getContactDetailDao(contactDetailId, this);
+		ContactDetailDao contactDetailDao = contactDetailJpaRepository.getContactDetailDao(contactDetailId);
 		return contactDetailDao;
 	}
 
 	public List<PhoneDetailDao> getPhoneDetailDaoList(String phoneDetailId) {
-		List<PhoneDetailDao> phoneDetailDaoList = phoneDetailJpaRepository.getPhoneDetailDaoList(phoneDetailId, this);
+		List<PhoneDetailDao> phoneDetailDaoList = phoneDetailJpaRepository.getPhoneDetailDaoList(phoneDetailId);
 		return phoneDetailDaoList;
 	}
 
@@ -111,7 +111,7 @@ public class JpaRepository {
 	}
 
 	public List<AddressDetailDao> getAddressDetailDaoList(String addressId) {
-		List<AddressDetailDao> addressDetailDaoList = addressDetailJpaRepository.getAddressDetailDaoList(addressId, this);
+		List<AddressDetailDao> addressDetailDaoList = addressDetailJpaRepository.getAddressDetailDaoList(addressId);
 		return addressDetailDaoList;
 	}
 
@@ -131,29 +131,29 @@ public class JpaRepository {
 	}
 
 	public AddressTypeDao getAddressTypeDao(String addressTypeId) {
-		final AddressTypeDao addressType = addressTypeJpaRepository.getAddressTypeDao(addressTypeId, this);
+		final AddressTypeDao addressType = addressTypeJpaRepository.getAddressTypeDao(addressTypeId);
 		return addressType;
 	}
 
 	public HashMap<String, Long> getCourseWiseStudentEnrollment() {
 		HashMap<String, Long> map = new HashMap<String, Long>();
 		final List<Object[]> courseWiseStudentEnrollment = courseInfoJpaRepository.getCourseWiseStudentEnrollment();
-		for(Object[] entry : courseWiseStudentEnrollment) {
-			Long count = (Long)entry[0];
-			String courseName = (String)entry[1];
+		for (Object[] entry : courseWiseStudentEnrollment) {
+			Long count = (Long) entry[0];
+			String courseName = (String) entry[1];
 			map.put(courseName, count);
 		}
 		return map;
 	}
-	
+
 	public List<YearCourseWiseEnrollmentDao> getCourseTypeWiseEnrollment() {
 		List<YearCourseWiseEnrollmentDao> list = new LinkedList<YearCourseWiseEnrollmentDao>();
 		final List<Object[]> courseTypeWiseEnrollment = courseInfoJpaRepository.getCourseTypeWiseEnrollment();
-		
-		for(Object[] entry : courseTypeWiseEnrollment) {
-			Long count = (Long)entry[0];
-			String courseType = (String)entry[1];
-			Integer year = Integer.parseInt((String)entry[2]);
+
+		for (Object[] entry : courseTypeWiseEnrollment) {
+			Long count = (Long) entry[0];
+			String courseType = (String) entry[1];
+			Integer year = Integer.parseInt((String) entry[2]);
 			list.add(new YearCourseWiseEnrollmentDao(count, courseType, year));
 		}
 		return list;
@@ -165,14 +165,15 @@ public class JpaRepository {
 	}
 
 	public HashMap<Integer, List<SubjectMarksDao>> getStudentSemSubMarks(String univRegNo, String courseId) {
-		final List<Object[]> studentSemSubMarks = studentAcademicJpaRepository.getStudentSemSubMarks(univRegNo, courseId);
+		final List<Object[]> studentSemSubMarks = studentAcademicJpaRepository.getStudentSemSubMarks(univRegNo,
+				courseId);
 		HashMap<Integer, List<SubjectMarksDao>> map = new HashMap<Integer, List<SubjectMarksDao>>();
-		for(Object[] entry : studentSemSubMarks) {
-			Integer semester = (Integer)entry[0];
-			String subjectName = (String)entry[1];
-			Integer marks = ((BigDecimal)entry[2]).intValue();
+		for (Object[] entry : studentSemSubMarks) {
+			Integer semester = (Integer) entry[0];
+			String subjectName = (String) entry[1];
+			Integer marks = ((BigDecimal) entry[2]).intValue();
 			map.compute(semester, (sem, val) -> {
-				if(val == null) {
+				if (val == null) {
 					val = new LinkedList<SubjectMarksDao>();
 				}
 				val.add(new SubjectMarksDao(subjectName, marks));
@@ -191,11 +192,12 @@ public class JpaRepository {
 	}
 
 	public List<SemMarksDao> getStudentAvgMarksBySem(String univRegNo, String courseId) {
-		final List<Object[]> studentAvgMarksBySem = studentAcademicJpaRepository.getStudentAvgMarksBySem(univRegNo, courseId);
+		final List<Object[]> studentAvgMarksBySem = studentAcademicJpaRepository.getStudentAvgMarksBySem(univRegNo,
+				courseId);
 		List<SemMarksDao> avgMarksBySem = new LinkedList<SemMarksDao>();
-		for(Object[] entry : studentAvgMarksBySem) {
-			Float avgMarks = ((BigDecimal)entry[0]).floatValue();
-			Integer semester = ((Integer)entry[1]);
+		for (Object[] entry : studentAvgMarksBySem) {
+			Float avgMarks = ((BigDecimal) entry[0]).floatValue();
+			Integer semester = ((Integer) entry[1]);
 			avgMarksBySem.add(new SemMarksDao(semester, avgMarks));
 		}
 		return avgMarksBySem;
@@ -204,34 +206,40 @@ public class JpaRepository {
 	public List<SemMarksDao> getClassAvgMarksBySem(String courseId) {
 		final List<Object[]> studentAvgMarksBySem = studentAcademicJpaRepository.getClassAvgMarksBySem(courseId);
 		List<SemMarksDao> classAvgMarksBySem = new LinkedList<SemMarksDao>();
-		for(Object[] entry : studentAvgMarksBySem) {
-			Float avgMarks = ((BigDecimal)entry[0]).floatValue();
-			Integer semester = (Integer)entry[1];
+		for (Object[] entry : studentAvgMarksBySem) {
+			Float avgMarks = ((BigDecimal) entry[0]).floatValue();
+			Integer semester = (Integer) entry[1];
 			classAvgMarksBySem.add(new SemMarksDao(semester, avgMarks));
 		}
 		return classAvgMarksBySem;
 	}
 
 	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(String univRegNo, String courseId) {
-		final List<Object[]> studentDistributionWisePercentage = studentAcademicJpaRepository.getStudentDistributionWisePercentage(univRegNo, courseId);
+		final List<Object[]> studentDistributionWisePercentage = studentAcademicJpaRepository
+				.getStudentDistributionWisePercentage(univRegNo, courseId);
 		List<DistributionTypePercentageDao> list = new LinkedList<DistributionTypePercentageDao>();
-		for(Object[] entry : studentDistributionWisePercentage) {
-			String type = (String)entry[0];
-			Float percentage = ((BigDecimal)entry[1]).floatValue();
+		for (Object[] entry : studentDistributionWisePercentage) {
+			String type = (String) entry[0];
+			Float percentage = ((BigDecimal) entry[1]).floatValue();
 			list.add(new DistributionTypePercentageDao(type, percentage));
 		}
 		return list;
 	}
 
 	public List<SemDistributionTypeMarksDao> getStudentSemDistributionTypeMarks(String univRegNo, String courseId) {
-		final List<Object[]> studentSemDistributionTypeMarks = studentAcademicJpaRepository.getStudentSemDistributionTypeMarks(univRegNo, courseId);
+		final List<Object[]> studentSemDistributionTypeMarks = studentAcademicJpaRepository
+				.getStudentSemDistributionTypeMarks(univRegNo, courseId);
 		List<SemDistributionTypeMarksDao> list = new LinkedList<SemDistributionTypeMarksDao>();
-		for(Object[] entry : studentSemDistributionTypeMarks) {
-			Integer semester = (Integer)entry[0];
-			String type = (String)entry[1];
-			Integer marks = ((BigDecimal)entry[2]).intValue();
+		for (Object[] entry : studentSemDistributionTypeMarks) {
+			Integer semester = (Integer) entry[0];
+			String type = (String) entry[1];
+			Integer marks = ((BigDecimal) entry[2]).intValue();
 			list.add(new SemDistributionTypeMarksDao(type, marks, semester));
 		}
 		return list;
+	}
+
+	public List<CountryInfoDao> getAllCountries() {
+		return countryInfoJpaRepository.getAllCountries();
 	}
 }
