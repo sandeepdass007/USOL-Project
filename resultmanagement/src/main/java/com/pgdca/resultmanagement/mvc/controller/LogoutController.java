@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pgdca.resultmanagement.dto.LogoutResponse;
+import com.pgdca.resultmanagement.dao.LogoutResponse;
 
 @Controller
 @RequestMapping(path = "/logout")

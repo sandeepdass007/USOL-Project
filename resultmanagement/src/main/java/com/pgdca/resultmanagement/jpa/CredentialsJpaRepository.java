@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import com.pgdca.resultmanagement.jdbc.entity.Credentials;
-import com.pgdca.resultmanagement.jdbc.entity.modelmapper.EntityModelMapper;
+import com.pgdca.resultmanagement.entity.Credentials;
+import com.pgdca.resultmanagement.entity.modelmapper.EntityModelMapper;
 import com.pgdca.resultmanagement.mvc.dao.CredentialsDao;
 
 @Repository

@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pgdca.resultmanagement.dto.LoginCredentials;
-import com.pgdca.resultmanagement.dto.LoginCredentials.Debug;
-import com.pgdca.resultmanagement.dto.LoginResponse;
+import com.pgdca.resultmanagement.dao.LoginCredentials;
+import com.pgdca.resultmanagement.dao.LoginResponse;
+import com.pgdca.resultmanagement.dao.LoginCredentials.Debug;
 import com.pgdca.resultmanagement.jpa.JpaRepository;
 import com.pgdca.resultmanagement.mvc.dao.CredentialsDao;
 import com.pgdca.resultmanagement.utils.Constants;

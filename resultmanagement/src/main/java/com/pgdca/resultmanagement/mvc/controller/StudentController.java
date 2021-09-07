@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.JsonObject;
-import com.pgdca.resultmanagement.dto.ChangePasswordDto;
+import com.pgdca.resultmanagement.dao.ChangePasswordDao;
 import com.pgdca.resultmanagement.mvc.helper.StudentAcademicsHelper;
 import com.pgdca.resultmanagement.mvc.helper.StudentAccountHelper;
 import com.pgdca.resultmanagement.mvc.helper.StudentHomeHelper;
@@ -86,7 +86,7 @@ public class StudentController {
 	
 	@PostMapping(value = "/account/change-password", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String changePassword(@RequestBody ChangePasswordDto changePasswordDto, HttpSession httpSession) {
+	public String changePassword(@RequestBody ChangePasswordDao changePasswordDao, HttpSession httpSession) {
 		String username = (String) httpSession.getAttribute("username");
 		// if username session attribute is not present, that means it is a security
 		// breach
@@ -94,9 +94,9 @@ public class StudentController {
 		if (!StringUtils.hasText(username)) {
 			return "redirect:/";
 		}
-		final String currentPassword = changePasswordDto.getCurrentPassword();
-		final String newPassword = changePasswordDto.getNewPassword();
-		final String confirmNewPassword = changePasswordDto.getConfirmNewPassword();
+		final String currentPassword = changePasswordDao.getCurrentPassword();
+		final String newPassword = changePasswordDao.getNewPassword();
+		final String confirmNewPassword = changePasswordDao.getConfirmNewPassword();
 		boolean userValid = studentAccountHelper.isUserValid(username, currentPassword);
 		JsonObject jResponse = new JsonObject();
 		if(userValid) {
