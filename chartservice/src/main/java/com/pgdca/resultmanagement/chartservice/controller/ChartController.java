@@ -45,9 +45,7 @@ public class ChartController {
 	@GetMapping(value = "/student-sem-sub-marks", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@Cacheable(value = "studentcharts", key = "#httpSession.getAttribute('username')")
-	public HashMap<Integer, List<SubjectMarksDao>> getStudentSemSubMarks(
-			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
-		final String univRegNo = (String) httpSession.getAttribute("username");
+	public HashMap<Integer, List<SubjectMarksDao>> getStudentSemSubMarks(@RequestParam(name = "univRegNo") String univRegNo, @RequestParam(name = "courseId") String courseId) {
 		HashMap<Integer, List<SubjectMarksDao>> map = jpaRepository.getStudentSemSubMarks(univRegNo, courseId);
 		return map;
 	}
@@ -55,9 +53,7 @@ public class ChartController {
 	@GetMapping(value = "/student-class-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
-	public String getStudentClassAvgMarksBySem(@RequestParam(name = "courseId") String courseId,
-			HttpSession httpSession) {
-		final String univRegNo = (String) httpSession.getAttribute("username");
+	public String getStudentClassAvgMarksBySem(@RequestParam(name = "univRegNo") String univRegNo, @RequestParam(name = "courseId") String courseId) {
 		List<SemMarksDao> avgMarksBySem = jpaRepository.getStudentAvgMarksBySem(univRegNo, courseId);
 		List<SemMarksDao> classAvgMarksBySem = jpaRepository.getClassAvgMarksBySem(courseId);
 		JsonObject jResponse = new JsonObject();
@@ -69,9 +65,7 @@ public class ChartController {
 	@GetMapping(value = "/student-avg-marks-by-sem", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
-	public List<SemMarksDao> getStudentAvgMarksBySem(@RequestParam(name = "courseId") String courseId,
-			HttpSession httpSession) {
-		final String univRegNo = (String) httpSession.getAttribute("username");
+	public List<SemMarksDao> getStudentAvgMarksBySem(@RequestParam(name = "univRegNo") String univRegNo, @RequestParam(name = "courseId") String courseId) {
 		List<SemMarksDao> avgMarksBySem = jpaRepository.getStudentAvgMarksBySem(univRegNo, courseId);
 		return avgMarksBySem;
 	}
@@ -79,9 +73,7 @@ public class ChartController {
 	@GetMapping(value = "/student-dist-wise-per", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
-	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(
-			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
-		final String univRegNo = (String) httpSession.getAttribute("username");
+	public List<DistributionTypePercentageDao> getStudentDistributionWisePercentage(@RequestParam(name = "univRegNo") String univRegNo, @RequestParam(name = "courseId") String courseId) {
 		List<DistributionTypePercentageDao> studentDistributionWisePercentage = jpaRepository
 				.getStudentDistributionWisePercentage(univRegNo, courseId);
 		return studentDistributionWisePercentage;
@@ -90,9 +82,7 @@ public class ChartController {
 	@GetMapping(value = "/student-sem-dist-type-wise-marks", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@Cacheable(value = "studentcharts", key = "{#root.methodName, #courseId, #httpSession.getAttribute('username')}")
-	public List<SemDistributionTypeMarksDao> getStudentSemDistributionTypeMarks(
-			@RequestParam(name = "courseId") String courseId, HttpSession httpSession) {
-		final String univRegNo = (String) httpSession.getAttribute("username");
+	public List<SemDistributionTypeMarksDao> getStudentSemDistributionTypeMarks(@RequestParam(name = "univRegNo") String univRegNo, @RequestParam(name = "courseId") String courseId) {
 		List<SemDistributionTypeMarksDao> studentSemDistributionTypeMarks = jpaRepository
 				.getStudentSemDistributionTypeMarks(univRegNo, courseId);
 		return studentSemDistributionTypeMarks;
