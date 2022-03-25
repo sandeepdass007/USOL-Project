@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ import com.pgdca.resultmanagement.chartservice.dao.YearCourseWiseEnrollmentDao;
 import com.pgdca.resultmanagement.chartservice.jpa.JpaRepository;
 
 @RestController
+@RequestMapping("/chart-service")
 public class ChartController {
 	
 	@Autowired

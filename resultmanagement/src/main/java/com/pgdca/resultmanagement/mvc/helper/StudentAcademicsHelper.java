@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.dao.CourseWiseSubjects;
 import com.pgdca.resultmanagement.mvc.dao.StudentDetailDao;
-import com.pgdca.resultmanagement.proxy.StudentServiceProxy;
+import com.pgdca.resultmanagement.proxy.ChartServiceProxy;
 import com.pgdca.resultmanagement.utils.CommonUtil;
 
 @Component
 public class StudentAcademicsHelper extends StudentHelper {
 
 	@Autowired
-	private StudentServiceProxy studentServiceProxy;
+	private ChartServiceProxy studentServiceProxy;
 
 	public HashMap<String, Object> getModelAttributes(String username) {
 		final HashMap<String, Object> modelAttributes = new HashMap<String, Object>();

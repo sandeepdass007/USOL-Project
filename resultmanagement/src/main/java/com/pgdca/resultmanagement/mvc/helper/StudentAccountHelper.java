@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.pgdca.resultmanagement.jpa.JpaRepository;
 import com.pgdca.resultmanagement.mvc.dao.StudentDetailDao;
-import com.pgdca.resultmanagement.proxy.StudentServiceProxy;
+import com.pgdca.resultmanagement.proxy.ChartServiceProxy;
 import com.pgdca.resultmanagement.utils.CommonUtil;
 
 @Component
@@ -17,7 +17,7 @@ public class StudentAccountHelper extends StudentHelper {
 	private JpaRepository jpaRepository;
 	
 	@Autowired
-	private StudentServiceProxy studentServiceProxy;
+	private ChartServiceProxy studentServiceProxy;
 
 	public HashMap<String, Object> getModelAttributes(String username) {
 		final HashMap<String, Object> modelAttributes = new HashMap<String, Object>();
